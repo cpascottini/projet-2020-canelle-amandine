@@ -18,8 +18,7 @@ namespace ProjetGL
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)
-        {
-            
+        {                      
         }
 
         private void linkInscription_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -27,8 +26,8 @@ namespace ProjetGL
             InscriptionForm inscriptionForm = new InscriptionForm();
             if (inscriptionForm.ShowDialog() == DialogResult.OK)
             {
-                string login = inscriptionForm.NewLogin;
-                string password = inscriptionForm.NewPassword;
+                 string login = inscriptionForm.NewLogin;
+                 string password = inscriptionForm.NewPassword;  
             }
         }
     }

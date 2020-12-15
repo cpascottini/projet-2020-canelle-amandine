@@ -75,6 +75,7 @@
             // 
             // btnConnexion
             // 
+            this.btnConnexion.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnConnexion.Location = new System.Drawing.Point(157, 215);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(75, 23);
@@ -120,6 +121,7 @@
             this.linkInscription.Name = "linkInscription";
             this.linkInscription.Size = new System.Drawing.Size(17, 13);
             this.linkInscription.TabIndex = 8;
+            this.linkInscription.TabStop = true;
             this.linkInscription.Text = "ici";
             this.linkInscription.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkInscription_LinkClicked);
             // 
@@ -146,6 +148,7 @@
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbLogin);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "LoginForm";
             this.Text = "Connexion à la BDThèque";
             this.ResumeLayout(false);

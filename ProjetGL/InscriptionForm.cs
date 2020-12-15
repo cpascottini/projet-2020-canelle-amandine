@@ -17,6 +17,11 @@ namespace ProjetGL
             InitializeComponent();
         }
 
+        public bool passwordsEqual()
+        {
+            return tbNewPassword.Text == tbNewPassword2.Text;
+        }
+
         public string NewLogin
         {
             get { return tbNewLogin.Text; }

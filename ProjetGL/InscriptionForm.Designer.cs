@@ -70,7 +70,7 @@
             this.tbNewPassword2.Location = new System.Drawing.Point(146, 180);
             this.tbNewPassword2.Name = "tbNewPassword2";
             this.tbNewPassword2.Size = new System.Drawing.Size(192, 20);
-            this.tbNewPassword2.TabIndex = 3;
+            this.tbNewPassword2.TabIndex = 5;
             this.tbNewPassword2.UseSystemPasswordChar = true;
             // 
             // tbNewPassword
@@ -86,7 +86,7 @@
             this.tbNewLogin.Location = new System.Drawing.Point(146, 75);
             this.tbNewLogin.Name = "tbNewLogin";
             this.tbNewLogin.Size = new System.Drawing.Size(192, 20);
-            this.tbNewLogin.TabIndex = 5;
+            this.tbNewLogin.TabIndex = 3;
             // 
             // button1
             // 
@@ -121,6 +121,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "InscriptionForm";
             this.Text = "Inscription à la BDThèque";
             this.ResumeLayout(false);
