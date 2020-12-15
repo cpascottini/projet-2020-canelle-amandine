@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class Utilisateur : Personne
+    public class Utilisateur : Personne
     {
-        public List<BD> Possessions;
-        public List<BD> Souhaits;
+        public List<BD> Possessions { get; set; }
+        public List<BD> Souhaits { get; set; }
+        public Utilisateur(List<BD> possessions, List<BD> souhaits)
+        {
+            Possessions = possessions;
+            Souhaits = souhaits;
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class BD
+    public class BD
     {
         public virtual int Id { get; set; }
         public virtual string Titre { get; set; }

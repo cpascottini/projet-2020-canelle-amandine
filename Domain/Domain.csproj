@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2EA27C68-4779-4771-B3B3-B1C35098667E}</ProjectGuid>
+    <ProjectGuid>{0FD8A8E3-2D13-486E-A767-9AB8915E26BE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Domain</RootNamespace>
@@ -47,11 +47,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilisateur.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Mapping\BD.hbm.xml" />
-    <EmbeddedResource Include="Mapping\Personne.xml" />
-    <EmbeddedResource Include="Mapping\Utilisateur.xml" />
+    <Content Include="Mapping\Administrateur.hbm.xml" />
+    <Content Include="Mapping\BD.hbm.xml" />
+    <Content Include="Mapping\Personne.hbm.xml" />
+    <Content Include="Mapping\Utilisateur.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

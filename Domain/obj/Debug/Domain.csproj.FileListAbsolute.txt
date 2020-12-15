@@ -1,0 +1,6 @@
+C:\Users\amand\source\repos\projet-2020-canelle-amandine\Domain\bin\Debug\Domain.dll
+C:\Users\amand\source\repos\projet-2020-canelle-amandine\Domain\bin\Debug\Domain.pdb
+C:\Users\amand\source\repos\projet-2020-canelle-amandine\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+C:\Users\amand\source\repos\projet-2020-canelle-amandine\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\amand\source\repos\projet-2020-canelle-amandine\Domain\obj\Debug\Domain.dll
+C:\Users\amand\source\repos\projet-2020-canelle-amandine\Domain\obj\Debug\Domain.pdb

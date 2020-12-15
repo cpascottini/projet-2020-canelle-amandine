@@ -13,6 +13,6 @@
     <property name="Serie" column="bd_serie" />
     <property name="Genre" column="bd_genre" />
     <property name="Couverture" column="bd_couverture" />
-    
+
   </class>
 </hibernate-mapping>
