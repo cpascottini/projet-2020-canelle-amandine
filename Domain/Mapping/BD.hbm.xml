@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain">
+  <class name="BD" table="bd">
+    <id name="Id" column="bd_id" type="int">
+      <generator class="native">
+      </generator>
+    </id>
+    <property name="Titre" column="bd_titre" />
+    <property name="Auteur" column="bd_auteur" />
+    <property name="Dessinateur" column="bd_dessinateur" />
+    <property name="Editeur" column="bd_editeur" />
+    <property name="Serie" column="bd_serie" />
+    <property name="Genre" column="bd_genre" />
+    <property name="Couverture" column="bd_couverture" />
+    
+  </class>
+</hibernate-mapping>
