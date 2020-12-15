@@ -1,4 +1,4 @@
-﻿drop table if exists personne
+﻿drop table if exists personne;
 drop table if exists utilisateur;
 drop table if exists administrateur;
 drop table if exists bd;
