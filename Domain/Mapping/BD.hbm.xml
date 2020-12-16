@@ -14,5 +14,18 @@
     <property name="Genre" column="bd_genre" />
     <property name="Couverture" column="bd_couverture" />
 
+    <!--
+      <bag name="Personne" inverse="true" " table="relation">
+        <key column="pers_id"/>
+        <many-to-many class="BD" column="bd_id"/>
+      </bag>
+
+    
+    <bag name="Personnes" inverse="true" table="relation">
+      <key column="bd_id"/>
+      <many-to-many class="Personne" column="pers_id"/>
+    </bag>
+    -->
+
   </class>
 </hibernate-mapping>

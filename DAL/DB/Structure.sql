@@ -6,7 +6,7 @@ create table personne (
     pers_id integer not null primary key auto_increment,
     pers_login varchar(100) not null,
     pers_mdp varchar(100) not null,
-    pers_statut varchar(100) not null
+    pers_role varchar(100) not null
 );
 
 create table bd (
@@ -26,5 +26,5 @@ create table relation (
     foreign key (pers_id) references personne(pers_id),
     foreign key (bd_id) references bd(bd_id),
     primary key (pers_id,bd_id),
-    rel_relation varchar(100) not null
+    rel_statut varchar(100) not null
 );

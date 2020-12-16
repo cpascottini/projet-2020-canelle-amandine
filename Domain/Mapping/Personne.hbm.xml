@@ -8,17 +8,16 @@
     </id>
     <property name="Login" column="pers_login" />
     <property name="Mdp" column="pers_mdp" />
-    <property name="Statut" column="pers_statut" />
+    <property name="Role" column="pers_role" />
 
-
-    <bag name="Possessions" inverse="true" lazy="true">
+    <bag name="Possessions" table="relation">
       <key column="pers_id"/>
-      <one-to-many class="BD"/>
+      <many-to-many class="BD" column="bd_id"/>
     </bag>
 
-    <bag name="Souhaits" inverse="true" lazy="true">
+    <bag name="Souhaits" table="relation">
       <key column="pers_id"/>
-      <one-to-many class="BD"/>
+      <many-to-many class="BD" column="bd_id"/>
     </bag>
 
   </class>

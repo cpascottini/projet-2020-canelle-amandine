@@ -17,11 +17,13 @@ namespace DAL
         {
             return (Session.Query<BD>().ToList());
         }
+        
         public IList<BD> GetBDUtilisateur()
         {
-            int idUtilisateur = 1;
-            return Session.CreateQuery("select * from bd as bd join relation.pers_id as id where id = idUtilisateur").List<BD>();
+            int idUtilisateur = 3;
+            return Session.CreateQuery("select bd_titre,bd_auteur,bd_dessinateur,bd_editeur,bd_serie,bd_genre,bd_couverture from BD, relation where relation.pers_id = 3 and BD.Id = relation.bd_id and relation.rel_statut = 'possede'").List<BD>();
         }
+        
         public void Save(BD bd)
         {
             Session.Save(bd);
