@@ -8,6 +8,18 @@
     </id>
     <property name="Login" column="pers_login" />
     <property name="Mdp" column="pers_mdp" />
+    <property name="Statut" column="pers_statut" />
+
+
+    <bag name="Possessions" inverse="true" lazy="true">
+      <key column="pers_id"/>
+      <one-to-many class="BD"/>
+    </bag>
+
+    <bag name="Souhaits" inverse="true" lazy="true">
+      <key column="pers_id"/>
+      <one-to-many class="BD"/>
+    </bag>
 
   </class>
 </hibernate-mapping>

@@ -18,12 +18,32 @@ namespace Domain
         public virtual string Couverture { get; set; }
 
         public BD() { }
-        public BD(int id, string titre, string auteur, string dessinateur)
+        public BD(int id,
+            string titre,
+            string auteur,
+            string dessinateur,
+            string editeur,
+            string serie,
+            string genre,
+            string couverture)
         {
             Id = id;
             Titre = titre;
             Auteur = auteur;
             Dessinateur = dessinateur;
+            Editeur = editeur;
+            Serie = serie;
+            Genre = genre;
+            Couverture = couverture;
+        }
+
+        public override string ToString()
+        {
+            return Titre + " - " + Auteur + ", " + Dessinateur + " (" + Editeur + ")";
+        }
+        public virtual string[] Decrire()
+        {
+            return new string[] { Titre, Auteur, Dessinateur };
         }
     }
 }
