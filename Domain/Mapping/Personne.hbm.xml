@@ -6,9 +6,9 @@
       <generator class="native">
       </generator>
     </id>
-    <property name="Login" column="pers_login" />
-    <property name="Mdp" column="pers_mdp" />
-    <property name="Role" column="pers_role" />
+    <property name="Login" column="pers_login" not-null="true"/>
+    <property name="Mdp" column="pers_mdp" not-null="true"/>
+    <property name="Role" column="pers_role" not-null="true"/>
 
     <bag name="Possessions" table="relation">
       <key column="pers_id"/>

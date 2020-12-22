@@ -19,7 +19,13 @@ namespace ProjetGL
             IBDRepository bdRepository = new BDRepository();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm(bdRepository));
+
+            IPersonneRepository personneRepository = new PersonneRepository();
+            LoginForm login_form = new LoginForm(personneRepository);
+            if (login_form.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new MainForm(bdRepository));
+            }           
         }
     }
 }

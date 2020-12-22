@@ -61,6 +61,8 @@
   <ItemGroup>
     <Compile Include="BDRepository.cs" />
     <Compile Include="IBDRepository.cs" />
+    <Compile Include="IPersonneRepository.cs" />
+    <Compile Include="PersonneRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
   </ItemGroup>

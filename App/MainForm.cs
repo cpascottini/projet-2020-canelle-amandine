@@ -14,20 +14,14 @@ namespace ProjetGL
 {
     public partial class MainForm : Form
     {
-        public bool connected;
         private IBDRepository bdRepository;
         public MainForm(IBDRepository bdRepository)
         {
-            connected = false;
-            LoginForm loginForm = new LoginForm();
-            if(loginForm.ShowDialog() == DialogResult.OK)
-            {
-                InitializeComponent();
-                cbRecherche.SelectedIndex = 0;
+            InitializeComponent();
+            cbRecherche.SelectedIndex = 0;
 
-                this.bdRepository = bdRepository;
-                AfficherContenu();
-            }
+            this.bdRepository = bdRepository;
+            AfficherContenu();
         }
 
         private void AfficherContenu()
