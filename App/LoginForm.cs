@@ -52,7 +52,7 @@ namespace ProjetGL
             }
             else
             {
-                MessageBox.Show("Saisie incorrecte !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Mauvais identifiant / mot de passe !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
             /*// Contrôle de la saisie

@@ -131,6 +131,7 @@
             this.btnRecherche.TabIndex = 3;
             this.btnRecherche.Text = "Rechercher";
             this.btnRecherche.UseVisualStyleBackColor = true;
+            this.btnRecherche.Click += new System.EventHandler(this.btnRecherche_Click);
             // 
             // tbRecherche
             // 
@@ -145,9 +146,10 @@
             this.cbRecherche.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRecherche.FormattingEnabled = true;
             this.cbRecherche.Items.AddRange(new object[] {
-            "Nom",
+            "Titre",
+            "Scénariste",
+            "Dessinateur",
             "Série",
-            "Auteur",
             "Genre"});
             this.cbRecherche.Location = new System.Drawing.Point(21, 23);
             this.cbRecherche.Margin = new System.Windows.Forms.Padding(4);

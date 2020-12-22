@@ -14,8 +14,8 @@ namespace Domain
         public virtual string Role { get; set; }
 
         // spécifique à l'utilisateur
-        public virtual List<BD> Possessions { get; set; }
-        public virtual List<BD> Souhaits { get; set; }
+        public virtual ISet<BD> Possessions { get; set; }
+        public virtual ISet<BD> Souhaits { get; set; }
 
         public Personne() { }
         public Personne(int id, string login, string mdp, string role)
@@ -27,7 +27,7 @@ namespace Domain
             Role = role;
         }
 
-        public Personne(int id, string login, string mdp, string role, List<BD> possessions, List<BD> souhaits)
+        public Personne(int id, string login, string mdp, string role, ISet<BD> possessions, ISet<BD> souhaits)
         // pour construire un utilisateur
         {
             Id = id;

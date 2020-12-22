@@ -11,6 +11,7 @@ namespace DAL
     {
         IList<BD> GetAll();
         IList<BD> GetBDUtilisateur();
+        IList<BD> GetBDRecherche(string rechercheLocal);
         void Save(BD bd);
     }
 }

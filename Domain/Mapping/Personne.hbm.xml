@@ -10,6 +10,7 @@
     <property name="Mdp" column="pers_mdp" not-null="true"/>
     <property name="Role" column="pers_role" not-null="true"/>
 
+    <!--
     <bag name="Possessions" table="relation">
       <key column="pers_id"/>
       <many-to-many class="BD" column="bd_id"/>
@@ -19,6 +20,17 @@
       <key column="pers_id"/>
       <many-to-many class="BD" column="bd_id"/>
     </bag>
+-->
 
+    <set name="Possessions" table="relation">
+      <key column="pers_id"/>
+      <many-to-many class="BD" column="bd_id"/>
+    </set>
+
+    <set name="Souhaits" table="relation">
+      <key column="pers_id"/>
+      <many-to-many class="BD" column="bd_id"/>
+    </set>
+    
   </class>
 </hibernate-mapping>

@@ -61,5 +61,17 @@ namespace ProjetGL
                 MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnRecherche_Click(object sender, EventArgs e)
+        {
+            string recherche = tbRecherche.Text;
+
+            dgvAllAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes
+            foreach (BD bd in bdRepository.GetBDRecherche(recherche))
+            {
+                dgvAllAlbums.Rows.Add(bd.Decrire());
+            }
+            dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
+        }
     }
 }
