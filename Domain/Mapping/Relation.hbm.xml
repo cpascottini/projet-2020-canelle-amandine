@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain">
+  <class name="Relation" table="relation">
+    <id name="Id" column="rel_id" type="int">
+      <generator class="native">
+      </generator>
+    </id>
+    <property name="Personne" column="pers_id" />
+    <property name="BD" column="bd_id" />
+    <property name="Statut" column="rel_statut" />
+  </class>
+</hibernate-mapping>
