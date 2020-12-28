@@ -7,8 +7,8 @@ insert into personne values (1,'fanDeBd','bonjour','utilisateur');
 insert into personne values (2,'admin1','gestion','administrateur');
 insert into personne values (3,'roger','vivelabd','utilisateur');
 
-insert into relation values(1,1,'possede');
-insert into relation values(1,2,'veut');
-insert into relation values(3,1,'possede');
-insert into relation values(3,4,'possede');
-insert into relation values(3,3,'veut');
+insert into relation values(1,1,1,'possede');
+insert into relation values(2,1,2,'veut');
+insert into relation values(3,3,1,'possede');
+insert into relation values(4,3,4,'possede');
+insert into relation values(5,3,3,'veut');

@@ -21,10 +21,10 @@ create table bd (
 );
 
 create table relation (
+    rel_id integer not null primary key auto_increment,
     pers_id integer not null,
     bd_id integer not null,
     foreign key (pers_id) references personne(pers_id),
     foreign key (bd_id) references bd(bd_id),
-    primary key (pers_id,bd_id),
     rel_statut varchar(100) not null
 );
