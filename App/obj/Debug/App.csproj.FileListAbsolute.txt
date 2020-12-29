@@ -27,6 +27,7 @@ C:\Users\KNL\source\repos\projet-2020-canelle-amandine\App\bin\Debug\Remotion.Li
 C:\Users\KNL\source\repos\projet-2020-canelle-amandine\App\bin\Debug\Remotion.Linq.EagerFetching.xml
 C:\Users\KNL\source\repos\projet-2020-canelle-amandine\App\bin\Debug\Antlr3.Runtime.xml
 C:\Users\KNL\source\repos\projet-2020-canelle-amandine\App\bin\Debug\Iesi.Collections.xml
+C:\Users\KNL\source\repos\projet-2020-canelle-amandine\App\obj\Debug\ProjetGL.AlbumForm.resources
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\bin\Debug\MySql.Data.dll
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\bin\Debug\hibernate.cfg.xml
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\bin\Debug\App.exe.config
@@ -47,6 +48,7 @@ C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\bin\Debug\Remotion.
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\bin\Debug\Antlr3.Runtime.xml
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\bin\Debug\Iesi.Collections.xml
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\obj\Debug\App.csprojAssemblyReference.cache
+C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\obj\Debug\ProjetGL.AlbumForm.resources
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\obj\Debug\ProjetGL.InscriptionForm.resources
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\obj\Debug\ProjetGL.LoginForm.resources
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\obj\Debug\ProjetGL.MainForm.resources
@@ -56,4 +58,3 @@ C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\obj\Debug\App.cspro
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\obj\Debug\App.csproj.CopyComplete
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\obj\Debug\App.exe
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\obj\Debug\App.pdb
-C:\Users\KNL\source\repos\projet-2020-canelle-amandine\App\obj\Debug\ProjetGL.AlbumForm.resources

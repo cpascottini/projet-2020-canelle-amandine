@@ -18,7 +18,6 @@ namespace ProjetGL
         public MainForm(IBDRepository bdRepository)
         {
             InitializeComponent();
-            cbRecherche.SelectedIndex = 0;
 
             this.bdRepository = bdRepository;
             AfficherContenu();
@@ -35,10 +34,7 @@ namespace ProjetGL
                 {
                     dgvAllAlbums.Rows.Add(bd.Decrire());
                 }
-                DataGridViewCheckBoxColumn colonneCheckBox = new DataGridViewCheckBoxColumn();
-                colonneCheckBox.HeaderText = "Je le veux";
-                colonneCheckBox.Name = "checkBoxStatut";
-                dgvAllAlbums.Columns.Add(colonneCheckBox);
+                
 
                 // tri alphabétique sur la 1ère colonne (nom)
                 dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);

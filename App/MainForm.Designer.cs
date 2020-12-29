@@ -38,11 +38,12 @@
             this.labelPasDeResultat = new System.Windows.Forms.Label();
             this.btnRecherche = new System.Windows.Forms.Button();
             this.tbRecherche = new System.Windows.Forms.TextBox();
-            this.cbRecherche = new System.Windows.Forms.ComboBox();
             this.dgvAllAlbums = new System.Windows.Forms.DataGridView();
             this.columnAllTitre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnAllScenariste = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnAllDessinateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnMyAlbums = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.columnWishlist = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabCtrlAlbums.SuspendLayout();
             this.tabPageMyAlbums.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyAlbums)).BeginInit();
@@ -54,21 +55,19 @@
             // 
             this.tabCtrlAlbums.Controls.Add(this.tabPageMyAlbums);
             this.tabCtrlAlbums.Controls.Add(this.tabPageAllAlbums);
-            this.tabCtrlAlbums.Location = new System.Drawing.Point(13, 67);
-            this.tabCtrlAlbums.Margin = new System.Windows.Forms.Padding(4);
+            this.tabCtrlAlbums.Location = new System.Drawing.Point(10, 54);
             this.tabCtrlAlbums.Name = "tabCtrlAlbums";
             this.tabCtrlAlbums.SelectedIndex = 0;
-            this.tabCtrlAlbums.Size = new System.Drawing.Size(816, 441);
+            this.tabCtrlAlbums.Size = new System.Drawing.Size(639, 358);
             this.tabCtrlAlbums.TabIndex = 0;
             // 
             // tabPageMyAlbums
             // 
             this.tabPageMyAlbums.Controls.Add(this.dgvMyAlbums);
-            this.tabPageMyAlbums.Location = new System.Drawing.Point(4, 25);
-            this.tabPageMyAlbums.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageMyAlbums.Location = new System.Drawing.Point(4, 22);
             this.tabPageMyAlbums.Name = "tabPageMyAlbums";
-            this.tabPageMyAlbums.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageMyAlbums.Size = new System.Drawing.Size(808, 412);
+            this.tabPageMyAlbums.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageMyAlbums.Size = new System.Drawing.Size(641, 332);
             this.tabPageMyAlbums.TabIndex = 0;
             this.tabPageMyAlbums.Text = "Mes albums";
             this.tabPageMyAlbums.UseVisualStyleBackColor = true;
@@ -81,10 +80,9 @@
             this.columnMyScenariste,
             this.columnMyDessinateur});
             this.dgvMyAlbums.Location = new System.Drawing.Point(0, 0);
-            this.dgvMyAlbums.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMyAlbums.Name = "dgvMyAlbums";
             this.dgvMyAlbums.RowHeadersWidth = 51;
-            this.dgvMyAlbums.Size = new System.Drawing.Size(808, 412);
+            this.dgvMyAlbums.Size = new System.Drawing.Size(641, 336);
             this.dgvMyAlbums.TabIndex = 0;
             this.dgvMyAlbums.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyAlbums_CellContentClick);
             // 
@@ -114,13 +112,11 @@
             this.tabPageAllAlbums.Controls.Add(this.labelPasDeResultat);
             this.tabPageAllAlbums.Controls.Add(this.btnRecherche);
             this.tabPageAllAlbums.Controls.Add(this.tbRecherche);
-            this.tabPageAllAlbums.Controls.Add(this.cbRecherche);
             this.tabPageAllAlbums.Controls.Add(this.dgvAllAlbums);
-            this.tabPageAllAlbums.Location = new System.Drawing.Point(4, 25);
-            this.tabPageAllAlbums.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPageAllAlbums.Location = new System.Drawing.Point(4, 22);
             this.tabPageAllAlbums.Name = "tabPageAllAlbums";
-            this.tabPageAllAlbums.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageAllAlbums.Size = new System.Drawing.Size(808, 412);
+            this.tabPageAllAlbums.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageAllAlbums.Size = new System.Drawing.Size(631, 332);
             this.tabPageAllAlbums.TabIndex = 1;
             this.tabPageAllAlbums.Text = "Tous les albums";
             this.tabPageAllAlbums.UseVisualStyleBackColor = true;
@@ -129,18 +125,17 @@
             // 
             this.labelPasDeResultat.AutoSize = true;
             this.labelPasDeResultat.BackColor = System.Drawing.Color.Transparent;
-            this.labelPasDeResultat.Location = new System.Drawing.Point(255, 242);
+            this.labelPasDeResultat.Location = new System.Drawing.Point(182, 128);
+            this.labelPasDeResultat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPasDeResultat.Name = "labelPasDeResultat";
-            this.labelPasDeResultat.Size = new System.Drawing.Size(16, 17);
+            this.labelPasDeResultat.Size = new System.Drawing.Size(0, 13);
             this.labelPasDeResultat.TabIndex = 5;
-            this.labelPasDeResultat.Text = "a";
             // 
             // btnRecherche
             // 
-            this.btnRecherche.Location = new System.Drawing.Point(528, 21);
-            this.btnRecherche.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRecherche.Location = new System.Drawing.Point(396, 17);
             this.btnRecherche.Name = "btnRecherche";
-            this.btnRecherche.Size = new System.Drawing.Size(100, 28);
+            this.btnRecherche.Size = new System.Drawing.Size(75, 23);
             this.btnRecherche.TabIndex = 3;
             this.btnRecherche.Text = "Rechercher";
             this.btnRecherche.UseVisualStyleBackColor = true;
@@ -148,27 +143,10 @@
             // 
             // tbRecherche
             // 
-            this.tbRecherche.Location = new System.Drawing.Point(191, 23);
-            this.tbRecherche.Margin = new System.Windows.Forms.Padding(4);
+            this.tbRecherche.Location = new System.Drawing.Point(33, 19);
             this.tbRecherche.Name = "tbRecherche";
-            this.tbRecherche.Size = new System.Drawing.Size(328, 22);
+            this.tbRecherche.Size = new System.Drawing.Size(328, 20);
             this.tbRecherche.TabIndex = 2;
-            // 
-            // cbRecherche
-            // 
-            this.cbRecherche.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRecherche.FormattingEnabled = true;
-            this.cbRecherche.Items.AddRange(new object[] {
-            "Titre",
-            "Scénariste",
-            "Dessinateur",
-            "Série",
-            "Genre"});
-            this.cbRecherche.Location = new System.Drawing.Point(21, 23);
-            this.cbRecherche.Margin = new System.Windows.Forms.Padding(4);
-            this.cbRecherche.Name = "cbRecherche";
-            this.cbRecherche.Size = new System.Drawing.Size(160, 24);
-            this.cbRecherche.TabIndex = 1;
             // 
             // dgvAllAlbums
             // 
@@ -176,12 +154,13 @@
             this.dgvAllAlbums.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnAllTitre,
             this.columnAllScenariste,
-            this.columnAllDessinateur});
-            this.dgvAllAlbums.Location = new System.Drawing.Point(0, 74);
-            this.dgvAllAlbums.Margin = new System.Windows.Forms.Padding(4);
+            this.columnAllDessinateur,
+            this.columnMyAlbums,
+            this.columnWishlist});
+            this.dgvAllAlbums.Location = new System.Drawing.Point(1, 51);
             this.dgvAllAlbums.Name = "dgvAllAlbums";
             this.dgvAllAlbums.RowHeadersWidth = 51;
-            this.dgvAllAlbums.Size = new System.Drawing.Size(808, 338);
+            this.dgvAllAlbums.Size = new System.Drawing.Size(634, 281);
             this.dgvAllAlbums.TabIndex = 0;
             this.dgvAllAlbums.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAllAlbums_CellContentClick);
             // 
@@ -206,14 +185,23 @@
             this.columnAllDessinateur.Name = "columnAllDessinateur";
             this.columnAllDessinateur.Width = 125;
             // 
+            // columnMyAlbums
+            // 
+            this.columnMyAlbums.HeaderText = "Je l\'ai";
+            this.columnMyAlbums.Name = "columnMyAlbums";
+            // 
+            // columnWishlist
+            // 
+            this.columnWishlist.HeaderText = "Je la veux";
+            this.columnWishlist.Name = "columnWishlist";
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 554);
+            this.ClientSize = new System.Drawing.Size(754, 450);
             this.Controls.Add(this.tabCtrlAlbums);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "BDThèque";
             this.tabCtrlAlbums.ResumeLayout(false);
@@ -234,14 +222,15 @@
         private System.Windows.Forms.TabPage tabPageAllAlbums;
         private System.Windows.Forms.Button btnRecherche;
         private System.Windows.Forms.TextBox tbRecherche;
-        private System.Windows.Forms.ComboBox cbRecherche;
         private System.Windows.Forms.DataGridView dgvAllAlbums;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnMyTitre;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnMyScenariste;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnMyDessinateur;
+        private System.Windows.Forms.Label labelPasDeResultat;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAllTitre;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAllScenariste;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAllDessinateur;
-        private System.Windows.Forms.Label labelPasDeResultat;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn columnMyAlbums;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn columnWishlist;
     }
 }
