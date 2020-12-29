@@ -25,7 +25,7 @@ namespace ProjetGL
             if (login_form.ShowDialog() == DialogResult.OK)
             {
                 Application.Run(new MainForm(bdRepository));
-            }           
+            }
         }
     }
 }

@@ -35,6 +35,7 @@
             this.columnMyScenariste = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnMyDessinateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageAllAlbums = new System.Windows.Forms.TabPage();
+            this.labelPasDeResultat = new System.Windows.Forms.Label();
             this.btnRecherche = new System.Windows.Forms.Button();
             this.tbRecherche = new System.Windows.Forms.TextBox();
             this.cbRecherche = new System.Windows.Forms.ComboBox();
@@ -109,6 +110,7 @@
             // 
             // tabPageAllAlbums
             // 
+            this.tabPageAllAlbums.Controls.Add(this.labelPasDeResultat);
             this.tabPageAllAlbums.Controls.Add(this.btnRecherche);
             this.tabPageAllAlbums.Controls.Add(this.tbRecherche);
             this.tabPageAllAlbums.Controls.Add(this.cbRecherche);
@@ -121,6 +123,16 @@
             this.tabPageAllAlbums.TabIndex = 1;
             this.tabPageAllAlbums.Text = "Tous les albums";
             this.tabPageAllAlbums.UseVisualStyleBackColor = true;
+            // 
+            // labelPasDeResultat
+            // 
+            this.labelPasDeResultat.AutoSize = true;
+            this.labelPasDeResultat.BackColor = System.Drawing.Color.Transparent;
+            this.labelPasDeResultat.Location = new System.Drawing.Point(255, 242);
+            this.labelPasDeResultat.Name = "labelPasDeResultat";
+            this.labelPasDeResultat.Size = new System.Drawing.Size(16, 17);
+            this.labelPasDeResultat.TabIndex = 5;
+            this.labelPasDeResultat.Text = "a";
             // 
             // btnRecherche
             // 
@@ -170,6 +182,7 @@
             this.dgvAllAlbums.RowHeadersWidth = 51;
             this.dgvAllAlbums.Size = new System.Drawing.Size(808, 338);
             this.dgvAllAlbums.TabIndex = 0;
+            this.dgvAllAlbums.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAllAlbums_CellContentClick);
             // 
             // columnAllTitre
             // 
@@ -228,5 +241,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAllTitre;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAllScenariste;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAllDessinateur;
+        private System.Windows.Forms.Label labelPasDeResultat;
     }
 }

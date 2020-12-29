@@ -72,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlbumForm.resx">
+      <DependentUpon>AlbumForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InscriptionForm.resx">
       <DependentUpon>InscriptionForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -20,16 +20,29 @@ namespace DAL
         
         public IList<BD> GetBDUtilisateur()
         {
-            int idUtilisateur = 3;        
+            int idUtilisateur = 3;        // il faut le récupérer 
             return Session.CreateQuery("select bd from BD as bd, Relation as r where bd.Id=r.BD and r.Personne=:util and r.Statut='possede'").SetInt32("util", idUtilisateur).List<BD>();
         }
 
         public IList<BD> GetBDRecherche(string rechercheLocal)
         {
-            //string recherche = tbRecherche.Text;
-            return Session.CreateQuery("select bd from BD bd where bd.Titre like " + rechercheLocal).List<BD>();
+            //IList<BD> bdRecherche = Session.CreateQuery("select bd from BD bd where bd.Titre like '%" + rechercheLocal + "%'").List<BD>();
+            IList<BD> bdRecherche = Session.CreateQuery("select bd from BD bd where bd.Titre like '%" + rechercheLocal + "%'" +
+                "or bd.Auteur like '%" + rechercheLocal + "%'" +
+                "or bd.Dessinateur like '%" + rechercheLocal + "%'" +
+                "or bd.Editeur like '%" + rechercheLocal + "%'" +
+                "or bd.Genre like '%" + rechercheLocal + "%'" +
+                "or bd.Serie like '%" + rechercheLocal + "%'").List<BD>();
+
+            return bdRecherche;
         }
         
+        public IList<BD> GetBDRow(string titreLocal, string auteurLocal)
+        {
+            return Session.CreateQuery("select bd from BD bd where bd.Titre='" + titreLocal + "'" +
+                "and bd.Auteur='" + auteurLocal + "'").List<BD>();
+        }
+
         public void Save(BD bd)
         {
             Session.Save(bd);

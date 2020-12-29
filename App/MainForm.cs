@@ -66,12 +66,49 @@ namespace ProjetGL
         {
             string recherche = tbRecherche.Text;
 
+            // on réaffiche le dgv si une recherche précédente les a cachées
+            dgvAllAlbums.Show();
+
+            // on remasque le label si une recherche précédente l'a affichée
+            labelPasDeResultat.Visible = false;
+
             dgvAllAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes
-            foreach (BD bd in bdRepository.GetBDRecherche(recherche))
+            if (bdRepository.GetBDRecherche(recherche).Count() != 0)
             {
-                dgvAllAlbums.Rows.Add(bd.Decrire());
+                foreach (BD bd in bdRepository.GetBDRecherche(recherche))
+                {
+                    dgvAllAlbums.Rows.Add(bd.Decrire());
+                }
+                dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
             }
-            dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
+            else
+            {
+                dgvAllAlbums.Hide();
+
+                labelPasDeResultat.Visible = true;
+                labelPasDeResultat.Text = "Aucun résultat pour cette recherche.";
+            }
+        }
+
+        private void dgvAllAlbums_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            DataGridViewRow row = this.dgvAllAlbums.Rows[rowIndex];
+            string titre = row.Cells["columnAllTitre"].Value.ToString();
+            string auteur = row.Cells["columnAllScenariste"].Value.ToString();
+
+            /*
+            AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
+            if (albumForm.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new AlbumForm(bdRepository, titre, auteur));
+            }
+            */
+            //Application.Run(new AlbumForm(bdRepository, titre, auteur));
+            AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
+            albumForm.ShowDialog();
+
+
         }
     }
 }
