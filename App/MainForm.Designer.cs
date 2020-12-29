@@ -86,6 +86,7 @@
             this.dgvMyAlbums.RowHeadersWidth = 51;
             this.dgvMyAlbums.Size = new System.Drawing.Size(808, 412);
             this.dgvMyAlbums.TabIndex = 0;
+            this.dgvMyAlbums.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyAlbums_CellContentClick);
             // 
             // columnMyTitre
             // 

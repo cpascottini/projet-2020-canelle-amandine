@@ -97,18 +97,19 @@ namespace ProjetGL
             string titre = row.Cells["columnAllTitre"].Value.ToString();
             string auteur = row.Cells["columnAllScenariste"].Value.ToString();
 
-            /*
-            AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
-            if (albumForm.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new AlbumForm(bdRepository, titre, auteur));
-            }
-            */
-            //Application.Run(new AlbumForm(bdRepository, titre, auteur));
             AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
             albumForm.ShowDialog();
+        }
 
+        private void dgvMyAlbums_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            DataGridViewRow row = this.dgvMyAlbums.Rows[rowIndex];
+            string titre = row.Cells["columnMyTitre"].Value.ToString();
+            string auteur = row.Cells["columnMyScenariste"].Value.ToString();
 
+            AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
+            albumForm.ShowDialog();
         }
     }
 }

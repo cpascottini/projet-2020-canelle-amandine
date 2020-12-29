@@ -35,7 +35,6 @@
             this.labelSerie = new System.Windows.Forms.Label();
             this.labelGenre = new System.Windows.Forms.Label();
             this.pictureBoxCouverture = new System.Windows.Forms.PictureBox();
-            this.btnRetour = new System.Windows.Forms.Button();
             this.tbTitre = new System.Windows.Forms.TextBox();
             this.tbAuteur = new System.Windows.Forms.TextBox();
             this.tbEditeur = new System.Windows.Forms.TextBox();
@@ -107,15 +106,6 @@
             this.pictureBoxCouverture.TabIndex = 6;
             this.pictureBoxCouverture.TabStop = false;
             // 
-            // btnRetour
-            // 
-            this.btnRetour.Location = new System.Drawing.Point(235, 385);
-            this.btnRetour.Name = "btnRetour";
-            this.btnRetour.Size = new System.Drawing.Size(222, 30);
-            this.btnRetour.TabIndex = 7;
-            this.btnRetour.Text = "Retour à la liste des albums";
-            this.btnRetour.UseVisualStyleBackColor = true;
-            // 
             // tbTitre
             // 
             this.tbTitre.Location = new System.Drawing.Point(163, 54);
@@ -175,7 +165,6 @@
             this.Controls.Add(this.tbDessinateur);
             this.Controls.Add(this.tbAuteur);
             this.Controls.Add(this.tbTitre);
-            this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.pictureBoxCouverture);
             this.Controls.Add(this.labelGenre);
             this.Controls.Add(this.labelSerie);
@@ -200,7 +189,6 @@
         private System.Windows.Forms.Label labelSerie;
         private System.Windows.Forms.Label labelGenre;
         private System.Windows.Forms.PictureBox pictureBoxCouverture;
-        private System.Windows.Forms.Button btnRetour;
         private System.Windows.Forms.TextBox tbTitre;
         private System.Windows.Forms.TextBox tbAuteur;
         private System.Windows.Forms.TextBox tbEditeur;
