@@ -56,22 +56,6 @@ namespace ProjetGL
             {
                 MessageBox.Show("Mauvais identifiant / mot de passe !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            /*// Contrôle de la saisie
-            if (Login == "my user" && Password == "my pass")
-            {
-                //save the user has logged in somewhere
-                //set the dialog result to ok
-                this.DialogResult = DialogResult.OK;
-                //close the dialog
-                this.Close();
-            }
-            else
-            {
-                //login failed
-                MessageBox.Show("Login failed");
-                //do not close the window
-            }*/
         }
 
         private void linkInscription_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

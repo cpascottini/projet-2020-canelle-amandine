@@ -20,14 +20,17 @@ namespace ProjetGL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            IPersonneRepository personneRepository = new PersonneRepository();
-            LoginForm loginForm = new LoginForm(personneRepository, bdRepository);
-            
-            if (loginForm.ShowDialog() == DialogResult.OK)
+            while(true)
             {
-                int idUtilisateur = personneRepository.GetIdUtilisateur(loginForm.Login, loginForm.Password);
-                Application.Run(new MainForm(bdRepository, idUtilisateur));
-            }
+                IPersonneRepository personneRepository = new PersonneRepository();
+                LoginForm loginForm = new LoginForm(personneRepository, bdRepository);
+
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    int idUtilisateur = personneRepository.GetIdUtilisateur(loginForm.Login, loginForm.Password);
+                    Application.Run(new MainForm(bdRepository, idUtilisateur));
+                }
+            }           
         }
     }
 }

@@ -15,7 +15,7 @@ create table bd (
     bd_auteur varchar(100) not null,
     bd_dessinateur varchar(100) not null,
     bd_editeur varchar(100) not null,
-    bd_serie varchar(100) not null,
+    bd_serie varchar(100),
     bd_genre varchar(100) not null,
     bd_couverture varchar(100) not null
 );

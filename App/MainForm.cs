@@ -15,15 +15,18 @@ namespace ProjetGL
     public partial class MainForm : Form
     {
         private IBDRepository bdRepository;
+        private int idUtilisateur;
+
         public MainForm(IBDRepository bdRepository, int idUtilisateur)
         {
             InitializeComponent();
 
             this.bdRepository = bdRepository;
-            AfficherContenu(idUtilisateur);
+            this.idUtilisateur = idUtilisateur;
+            AfficherContenu();
         }
 
-        private void AfficherContenu(int idUtilisateur)
+        private void AfficherContenu()
         {
             try
             {
@@ -112,7 +115,7 @@ namespace ProjetGL
             AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
             albumForm.ShowDialog();
 
-            /*
+            
             DataGridViewCheckBoxCell caseAjoutPossession = (DataGridViewCheckBoxCell)dgvAllAlbums.Rows[rowIndex].Cells["columnMyAlbums"];
             if (Convert.ToBoolean(caseAjoutPossession.Value))
             {
@@ -122,7 +125,7 @@ namespace ProjetGL
 
                 bdRepository.AjouterBD(bd, idUtilisateur);
             }
-            */
+            
         }
 
         private void dgvMyAlbums_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -150,9 +153,9 @@ namespace ProjetGL
         private void btnDeconnexion_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Vous avez été déconnecté.", "Déconnexion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            IPersonneRepository personneRepository = new PersonneRepository();
-            LoginForm newLoginForm = new LoginForm(personneRepository, bdRepository);
-            newLoginForm.ShowDialog();
+            //IPersonneRepository personneRepository = new PersonneRepository();
+            //LoginForm newLoginForm = new LoginForm(personneRepository, bdRepository);
+            //newLoginForm.ShowDialog();            
             this.Close();
         }
     }
