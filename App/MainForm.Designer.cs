@@ -66,8 +66,8 @@
             this.tabPageMyAlbums.Controls.Add(this.dgvMyAlbums);
             this.tabPageMyAlbums.Location = new System.Drawing.Point(4, 22);
             this.tabPageMyAlbums.Name = "tabPageMyAlbums";
-            this.tabPageMyAlbums.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPageMyAlbums.Size = new System.Drawing.Size(641, 332);
+            this.tabPageMyAlbums.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageMyAlbums.Size = new System.Drawing.Size(631, 332);
             this.tabPageMyAlbums.TabIndex = 0;
             this.tabPageMyAlbums.Text = "Mes albums";
             this.tabPageMyAlbums.UseVisualStyleBackColor = true;
@@ -115,7 +115,7 @@
             this.tabPageAllAlbums.Controls.Add(this.dgvAllAlbums);
             this.tabPageAllAlbums.Location = new System.Drawing.Point(4, 22);
             this.tabPageAllAlbums.Name = "tabPageAllAlbums";
-            this.tabPageAllAlbums.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageAllAlbums.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageAllAlbums.Size = new System.Drawing.Size(631, 332);
             this.tabPageAllAlbums.TabIndex = 1;
             this.tabPageAllAlbums.Text = "Tous les albums";

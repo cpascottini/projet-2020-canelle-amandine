@@ -107,7 +107,7 @@
             // pictureBoxCouverture
             // 
             this.pictureBoxCouverture.Location = new System.Drawing.Point(355, 48);
-            this.pictureBoxCouverture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxCouverture.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxCouverture.Name = "pictureBoxCouverture";
             this.pictureBoxCouverture.Size = new System.Drawing.Size(142, 184);
             this.pictureBoxCouverture.TabIndex = 6;
@@ -117,7 +117,7 @@
             // 
             this.tbTitre.Enabled = false;
             this.tbTitre.Location = new System.Drawing.Point(122, 44);
-            this.tbTitre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTitre.Margin = new System.Windows.Forms.Padding(2);
             this.tbTitre.Name = "tbTitre";
             this.tbTitre.ReadOnly = true;
             this.tbTitre.Size = new System.Drawing.Size(154, 20);
@@ -127,7 +127,7 @@
             // 
             this.tbAuteur.Enabled = false;
             this.tbAuteur.Location = new System.Drawing.Point(122, 68);
-            this.tbAuteur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAuteur.Margin = new System.Windows.Forms.Padding(2);
             this.tbAuteur.Name = "tbAuteur";
             this.tbAuteur.ReadOnly = true;
             this.tbAuteur.Size = new System.Drawing.Size(154, 20);
@@ -137,7 +137,7 @@
             // 
             this.tbEditeur.Enabled = false;
             this.tbEditeur.Location = new System.Drawing.Point(122, 118);
-            this.tbEditeur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEditeur.Margin = new System.Windows.Forms.Padding(2);
             this.tbEditeur.Name = "tbEditeur";
             this.tbEditeur.ReadOnly = true;
             this.tbEditeur.Size = new System.Drawing.Size(154, 20);
@@ -147,7 +147,7 @@
             // 
             this.tbDessinateur.Enabled = false;
             this.tbDessinateur.Location = new System.Drawing.Point(122, 93);
-            this.tbDessinateur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDessinateur.Margin = new System.Windows.Forms.Padding(2);
             this.tbDessinateur.Name = "tbDessinateur";
             this.tbDessinateur.ReadOnly = true;
             this.tbDessinateur.Size = new System.Drawing.Size(154, 20);
@@ -157,7 +157,7 @@
             // 
             this.tbGenre.Enabled = false;
             this.tbGenre.Location = new System.Drawing.Point(122, 214);
-            this.tbGenre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGenre.Margin = new System.Windows.Forms.Padding(2);
             this.tbGenre.Name = "tbGenre";
             this.tbGenre.ReadOnly = true;
             this.tbGenre.Size = new System.Drawing.Size(154, 20);
@@ -167,7 +167,7 @@
             // 
             this.tbSerie.Enabled = false;
             this.tbSerie.Location = new System.Drawing.Point(122, 190);
-            this.tbSerie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSerie.Margin = new System.Windows.Forms.Padding(2);
             this.tbSerie.Name = "tbSerie";
             this.tbSerie.ReadOnly = true;
             this.tbSerie.Size = new System.Drawing.Size(154, 20);
@@ -177,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(547, 280);
             this.Controls.Add(this.tbGenre);
             this.Controls.Add(this.tbSerie);
             this.Controls.Add(this.tbEditeur);
@@ -191,7 +191,7 @@
             this.Controls.Add(this.labelDessinateur);
             this.Controls.Add(this.labelAuteur);
             this.Controls.Add(this.labelTitre);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AlbumForm";
             this.Text = "AlbumForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCouverture)).EndInit();
