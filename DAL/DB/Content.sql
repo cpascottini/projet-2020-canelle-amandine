@@ -10,6 +10,9 @@ insert into bd values (9, 'La Soupe aux Schtroumpfs' ,'Peyo' , 'Peyo', 'Dupuis',
 insert into bd values (10, 'Le Cosmoschtroumpf' ,'Peyo' , 'Peyo', 'Dupuis', 'Les Schtroumpfs' , 'jeunesse' , 'leCosmoschtroumpf.jpg');
 insert into bd values (11, 'Faux départ !' ,'Cauvin' , 'Laudec', 'Dupuis', 'Cédric' , 'humour' , 'fauxDepart.jpg');
 insert into bd values (12, 'Graine de star' ,'Cauvin' , 'Laudec', 'Dupuis', 'Cédric' , 'humour' , 'graineDeStar.jpg');
+insert into bd values (13,'La nuit de Saint-Germain-des-Prés','Léo Malet','Emmanuel Moynot','Casterman','Nestor Burma','policier','laNuitDeSaintGermainDesPres.jpg');
+insert into bd values (14,'Revers de fortune','Alain Ayroles','Jean-Luc Masbou','Delcourt','De cape et de crocs','aventure','reversDeFortune.jpg');
+insert into bd values (15,'Maus','Art Spiegelman','Art Spiegelman','Flammarion',null,'historique','maus.jpg');
 
 
 insert into personne values (1,'fanDeBd','bonjour','utilisateur');
@@ -21,3 +24,6 @@ insert into relation values(2,1,2,'veut');
 insert into relation values(3,3,1,'possede');
 insert into relation values(4,3,4,'possede');
 insert into relation values(5,3,3,'veut');
+insert into relation values(6,1,10,'possede');
+insert into relation values(7,1,14,'possede');
+insert into relation values(8,3,6,'veut');

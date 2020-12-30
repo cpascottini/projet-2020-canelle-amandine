@@ -27,9 +27,8 @@ namespace ProjetGL
         {
             try
             {
-                // BD de l'utilisateur connecté
+                // BD QUE POSSEDE L'UTILISATEUR CONNECTÉ
                 IList<BD> BDUtilisateur = bdRepository.GetBDUtilisateur(idUtilisateur);
-                IList<BD> BDWishlist = bdRepository.GetBDWishlist(idUtilisateur);
 
                 dgvMyAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes
                 // Accès à la liste des BD et remplissage du tableau
@@ -41,7 +40,22 @@ namespace ProjetGL
                 dgvMyAlbums.Sort(dgvMyAlbums.Columns[0], ListSortDirection.Ascending);
 
 
-                // BD du marché
+
+                // BD QUE VEUT L'UTILISATEUR CONNECTÉ
+                IList<BD> BDWishlist = bdRepository.GetBDWishlist(idUtilisateur);
+
+                dgvWishlist.Rows.Clear();  // suppression des éventuelles lignes existantes
+                // Accès à la liste des BD et remplissage du tableau
+                foreach (BD bd in BDWishlist)
+                {
+                    dgvWishlist.Rows.Add(bd.Decrire());
+                }
+                // tri alphabétique sur la 1ère colonne (nom)
+                dgvWishlist.Sort(dgvWishlist.Columns[0], ListSortDirection.Ascending);
+
+
+
+                // BD DU MARCHÉ
                 dgvAllAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes
                 // Accès à la liste des BD et remplissage du tableau
                 foreach (BD bd in bdRepository.GetAll())
@@ -97,6 +111,18 @@ namespace ProjetGL
 
             AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
             albumForm.ShowDialog();
+
+            /*
+            DataGridViewCheckBoxCell caseAjoutPossession = (DataGridViewCheckBoxCell)dgvAllAlbums.Rows[rowIndex].Cells["columnMyAlbums"];
+            if (Convert.ToBoolean(caseAjoutPossession.Value))
+            {
+                // ajouter la BD du row à la liste des possessions
+                IList<BD> bdRow = bdRepository.GetBDRow(titre, auteur);
+                BD bd = bdRow[0];
+
+                bdRepository.AjouterBD(bd, idUtilisateur);
+            }
+            */
         }
 
         private void dgvMyAlbums_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -108,6 +134,26 @@ namespace ProjetGL
 
             AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
             albumForm.ShowDialog();
+        }
+
+        private void dgvWishlist_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            DataGridViewRow row = this.dgvWishlist.Rows[rowIndex];
+            string titre = row.Cells["columnWishTitre"].Value.ToString();
+            string auteur = row.Cells["columnWishScenariste"].Value.ToString();
+
+            AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
+            albumForm.ShowDialog();
+        }
+
+        private void btnDeconnexion_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Vous avez été déconnecté.", "Déconnexion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            IPersonneRepository personneRepository = new PersonneRepository();
+            LoginForm newLoginForm = new LoginForm(personneRepository, bdRepository);
+            newLoginForm.ShowDialog();
+            this.Close();
         }
     }
 }

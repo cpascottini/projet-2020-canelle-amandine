@@ -37,14 +37,8 @@ namespace ProjetGL
                 tbSerie.Text = bdRow[0].Serie;
                 tbGenre.Text = bdRow[0].Genre;
 
-                /*
-                Bitmap couverture = new Bitmap(bdRow[0].Couverture);
-                pictureBoxCouverture.Image = (Image) couverture;
-                */
                 string couverture = bdRow[0].Couverture;
                 pictureBoxCouverture.Image = Image.FromFile( @"couvertures\" + couverture);
-                //pictureBoxCouverture.Image = Image.FromFile("C:/Users/KNL/Documents/04 - ENSC/02 - 2A/genieLog/projet/" + couverture);
-                // ce chemin marche mais on peut pas mettre ça...
                 pictureBoxCouverture.SizeMode = PictureBoxSizeMode.StretchImage;
 
 
