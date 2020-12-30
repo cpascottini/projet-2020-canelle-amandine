@@ -10,5 +10,6 @@ namespace DAL
     public interface IPersonneRepository
     {
         List<Personne> GetAll();
+        int GetIdUtilisateur(string loginLocal, string mdpLocal);
     }
 }

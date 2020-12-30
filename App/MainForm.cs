@@ -15,21 +15,22 @@ namespace ProjetGL
     public partial class MainForm : Form
     {
         private IBDRepository bdRepository;
-        public MainForm(IBDRepository bdRepository)
+        public MainForm(IBDRepository bdRepository, int idUtilisateur)
         {
             InitializeComponent();
 
             this.bdRepository = bdRepository;
-            AfficherContenu();
+            AfficherContenu(idUtilisateur);
         }
 
-        private void AfficherContenu()
+        private void AfficherContenu(int idUtilisateur)
         {
             try
             {
                 // BD de l'utilisateur connecté
-                IList<BD> BDUtilisateur = bdRepository.GetBDUtilisateur();
-                IList<BD> BDWishlist = bdRepository.GetBDWishlist();
+                IList<BD> BDUtilisateur = bdRepository.GetBDUtilisateur(idUtilisateur);
+                IList<BD> BDWishlist = bdRepository.GetBDWishlist(idUtilisateur);
+
                 dgvMyAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes
                 // Accès à la liste des BD et remplissage du tableau
                 foreach (BD bd in BDUtilisateur)
@@ -49,8 +50,6 @@ namespace ProjetGL
                     bool veut = BDWishlist.Contains(bd);
                     dgvAllAlbums.Rows.Add(bd.DecrireBDMarche(possede,veut));
                 }
-
-
                 // tri alphabétique sur la 1ère colonne (nom)
                 dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
 

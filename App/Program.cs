@@ -21,10 +21,12 @@ namespace ProjetGL
             Application.SetCompatibleTextRenderingDefault(false);
 
             IPersonneRepository personneRepository = new PersonneRepository();
-            LoginForm login_form = new LoginForm(personneRepository);
-            if (login_form.ShowDialog() == DialogResult.OK)
+            LoginForm loginForm = new LoginForm(personneRepository, bdRepository);
+            
+            if (loginForm.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new MainForm(bdRepository));
+                int idUtilisateur = personneRepository.GetIdUtilisateur(loginForm.Login, loginForm.Password);
+                Application.Run(new MainForm(bdRepository, idUtilisateur));
             }
         }
     }

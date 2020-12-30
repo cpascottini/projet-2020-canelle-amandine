@@ -13,5 +13,12 @@ namespace DAL
         {
             return Session.Query<Personne>().ToList();
         }
+        public int GetIdUtilisateur(string loginLocal, string mdpLocal)
+        {
+            string requete = "select Id from Personne p where p.Login='" + loginLocal + "' and p.Mdp='" + mdpLocal + "'";
+            int idUtilisateur = (int)Session.CreateQuery(requete).UniqueResult<int>();
+
+            return idUtilisateur;
+        }
     }
 }

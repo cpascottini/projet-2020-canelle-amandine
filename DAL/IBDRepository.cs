@@ -10,8 +10,8 @@ namespace DAL
     public interface IBDRepository
     {
         IList<BD> GetAll();
-        IList<BD> GetBDUtilisateur();
-        IList<BD> GetBDWishlist();
+        IList<BD> GetBDUtilisateur(int idUtilisateurLocal);
+        IList<BD> GetBDWishlist(int idUtilisateurLocal);
         IList<BD> GetBDRecherche(string rechercheLocal);
         IList<BD> GetBDRow(string titreLocal, string auteurLocal);
         void Save(BD bd);

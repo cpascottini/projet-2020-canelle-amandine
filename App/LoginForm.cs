@@ -15,11 +15,13 @@ namespace ProjetGL
     public partial class LoginForm : Form
     {
         private IPersonneRepository personneRepository;
+        private IBDRepository bdRepository;
 
-        public LoginForm(IPersonneRepository personneRepository)
+        public LoginForm(IPersonneRepository personneRepository, IBDRepository bdRepository)
         {
             InitializeComponent();
             this.personneRepository = personneRepository;
+            this.bdRepository = bdRepository;
         }
 
         public string Login
