@@ -24,6 +24,12 @@ namespace DAL
             return Session.CreateQuery("select bd from BD as bd, Relation as r where bd.Id=r.BD and r.Personne=:util and r.Statut='possede'").SetInt32("util", idUtilisateur).List<BD>();
         }
 
+        public IList<BD> GetBDWishlist()
+        {
+            int idUtilisateur = 3;        // il faut le récupérer
+            return Session.CreateQuery("select bd from BD as bd, Relation as r where bd.Id=r.BD and r.Personne=:util and r.Statut='veut'").SetInt32("util", idUtilisateur).List<BD>();
+        }
+
         public IList<BD> GetBDRecherche(string rechercheLocal)
         {
             //IList<BD> bdRecherche = Session.CreateQuery("select bd from BD bd where bd.Titre like '%" + rechercheLocal + "%'").List<BD>();

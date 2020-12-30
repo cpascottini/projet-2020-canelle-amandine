@@ -27,29 +27,32 @@ namespace ProjetGL
         {
             try
             {
-                // BD du marché
-                dgvAllAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes
-                // Accès à la liste des BD et remplissage du tableau
-                foreach (BD bd in bdRepository.GetAll())
-                {
-                    dgvAllAlbums.Rows.Add(bd.Decrire());
-                }
-                
-
-                // tri alphabétique sur la 1ère colonne (nom)
-                dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
-
-
                 // BD de l'utilisateur connecté
+                IList<BD> BDUtilisateur = bdRepository.GetBDUtilisateur();
+                IList<BD> BDWishlist = bdRepository.GetBDWishlist();
                 dgvMyAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes
                 // Accès à la liste des BD et remplissage du tableau
-                foreach (BD bd in bdRepository.GetBDUtilisateur())
+                foreach (BD bd in BDUtilisateur)
                 {
                     dgvMyAlbums.Rows.Add(bd.Decrire());
                 }
                 // tri alphabétique sur la 1ère colonne (nom)
                 dgvMyAlbums.Sort(dgvMyAlbums.Columns[0], ListSortDirection.Ascending);
 
+
+                // BD du marché
+                dgvAllAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes
+                // Accès à la liste des BD et remplissage du tableau
+                foreach (BD bd in bdRepository.GetAll())
+                {
+                    bool possede = BDUtilisateur.Contains(bd);
+                    bool veut = BDWishlist.Contains(bd);
+                    dgvAllAlbums.Rows.Add(bd.DecrireBDMarche(possede,veut));
+                }
+
+
+                // tri alphabétique sur la 1ère colonne (nom)
+                dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
 
             }
             catch (Exception e)

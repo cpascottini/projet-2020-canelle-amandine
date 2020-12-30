@@ -45,5 +45,11 @@ namespace Domain
         {
             return new string[] { Titre, Auteur, Dessinateur };
         }
+
+        public virtual string[] DecrireBDMarche(bool possede, bool veut)
+        {
+            
+            return new string[] { Titre, Auteur, Dessinateur, possede.ToString(), veut.ToString() };
+        }
     }
 }
