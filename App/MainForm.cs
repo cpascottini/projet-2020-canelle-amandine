@@ -15,13 +15,15 @@ namespace ProjetGL
     public partial class MainForm : Form
     {
         private IBDRepository bdRepository;
+        private IRelationRepository relationRepository;
         private int idUtilisateur;
 
-        public MainForm(IBDRepository bdRepository, int idUtilisateur)
+        public MainForm(IBDRepository bdRepository, IRelationRepository relationRepository, int idUtilisateur)
         {
             InitializeComponent();
 
             this.bdRepository = bdRepository;
+            this.relationRepository = relationRepository;
             this.idUtilisateur = idUtilisateur;
             AfficherContenu();
         }
@@ -114,18 +116,26 @@ namespace ProjetGL
 
             AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
             albumForm.ShowDialog();
+        }
 
-            
+        private void dgvAllAlbums_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            DataGridViewRow row = this.dgvAllAlbums.Rows[rowIndex];
+            string titre = row.Cells["columnAllTitre"].Value.ToString();
+            string auteur = row.Cells["columnAllScenariste"].Value.ToString();
+
             DataGridViewCheckBoxCell caseAjoutPossession = (DataGridViewCheckBoxCell)dgvAllAlbums.Rows[rowIndex].Cells["columnMyAlbums"];
-            if (Convert.ToBoolean(caseAjoutPossession.Value))
+            if (Convert.ToBoolean(caseAjoutPossession.Value)) // si la case est cochée 
             {
                 // ajouter la BD du row à la liste des possessions
                 IList<BD> bdRow = bdRepository.GetBDRow(titre, auteur);
                 BD bd = bdRow[0];
 
-                bdRepository.AjouterBD(bd, idUtilisateur);
+                relationRepository.SaveRelation(bd, idUtilisateur);
+                string message = String.Format("L'album '{0}' a bien été ajouté à votre BDthèque", bd.Titre);
+                MessageBox.Show(message, "Ajout à la BDthèque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-            
         }
 
         private void dgvMyAlbums_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -152,10 +162,7 @@ namespace ProjetGL
 
         private void btnDeconnexion_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Vous avez été déconnecté.", "Déconnexion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            //IPersonneRepository personneRepository = new PersonneRepository();
-            //LoginForm newLoginForm = new LoginForm(personneRepository, bdRepository);
-            //newLoginForm.ShowDialog();            
+            MessageBox.Show("Vous avez été déconnecté.", "Déconnexion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);            
             this.Close();
         }
     }

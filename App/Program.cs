@@ -20,17 +20,21 @@ namespace ProjetGL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            while(true)
+            int nbOuverture = 0;
+            while (nbOuverture < 2)
             {
                 IPersonneRepository personneRepository = new PersonneRepository();
+                IRelationRepository relationRepository = new RelationRepository();
                 LoginForm loginForm = new LoginForm(personneRepository, bdRepository);
 
                 if (loginForm.ShowDialog() == DialogResult.OK)
                 {
                     int idUtilisateur = personneRepository.GetIdUtilisateur(loginForm.Login, loginForm.Password);
-                    Application.Run(new MainForm(bdRepository, idUtilisateur));
+                    MainForm mainForm = new MainForm(bdRepository, relationRepository, idUtilisateur);
+                    Application.Run(mainForm);
                 }
-            }           
+                nbOuverture++;
+            }
         }
     }
 }
