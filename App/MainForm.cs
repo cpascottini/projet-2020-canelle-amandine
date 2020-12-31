@@ -116,18 +116,10 @@ namespace ProjetGL
 
             AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
             albumForm.ShowDialog();
-        }
 
-        private void dgvAllAlbums_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            int rowIndex = e.RowIndex;
-            DataGridViewRow row = this.dgvAllAlbums.Rows[rowIndex];
-            string titre = row.Cells["columnAllTitre"].Value.ToString();
-            string auteur = row.Cells["columnAllScenariste"].Value.ToString();
-
-            DataGridViewCheckBoxCell caseAjoutPossession = (DataGridViewCheckBoxCell)dgvAllAlbums.Rows[rowIndex].Cells["columnMyAlbums"];
-            if (Convert.ToBoolean(caseAjoutPossession.Value)) // si la case est cochée 
-            {
+            //DataGridViewCheckBoxCell caseAjoutPossession = (DataGridViewCheckBoxCell)dgvAllAlbums.Rows[rowIndex].Cells["columnMyAlbums"];
+            //if (Convert.ToBoolean(caseAjoutPossession.Value)) // si la case est cochée 
+            //{
                 // ajouter la BD du row à la liste des possessions
                 IList<BD> bdRow = bdRepository.GetBDRow(titre, auteur);
                 BD bd = bdRow[0];
@@ -135,18 +127,7 @@ namespace ProjetGL
                 relationRepository.SaveRelation(bd, idUtilisateur);
                 string message = String.Format("L'album '{0}' a bien été ajouté à votre BDthèque", bd.Titre);
                 MessageBox.Show(message, "Ajout à la BDthèque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-        }
-
-        private void dgvMyAlbums_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int rowIndex = e.RowIndex;
-            DataGridViewRow row = this.dgvMyAlbums.Rows[rowIndex];
-            string titre = row.Cells["columnMyTitre"].Value.ToString();
-            string auteur = row.Cells["columnMyScenariste"].Value.ToString();
-
-            AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
-            albumForm.ShowDialog();
+            //}
         }
 
         private void dgvWishlist_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -164,6 +145,19 @@ namespace ProjetGL
         {
             MessageBox.Show("Vous avez été déconnecté.", "Déconnexion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);            
             this.Close();
+        }
+        
+        private void btnAjouterMyAlbums_Click(object sender, EventArgs e)
+        {
+            /*
+            MessageBox.Show("Sélectionnez l'album à ajouter à votre BDthèque", "Ajout à la BDthèque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+            int rowIndex = e.RowIndex;
+            DataGridViewRow row = this.dgvAllAlbums.Rows[rowIndex];
+            string titre = row.Cells["columnAllTitre"].Value.ToString();
+            string auteur = row.Cells["columnAllScenariste"].Value.ToString();
+            */
+
         }
     }
 }

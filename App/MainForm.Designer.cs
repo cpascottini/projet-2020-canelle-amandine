@@ -50,6 +50,7 @@
             this.columnWishScenariste = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnWishDessinateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDeconnexion = new System.Windows.Forms.Button();
+            this.btnAjouterMyAlbums = new System.Windows.Forms.Button();
             this.tabCtrlAlbums.SuspendLayout();
             this.tabPageMyAlbums.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyAlbums)).BeginInit();
@@ -96,7 +97,6 @@
             this.dgvMyAlbums.RowHeadersWidth = 51;
             this.dgvMyAlbums.Size = new System.Drawing.Size(922, 412);
             this.dgvMyAlbums.TabIndex = 0;
-            this.dgvMyAlbums.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyAlbums_CellContentClick);
             // 
             // columnMyTitre
             // 
@@ -272,11 +272,22 @@
             this.btnDeconnexion.UseVisualStyleBackColor = false;
             this.btnDeconnexion.Click += new System.EventHandler(this.btnDeconnexion_Click);
             // 
+            // btnAjouterMyAlbums
+            // 
+            this.btnAjouterMyAlbums.Location = new System.Drawing.Point(998, 208);
+            this.btnAjouterMyAlbums.Name = "btnAjouterMyAlbums";
+            this.btnAjouterMyAlbums.Size = new System.Drawing.Size(136, 58);
+            this.btnAjouterMyAlbums.TabIndex = 2;
+            this.btnAjouterMyAlbums.Text = "Ajouter un album à Mes albums";
+            this.btnAjouterMyAlbums.UseVisualStyleBackColor = true;
+            this.btnAjouterMyAlbums.Click += new System.EventHandler(this.btnAjouterMyAlbums_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 554);
+            this.ClientSize = new System.Drawing.Size(1174, 619);
+            this.Controls.Add(this.btnAjouterMyAlbums);
             this.Controls.Add(this.btnDeconnexion);
             this.Controls.Add(this.tabCtrlAlbums);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -319,5 +330,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnWishScenariste;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnWishDessinateur;
         private System.Windows.Forms.Button btnDeconnexion;
+        private System.Windows.Forms.Button btnAjouterMyAlbums;
     }
 }

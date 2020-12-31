@@ -24,11 +24,12 @@ namespace DAL
 
             string titre = bdLocal.Titre;
             string auteur = bdLocal.Auteur;
-            string requeteIdBD = "select bd from BD bd where bd.Titre='" + titre + "' and bd.Auteur='" + auteur + "'";
-            int idBD = (int)Session.CreateQuery(requeteIdBD).UniqueResult<long>();
+            string requeteIdBD = "select Id from BD bd where bd.Titre='" + titre + "' and bd.Auteur='" + auteur + "'";
+            int idBD = (int)Session.CreateQuery(requeteIdBD).UniqueResult<int>();
             relation.BD = idBD;
 
             relation.Personne = idUtilisateurLocal;
+            relation.Statut = "possede";
 
             Session.SaveOrUpdate(relation); // Ajout d’une ligne dans la table Relation de la BD
         }
