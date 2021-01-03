@@ -117,17 +117,31 @@ namespace ProjetGL
             AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
             albumForm.ShowDialog();
 
-            //DataGridViewCheckBoxCell caseAjoutPossession = (DataGridViewCheckBoxCell)dgvAllAlbums.Rows[rowIndex].Cells["columnMyAlbums"];
-            //if (Convert.ToBoolean(caseAjoutPossession.Value)) // si la case est cochée 
-            //{
+            // ajout d'une bd du marché à ses possessions
+            DataGridViewCheckBoxCell caseAjoutPossession = (DataGridViewCheckBoxCell)dgvAllAlbums.Rows[rowIndex].Cells["columnMyAlbums"];          
+            if (caseAjoutPossession.Selected)
+            {
                 // ajouter la BD du row à la liste des possessions
                 IList<BD> bdRow = bdRepository.GetBDRow(titre, auteur);
                 BD bd = bdRow[0];
 
-                relationRepository.SaveRelation(bd, idUtilisateur);
+                relationRepository.SaveRelation(bd, idUtilisateur, "possede");
                 string message = String.Format("L'album '{0}' a bien été ajouté à votre BDthèque", bd.Titre);
                 MessageBox.Show(message, "Ajout à la BDthèque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            //}
+            }
+
+            // ajout d'une bd du marché à sa liste d'envie    
+            DataGridViewCheckBoxCell caseAjoutWishlist = (DataGridViewCheckBoxCell)dgvAllAlbums.Rows[rowIndex].Cells["columnWishlist"];
+            if (caseAjoutWishlist.Selected)
+            {
+                // ajouter la BD du row à la liste d'envie
+                IList<BD> bdRow = bdRepository.GetBDRow(titre, auteur);
+                BD bd = bdRow[0];
+
+                relationRepository.SaveRelation(bd, idUtilisateur, "veut");
+                string message = String.Format("L'album '{0}' a bien été ajouté à votre liste d'envie", bd.Titre);
+                MessageBox.Show(message, "Ajout à la Wishlist", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
         }
 
         private void dgvWishlist_CellContentClick(object sender, DataGridViewCellEventArgs e)

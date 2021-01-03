@@ -10,6 +10,6 @@ namespace DAL
     public interface IRelationRepository
     {
         List<Relation> GetAll();
-        void SaveRelation(BD bdLocal, int idUtilisateurLocal);
+        void SaveRelation(BD bdLocal, int idUtilisateurLocal, string statut);
     }
 }

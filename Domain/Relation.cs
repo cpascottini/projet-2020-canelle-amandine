@@ -12,5 +12,7 @@ namespace Domain
         public virtual int Personne { get; set; }
         public virtual int BD { get; set; }
         public virtual string Statut { get; set; }
+
+        public Relation() { }
     }
 }

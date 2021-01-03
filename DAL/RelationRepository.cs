@@ -13,14 +13,10 @@ namespace DAL
         {
             return Session.Query<Relation>().ToList();
         }
-        public void SaveRelation(BD bdLocal, int idUtilisateurLocal)
+        public void SaveRelation(BD bdLocal, int idUtilisateurLocal, string statut)
         {
             // màj des données
             Relation relation = new Relation();
-
-            string requeteNbRelations = "select count(*) from Relation"; // Nb total de relations
-            int nbRelations = (int)Session.CreateQuery(requeteNbRelations).UniqueResult<long>();
-            relation.Id = nbRelations + 1;
 
             string titre = bdLocal.Titre;
             string auteur = bdLocal.Auteur;
@@ -29,7 +25,7 @@ namespace DAL
             relation.BD = idBD;
 
             relation.Personne = idUtilisateurLocal;
-            relation.Statut = "possede";
+            relation.Statut = statut;
 
             Session.SaveOrUpdate(relation); // Ajout d’une ligne dans la table Relation de la BD
         }
