@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjoutAlbumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutAlbumForm.Designer.cs">
+      <DependentUpon>AjoutAlbumForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlbumForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AjoutAlbumForm.resx">
+      <DependentUpon>AjoutAlbumForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlbumForm.resx">
       <DependentUpon>AlbumForm.cs</DependentUpon>
     </EmbeddedResource>

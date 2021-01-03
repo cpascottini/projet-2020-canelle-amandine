@@ -11,5 +11,7 @@ namespace DAL
     {
         List<Relation> GetAll();
         void SaveRelation(BD bdLocal, int idUtilisateurLocal, string statut);
+        void UpdateRelation(BD bdLocal, int idUtilisateurLocal);
+        void DeleteRelation(BD bdLocal, int idUtilisateur, string statutLocal);
     }
 }

@@ -26,4 +26,3 @@ insert into relation values(4,3,4,'possede');
 insert into relation values(5,3,3,'veut');
 insert into relation values(6,1,10,'possede');
 insert into relation values(7,1,14,'possede');
-insert into relation values(8,3,6,'veut');

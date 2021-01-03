@@ -14,5 +14,9 @@ namespace DAL
         IList<BD> GetBDWishlist(int idUtilisateurLocal);
         IList<BD> GetBDRecherche(string rechercheLocal);
         IList<BD> GetBDRow(string titreLocal, string auteurLocal);
+        void SaveBD(string titreLocal, string auteurLocal, string dessinateurLocal, string editeurLocal,
+            string genreLocal, string serieLocal);
+        void SaveBD(string titreLocal, string auteurLocal, string dessinateurLocal, string editeurLocal,
+           string genreLocal);
     }
 }
