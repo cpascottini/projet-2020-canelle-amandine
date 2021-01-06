@@ -20,5 +20,10 @@ namespace DAL
 
             return idUtilisateur;
         }
+
+        public string GetRoleUtilisateur(int idUtilisateurLocal)
+        {
+            return Session.CreateQuery("select Role from Personne p where p.Id = :util").SetInt32("util", idUtilisateurLocal).UniqueResult<string>();
+        }
     }
 }

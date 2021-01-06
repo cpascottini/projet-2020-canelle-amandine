@@ -30,7 +30,7 @@ namespace ProjetGL
                 if (loginForm.ShowDialog() == DialogResult.OK)
                 {
                     int idUtilisateur = personneRepository.GetIdUtilisateur(loginForm.Login, loginForm.Password);
-                    MainForm mainForm = new MainForm(bdRepository, relationRepository, idUtilisateur);
+                    MainForm mainForm = new MainForm(bdRepository, relationRepository, personneRepository, idUtilisateur);
                     Application.Run(mainForm);
                 }
                 nbOuverture++;

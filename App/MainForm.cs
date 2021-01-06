@@ -16,18 +16,21 @@ namespace ProjetGL
     {
         private IBDRepository bdRepository;
         private IRelationRepository relationRepository;
+        private IPersonneRepository personneRepository;
         private int idUtilisateur;
 
-        public MainForm(IBDRepository bdRepository, IRelationRepository relationRepository, int idUtilisateur)
+        public MainForm(IBDRepository bdRepository, IRelationRepository relationRepository, IPersonneRepository personneRepository, int idUtilisateur)
         {
             InitializeComponent();
 
             this.bdRepository = bdRepository;
             this.relationRepository = relationRepository;
+            this.personneRepository = personneRepository;
             this.idUtilisateur = idUtilisateur;
-
+           
+            string roleUtilisateur = personneRepository.GetRoleUtilisateur(idUtilisateur);
             // si la personne connectée n'est pas un admin elle ne peut pas ajouter d'album au marché
-            if (idUtilisateur != 2)
+            if (roleUtilisateur!="administrateur")
             {
                 btnAjouterAlbum.Visible = false;
             }
@@ -161,7 +164,7 @@ namespace ProjetGL
             }
 
             // suppression d'une BD de sa wishlist
-            if (caseAjoutWishlist.Selected && Convert.ToBoolean(caseAjoutWishlist.Value)) // ?
+            if (caseAjoutWishlist.Selected && Convert.ToBoolean(caseAjoutWishlist.Value))
             {
                 showAlbum = false;
 
@@ -171,9 +174,9 @@ namespace ProjetGL
                 MessageBox.Show(message, "Retrait d'un album de la wishlist", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
 
-            /*
+            
             // suppression d'une BD de ses possessions
-            if (caseAjoutPossession.Selected && Convert.ToBoolean(caseAjoutWishlist.Value)) // ?
+            if (caseAjoutPossession.Selected && Convert.ToBoolean(caseAjoutPossession.Value)) 
             {
                 showAlbum = false;
 
@@ -182,7 +185,7 @@ namespace ProjetGL
                 string message = String.Format("L'album '{0}' a bien été retiré de votre BDthèque.", bd.Titre);
                 MessageBox.Show(message, "Retrait d'un album de la BDthèque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-            */
+            
 
             if (showAlbum==true)
             {
