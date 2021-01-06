@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using App;
 using DAL;
 using Domain;
 
@@ -18,6 +19,7 @@ namespace ProjetGL
         private IRelationRepository relationRepository;
         private IPersonneRepository personneRepository;
         private int idUtilisateur;
+
 
         public MainForm(IBDRepository bdRepository, IRelationRepository relationRepository, IPersonneRepository personneRepository, int idUtilisateur)
         {
@@ -206,9 +208,8 @@ namespace ProjetGL
         }
 
         private void btnDeconnexion_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Vous avez été déconnecté.", "Déconnexion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);            
-            this.Close();
+        {            
+            this.Close();    
         }
 
         private void btnAjouterAlbum_Click(object sender, EventArgs e)

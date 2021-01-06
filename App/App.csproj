@@ -58,6 +58,12 @@
     <Compile Include="AlbumForm.Designer.cs">
       <DependentUpon>AlbumForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeconnexionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeconnexionForm.Designer.cs">
+      <DependentUpon>DeconnexionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InscriptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AlbumForm.resx">
       <DependentUpon>AlbumForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeconnexionForm.resx">
+      <DependentUpon>DeconnexionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InscriptionForm.resx">
       <DependentUpon>InscriptionForm.cs</DependentUpon>

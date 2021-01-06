@@ -20,20 +20,25 @@ namespace ProjetGL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            int nbOuverture = 0;
-            while (nbOuverture < 2)
+            //int nbOuverture = 0;
+            bool appliOuverte = true;
+            while (appliOuverte)
             {
                 IPersonneRepository personneRepository = new PersonneRepository();
                 IRelationRepository relationRepository = new RelationRepository();
                 LoginForm loginForm = new LoginForm(personneRepository, bdRepository);
-
+                
                 if (loginForm.ShowDialog() == DialogResult.OK)
                 {
                     int idUtilisateur = personneRepository.GetIdUtilisateur(loginForm.Login, loginForm.Password);
                     MainForm mainForm = new MainForm(bdRepository, relationRepository, personneRepository, idUtilisateur);
-                    Application.Run(mainForm);
+                    Application.Run(mainForm);                    
                 }
-                nbOuverture++;
+                DeconnexionForm deconnexionForm = new DeconnexionForm();
+                if (deconnexionForm.ShowDialog() == DialogResult.No)
+                {
+                    appliOuverte = false;
+                }
             }
         }
     }
