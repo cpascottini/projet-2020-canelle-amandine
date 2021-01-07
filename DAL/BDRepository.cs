@@ -42,7 +42,7 @@ namespace DAL
         }
 
         public void SaveBD(string titreLocal, string auteurLocal, string dessinateurLocal, string editeurLocal,
-            string genreLocal, string serieLocal)
+            string genreLocal, string couvertureLocal, string serieLocal)
         {
             BD bd = new BD();
             bd.Titre = titreLocal;
@@ -50,13 +50,14 @@ namespace DAL
             bd.Dessinateur = dessinateurLocal;
             bd.Editeur = editeurLocal;
             bd.Genre = genreLocal;
+            bd.Couverture = couvertureLocal;
             bd.Serie = serieLocal;
 
             Session.SaveOrUpdate(bd); // Ajout d’une ligne dans la table BD de la DB
             Session.Flush();
         }
         public void SaveBD(string titreLocal, string auteurLocal, string dessinateurLocal, string editeurLocal,
-            string genreLocal)
+            string genreLocal, string couvertureLocal)
         {
             BD bd = new BD();
             bd.Titre = titreLocal;
@@ -64,6 +65,7 @@ namespace DAL
             bd.Dessinateur = dessinateurLocal;
             bd.Editeur = editeurLocal;
             bd.Genre = genreLocal;
+            bd.Couverture = couvertureLocal;
 
             Session.SaveOrUpdate(bd); // Ajout d’une ligne dans la table BD de la DB
             Session.Flush();

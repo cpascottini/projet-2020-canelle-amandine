@@ -20,7 +20,6 @@ namespace ProjetGL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //int nbOuverture = 0;
             bool appliOuverte = true;
             while (appliOuverte)
             {

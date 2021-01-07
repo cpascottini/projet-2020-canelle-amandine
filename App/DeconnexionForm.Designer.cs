@@ -28,38 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelInfoDeconnexion = new System.Windows.Forms.Label();
+            this.labelQuestionDeconnexion = new System.Windows.Forms.Label();
             this.btnQuit = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // labelInfoDeconnexion
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Vous avez été déconnecté de la BDThèque.";
+            this.labelInfoDeconnexion.AutoSize = true;
+            this.labelInfoDeconnexion.Location = new System.Drawing.Point(61, 41);
+            this.labelInfoDeconnexion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelInfoDeconnexion.Name = "labelInfoDeconnexion";
+            this.labelInfoDeconnexion.Size = new System.Drawing.Size(282, 17);
+            this.labelInfoDeconnexion.TabIndex = 0;
+            this.labelInfoDeconnexion.Text = "Vous avez été déconnecté de la BDthèque.";
             // 
-            // label2
+            // labelQuestionDeconnexion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(46, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(217, 32);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Voulez-vous quitter l\'application ou \r\nvous reconnecter à la BDThèque ?\r\n";
+            this.labelQuestionDeconnexion.AutoSize = true;
+            this.labelQuestionDeconnexion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelQuestionDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuestionDeconnexion.Location = new System.Drawing.Point(61, 91);
+            this.labelQuestionDeconnexion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelQuestionDeconnexion.Name = "labelQuestionDeconnexion";
+            this.labelQuestionDeconnexion.Size = new System.Drawing.Size(274, 40);
+            this.labelQuestionDeconnexion.TabIndex = 1;
+            this.labelQuestionDeconnexion.Text = "Voulez-vous quitter l\'application ou \r\nvous reconnecter à la BDthèque ?\r\n";
             // 
             // btnQuit
             // 
             this.btnQuit.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnQuit.Location = new System.Drawing.Point(49, 161);
+            this.btnQuit.Location = new System.Drawing.Point(65, 198);
+            this.btnQuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(75, 23);
+            this.btnQuit.Size = new System.Drawing.Size(100, 28);
             this.btnQuit.TabIndex = 2;
             this.btnQuit.Text = "Quitter";
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -67,22 +70,24 @@
             // btnContinue
             // 
             this.btnContinue.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnContinue.Location = new System.Drawing.Point(177, 161);
+            this.btnContinue.Location = new System.Drawing.Point(236, 198);
+            this.btnContinue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(88, 23);
+            this.btnContinue.Size = new System.Drawing.Size(117, 28);
             this.btnContinue.TabIndex = 3;
             this.btnContinue.Text = "Se reconnecter";
             this.btnContinue.UseVisualStyleBackColor = true;
             // 
             // DeconnexionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 220);
+            this.ClientSize = new System.Drawing.Size(417, 271);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.btnQuit);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelQuestionDeconnexion);
+            this.Controls.Add(this.labelInfoDeconnexion);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DeconnexionForm";
             this.Text = "Déconnexion";
             this.ResumeLayout(false);
@@ -92,8 +97,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelInfoDeconnexion;
+        private System.Windows.Forms.Label labelQuestionDeconnexion;
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Button btnContinue;
     }

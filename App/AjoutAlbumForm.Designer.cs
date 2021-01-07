@@ -44,6 +44,10 @@ namespace ProjetGL
             this.labelAjoutConsigne = new System.Windows.Forms.Label();
             this.btnAjoutAnnuler = new System.Windows.Forms.Button();
             this.btnAjoutValider = new System.Windows.Forms.Button();
+            this.pictureBoxAjoutCouverture = new System.Windows.Forms.PictureBox();
+            this.btnAjoutParcourir = new System.Windows.Forms.Button();
+            this.labelAjoutCouverture = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAjoutCouverture)).BeginInit();
             this.SuspendLayout();
             // 
             // tbAjoutGenre
@@ -166,6 +170,7 @@ namespace ProjetGL
             this.btnAjoutAnnuler.TabIndex = 27;
             this.btnAjoutAnnuler.Text = "Annuler";
             this.btnAjoutAnnuler.UseVisualStyleBackColor = false;
+            this.btnAjoutAnnuler.Click += new System.EventHandler(this.btnAjoutAnnuler_Click);
             // 
             // btnAjoutValider
             // 
@@ -178,11 +183,42 @@ namespace ProjetGL
             this.btnAjoutValider.UseVisualStyleBackColor = false;
             this.btnAjoutValider.Click += new System.EventHandler(this.btnAjoutValider_Click);
             // 
+            // pictureBoxAjoutCouverture
+            // 
+            this.pictureBoxAjoutCouverture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxAjoutCouverture.Location = new System.Drawing.Point(446, 114);
+            this.pictureBoxAjoutCouverture.Name = "pictureBoxAjoutCouverture";
+            this.pictureBoxAjoutCouverture.Size = new System.Drawing.Size(189, 226);
+            this.pictureBoxAjoutCouverture.TabIndex = 29;
+            this.pictureBoxAjoutCouverture.TabStop = false;
+            // 
+            // btnAjoutParcourir
+            // 
+            this.btnAjoutParcourir.Location = new System.Drawing.Point(492, 346);
+            this.btnAjoutParcourir.Name = "btnAjoutParcourir";
+            this.btnAjoutParcourir.Size = new System.Drawing.Size(95, 34);
+            this.btnAjoutParcourir.TabIndex = 30;
+            this.btnAjoutParcourir.Text = "Parcourir...";
+            this.btnAjoutParcourir.UseVisualStyleBackColor = true;
+            this.btnAjoutParcourir.Click += new System.EventHandler(this.btnAjoutParcourir_Click);
+            // 
+            // labelAjoutCouverture
+            // 
+            this.labelAjoutCouverture.AutoSize = true;
+            this.labelAjoutCouverture.Location = new System.Drawing.Point(504, 94);
+            this.labelAjoutCouverture.Name = "labelAjoutCouverture";
+            this.labelAjoutCouverture.Size = new System.Drawing.Size(78, 17);
+            this.labelAjoutCouverture.TabIndex = 31;
+            this.labelAjoutCouverture.Text = "Couverture";
+            // 
             // AjoutAlbumForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelAjoutCouverture);
+            this.Controls.Add(this.btnAjoutParcourir);
+            this.Controls.Add(this.pictureBoxAjoutCouverture);
             this.Controls.Add(this.btnAjoutValider);
             this.Controls.Add(this.btnAjoutAnnuler);
             this.Controls.Add(this.labelAjoutConsigne);
@@ -200,6 +236,7 @@ namespace ProjetGL
             this.Controls.Add(this.labelAjoutTitre);
             this.Name = "AjoutAlbumForm";
             this.Text = "Ajout d\'un album";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAjoutCouverture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +259,8 @@ namespace ProjetGL
         private System.Windows.Forms.Label labelAjoutConsigne;
         private System.Windows.Forms.Button btnAjoutAnnuler;
         private System.Windows.Forms.Button btnAjoutValider;
+        private System.Windows.Forms.PictureBox pictureBoxAjoutCouverture;
+        private System.Windows.Forms.Button btnAjoutParcourir;
+        private System.Windows.Forms.Label labelAjoutCouverture;
     }
 }

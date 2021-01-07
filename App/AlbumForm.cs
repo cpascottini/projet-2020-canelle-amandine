@@ -36,11 +36,11 @@ namespace ProjetGL
                 tbEditeur.Text = bdRow[0].Editeur;
                 tbSerie.Text = bdRow[0].Serie;
                 tbGenre.Text = bdRow[0].Genre;
-
+                
                 string couverture = bdRow[0].Couverture;
                 pictureBoxCouverture.Image = Image.FromFile( @"couvertures\" + couverture);
                 pictureBoxCouverture.SizeMode = PictureBoxSizeMode.StretchImage;
-
+                
 
             }
             catch (Exception e)

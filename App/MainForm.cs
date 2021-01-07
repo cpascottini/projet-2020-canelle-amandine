@@ -52,7 +52,7 @@ namespace ProjetGL
                 {
                     dgvMyAlbums.Rows.Add(bd.Decrire());
                 }
-                // tri alphabétique sur la 1ère colonne (nom)
+                // tri alphabétique sur la 1ère colonne (titre)
                 dgvMyAlbums.Sort(dgvMyAlbums.Columns[0], ListSortDirection.Ascending);
 
 
@@ -66,7 +66,7 @@ namespace ProjetGL
                 {
                     dgvWishlist.Rows.Add(bd.Decrire());
                 }
-                // tri alphabétique sur la 1ère colonne (nom)
+                // tri alphabétique sur la 1ère colonne (titre)
                 dgvWishlist.Sort(dgvWishlist.Columns[0], ListSortDirection.Ascending);
 
 
@@ -80,7 +80,7 @@ namespace ProjetGL
                     bool veut = BDWishlist.Contains(bd);
                     dgvAllAlbums.Rows.Add(bd.DecrireBDMarche(possede,veut));
                 }
-                // tri alphabétique sur la 1ère colonne (nom)
+                // tri alphabétique sur la 1ère colonne (titre)
                 dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
 
             }
@@ -109,7 +109,7 @@ namespace ProjetGL
                 }
                 dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
             }
-            else
+            else // s'il n'y a pas de résultat
             {
                 dgvAllAlbums.Hide();
 
@@ -127,7 +127,6 @@ namespace ProjetGL
             IList<BD> bdRow = bdRepository.GetBDRow(titre, auteur);
             BD bd = bdRow[0];
 
-            // on n'affiche la description d'un album que si le clic n'a pas lieu sur une colonne à cocher
             bool showAlbum = true;
 
             // ajout d'une BD du marché à sa liste d'envies    
@@ -187,12 +186,16 @@ namespace ProjetGL
                 string message = String.Format("L'album '{0}' a bien été retiré de votre BDthèque.", bd.Titre);
                 MessageBox.Show(message, "Retrait d'un album de la BDthèque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-            
 
+            // on n'affiche la description d'un album que si le clic n'a pas lieu sur une colonne à cocher
             if (showAlbum==true)
             {
                 AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
                 albumForm.ShowDialog();
+            }
+            else
+            {
+                AfficherContenu(); // on réaffiche le contenu pour mettre les données à jour
             }
         }
 
@@ -202,6 +205,16 @@ namespace ProjetGL
             DataGridViewRow row = this.dgvWishlist.Rows[rowIndex];
             string titre = row.Cells["columnWishTitre"].Value.ToString();
             string auteur = row.Cells["columnWishScenariste"].Value.ToString();
+
+            AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
+            albumForm.ShowDialog();
+        }
+        private void dgvMyAlbums_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            DataGridViewRow row = this.dgvMyAlbums.Rows[rowIndex];
+            string titre = row.Cells["columnMyTitre"].Value.ToString();
+            string auteur = row.Cells["columnMyScenariste"].Value.ToString();
 
             AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
             albumForm.ShowDialog();

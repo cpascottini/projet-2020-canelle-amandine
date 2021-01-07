@@ -61,3 +61,4 @@ C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\obj\Debug\App.pdb
 C:\Users\KNL\Source\Repos\projet-2020-canelle-amandine\App\obj\Debug\ProjetGL.AjoutAlbumForm.resources
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\obj\Debug\ProjetGL.AjoutAlbumForm.resources
 C:\Users\amand\source\repos\projet-2020-canelle-amandine\App\obj\Debug\ProjetGL.DeconnexionForm.resources
+C:\Users\KNL\Source\Repos\projet-2020-canelle-amandine\App\obj\Debug\ProjetGL.DeconnexionForm.resources

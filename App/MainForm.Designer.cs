@@ -44,12 +44,12 @@
             this.btnRecherche = new System.Windows.Forms.Button();
             this.tbRecherche = new System.Windows.Forms.TextBox();
             this.dgvAllAlbums = new System.Windows.Forms.DataGridView();
-            this.btnDeconnexion = new System.Windows.Forms.Button();
             this.columnAllTitre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnAllScenariste = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnAllDessinateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnMyAlbums = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.columnWishlist = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnDeconnexion = new System.Windows.Forms.Button();
             this.btnAjouterAlbum = new System.Windows.Forms.Button();
             this.tabCtrlAlbums.SuspendLayout();
             this.tabPageMyAlbums.SuspendLayout();
@@ -97,6 +97,7 @@
             this.dgvMyAlbums.RowHeadersWidth = 51;
             this.dgvMyAlbums.Size = new System.Drawing.Size(922, 412);
             this.dgvMyAlbums.TabIndex = 0;
+            this.dgvMyAlbums.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyAlbums_CellContentClick);
             // 
             // columnMyTitre
             // 
@@ -226,17 +227,6 @@
             this.dgvAllAlbums.TabIndex = 0;
             this.dgvAllAlbums.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAllAlbums_CellContentClick);
             // 
-            // btnDeconnexion
-            // 
-            this.btnDeconnexion.BackColor = System.Drawing.Color.Red;
-            this.btnDeconnexion.Location = new System.Drawing.Point(793, 12);
-            this.btnDeconnexion.Name = "btnDeconnexion";
-            this.btnDeconnexion.Size = new System.Drawing.Size(150, 33);
-            this.btnDeconnexion.TabIndex = 1;
-            this.btnDeconnexion.Text = "Déconnexion";
-            this.btnDeconnexion.UseVisualStyleBackColor = false;
-            this.btnDeconnexion.Click += new System.EventHandler(this.btnDeconnexion_Click);
-            // 
             // columnAllTitre
             // 
             this.columnAllTitre.HeaderText = "Titre";
@@ -271,6 +261,17 @@
             this.columnWishlist.MinimumWidth = 6;
             this.columnWishlist.Name = "columnWishlist";
             this.columnWishlist.Width = 125;
+            // 
+            // btnDeconnexion
+            // 
+            this.btnDeconnexion.BackColor = System.Drawing.Color.Red;
+            this.btnDeconnexion.Location = new System.Drawing.Point(793, 12);
+            this.btnDeconnexion.Name = "btnDeconnexion";
+            this.btnDeconnexion.Size = new System.Drawing.Size(150, 33);
+            this.btnDeconnexion.TabIndex = 1;
+            this.btnDeconnexion.Text = "Déconnexion";
+            this.btnDeconnexion.UseVisualStyleBackColor = false;
+            this.btnDeconnexion.Click += new System.EventHandler(this.btnDeconnexion_Click);
             // 
             // btnAjouterAlbum
             // 

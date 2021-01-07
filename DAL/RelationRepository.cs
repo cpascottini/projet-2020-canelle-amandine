@@ -39,7 +39,7 @@ namespace DAL
             string requeteIdRelation = "select Id from Relation r where r.BD=" + idBD + " and r.Personne=" + idUtilisateurLocal;
             int idRelation = (int)Session.CreateQuery(requeteIdRelation).UniqueResult<int>();
 
-            Relation relation = Session.Load<Relation>(idRelation);
+            Relation relation = Session.Load<Relation>(idRelation); // récupération de la relation correspondante
             relation.Statut = "possede"; // màj des données
 
             Session.SaveOrUpdate(relation); // Màj d'une ligne dans la table Relation de la DB
@@ -58,7 +58,7 @@ namespace DAL
                 " and r.Statut='" + statutLocal + "'";
             int idRelation = (int)Session.CreateQuery(requeteIdRelation).UniqueResult<int>();
 
-            Relation relation = Session.Load<Relation>(idRelation);
+            Relation relation = Session.Load<Relation>(idRelation); // récupération de la relation correspondante
 
             Session.Delete(relation); // Suppression d'une ligne dans la table Relation de la DB
             Session.Flush();
