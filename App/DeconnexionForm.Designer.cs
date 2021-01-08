@@ -52,9 +52,9 @@
             this.labelQuestionDeconnexion.Location = new System.Drawing.Point(13, 89);
             this.labelQuestionDeconnexion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelQuestionDeconnexion.Name = "labelQuestionDeconnexion";
-            this.labelQuestionDeconnexion.Size = new System.Drawing.Size(484, 20);
+            this.labelQuestionDeconnexion.Size = new System.Drawing.Size(529, 20);
             this.labelQuestionDeconnexion.TabIndex = 1;
-            this.labelQuestionDeconnexion.Text = "Voulez-vous quitter l\'application ou continuer sur la BDthèque ?\r\n";
+            this.labelQuestionDeconnexion.Text = "Voulez-vous quitter l\'application ou vous reconnecter à la BDthèque ?\r\n";
             // 
             // btnQuit
             // 
@@ -64,7 +64,7 @@
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(126, 28);
             this.btnQuit.TabIndex = 2;
-            this.btnQuit.Text = "Me déconnecter";
+            this.btnQuit.Text = "Quitter";
             this.btnQuit.UseVisualStyleBackColor = true;
             // 
             // btnContinue
@@ -75,7 +75,7 @@
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(117, 28);
             this.btnContinue.TabIndex = 3;
-            this.btnContinue.Text = "Annuler";
+            this.btnContinue.Text = "Me reconnecter";
             this.btnContinue.UseVisualStyleBackColor = true;
             // 
             // DeconnexionForm
