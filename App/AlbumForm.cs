@@ -40,8 +40,6 @@ namespace ProjetGL
                 string couverture = bdRow[0].Couverture;
                 pictureBoxCouverture.Image = Image.FromFile( @"couvertures\" + couverture);
                 pictureBoxCouverture.SizeMode = PictureBoxSizeMode.StretchImage;
-                
-
             }
             catch (Exception e)
             {

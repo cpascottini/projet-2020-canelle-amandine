@@ -19,6 +19,9 @@ namespace ProjetGL
         private IRelationRepository relationRepository;
         private IPersonneRepository personneRepository;
         private int idUtilisateur;
+        private bool hasTbRechercheBeenEdited = false;
+        private IList<BD> BDUtilisateur ;
+        private IList<BD> BDWishlist;
 
 
         public MainForm(IBDRepository bdRepository, IRelationRepository relationRepository, IPersonneRepository personneRepository, int idUtilisateur)
@@ -29,7 +32,9 @@ namespace ProjetGL
             this.relationRepository = relationRepository;
             this.personneRepository = personneRepository;
             this.idUtilisateur = idUtilisateur;
-           
+            MajBDUtilisateur();
+
+
             string roleUtilisateur = personneRepository.GetRoleUtilisateur(idUtilisateur);
             // si la personne connectée n'est pas un admin elle ne peut pas ajouter d'album au marché
             if (roleUtilisateur!="administrateur")
@@ -39,49 +44,24 @@ namespace ProjetGL
             AfficherContenu();
         }
 
+        private void MajBDUtilisateur()
+        {
+            BDUtilisateur = bdRepository.GetBDUtilisateur(idUtilisateur);
+            BDWishlist = bdRepository.GetBDWishlist(idUtilisateur);
+        }
+
         private void AfficherContenu()
         {
             try
             {
                 // BD QUE POSSEDE L'UTILISATEUR CONNECTÉ
-                IList<BD> BDUtilisateur = bdRepository.GetBDUtilisateur(idUtilisateur);
+                AfficherBDUtilisateur(dgvMyAlbums, BDUtilisateur);
 
-                dgvMyAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes
-                // Accès à la liste des BD et remplissage du tableau
-                foreach (BD bd in BDUtilisateur)
-                {
-                    dgvMyAlbums.Rows.Add(bd.Decrire());
-                }
-                // tri alphabétique sur la 1ère colonne (titre)
-                dgvMyAlbums.Sort(dgvMyAlbums.Columns[0], ListSortDirection.Ascending);
-
-
-
-                // BD QUE VEUT L'UTILISATEUR CONNECTÉ
-                IList<BD> BDWishlist = bdRepository.GetBDWishlist(idUtilisateur);
-
-                dgvWishlist.Rows.Clear();  // suppression des éventuelles lignes existantes
-                // Accès à la liste des BD et remplissage du tableau
-                foreach (BD bd in BDWishlist)
-                {
-                    dgvWishlist.Rows.Add(bd.Decrire());
-                }
-                // tri alphabétique sur la 1ère colonne (titre)
-                dgvWishlist.Sort(dgvWishlist.Columns[0], ListSortDirection.Ascending);
-
-
-
+                // BD QUE VEUT L'UTILISATEUR CONNECTÉ               
+                AfficherBDUtilisateur(dgvWishlist, BDWishlist);
+                
                 // BD DU MARCHÉ
-                dgvAllAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes
-                // Accès à la liste des BD et remplissage du tableau
-                foreach (BD bd in bdRepository.GetAll())
-                {
-                    bool possede = BDUtilisateur.Contains(bd);
-                    bool veut = BDWishlist.Contains(bd);
-                    dgvAllAlbums.Rows.Add(bd.DecrireBDMarche(possede,veut));
-                }
-                // tri alphabétique sur la 1ère colonne (titre)
-                dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
+                AfficherBDMarche(bdRepository.GetAll());
 
             }
             catch (Exception e)
@@ -90,8 +70,34 @@ namespace ProjetGL
             }
         }
 
-        private void btnRecherche_Click(object sender, EventArgs e)
+        private void AfficherBDMarche(IList<BD> listeBD)
         {
+            dgvAllAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes
+                                        // Accès à la liste des BD et remplissage du tableau
+            foreach (BD bd in listeBD)
+            {
+                bool possede = BDUtilisateur.Contains(bd);
+                bool veut = BDWishlist.Contains(bd);
+                dgvAllAlbums.Rows.Add(bd.DecrireBDMarche(possede, veut));
+            }
+            // tri alphabétique sur la 1ère colonne (titre)
+            dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
+        }
+
+        private void AfficherBDUtilisateur(DataGridView dgv, IList<BD> listeBD)
+        {
+            dgv.Rows.Clear();  // suppression des éventuelles lignes existantes
+                                       // Accès à la liste des BD et remplissage du tableau
+            foreach (BD bd in listeBD)
+            {
+                dgv.Rows.Add(bd.Decrire());
+            }
+            // tri alphabétique sur la 1ère colonne (titre)
+            dgv.Sort(dgv.Columns[0], ListSortDirection.Ascending);
+        }
+
+        private void btnRecherche_Click(object sender, EventArgs e)
+        {           
             string recherche = tbRecherche.Text;
 
             // on réaffiche le dgv si une recherche précédente les a cachées
@@ -101,13 +107,10 @@ namespace ProjetGL
             labelPasDeResultat.Visible = false;
 
             dgvAllAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes
-            if (bdRepository.GetBDRecherche(recherche).Count() != 0)
+            IList<BD> BDRecherche = bdRepository.GetBDRecherche(recherche);
+            if (BDRecherche.Count() != 0)
             {
-                foreach (BD bd in bdRepository.GetBDRecherche(recherche))
-                {
-                    dgvAllAlbums.Rows.Add(bd.Decrire());
-                }
-                dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
+                AfficherBDMarche(BDRecherche);
             }
             else // s'il n'y a pas de résultat
             {
@@ -118,7 +121,23 @@ namespace ProjetGL
             }
         }
 
-        private void dgvAllAlbums_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData) // pour rechercher en appuyant sur entrée
+        {
+            if (keyData == (Keys.Enter))
+            {
+                btnRecherche.PerformClick();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            tbRecherche.Text = "";
+            AfficherBDMarche(bdRepository.GetAll());
+        }
+
+        private void dgvAllAlbums_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
             DataGridViewRow row = this.dgvAllAlbums.Rows[rowIndex];
@@ -192,14 +211,16 @@ namespace ProjetGL
             {
                 AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
                 albumForm.ShowDialog();
+                
             }
             else
             {
+                MajBDUtilisateur();
                 AfficherContenu(); // on réaffiche le contenu pour mettre les données à jour
             }
         }
 
-        private void dgvWishlist_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvWishlist_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
             DataGridViewRow row = this.dgvWishlist.Rows[rowIndex];
@@ -209,7 +230,7 @@ namespace ProjetGL
             AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
             albumForm.ShowDialog();
         }
-        private void dgvMyAlbums_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvMyAlbums_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
             DataGridViewRow row = this.dgvMyAlbums.Rows[rowIndex];
@@ -229,6 +250,17 @@ namespace ProjetGL
         {
             AjoutAlbumForm ajoutAlbumForm = new AjoutAlbumForm(bdRepository);
             ajoutAlbumForm.ShowDialog();
+            AfficherBDMarche(bdRepository.GetAll());
+        }
+
+        private void tbRecherche_Enter(object sender, EventArgs e)
+        {
+            if(!hasTbRechercheBeenEdited)
+            {
+                tbRecherche.Text = "";
+                tbRecherche.ForeColor = Color.Black;
+                hasTbRechercheBeenEdited = true;
+            }          
         }
     }
 }

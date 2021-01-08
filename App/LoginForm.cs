@@ -58,6 +58,8 @@ namespace ProjetGL
             }
         }
 
+ 
+
         private void linkInscription_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             InscriptionForm inscriptionForm = new InscriptionForm();
@@ -67,5 +69,16 @@ namespace ProjetGL
                  string password = inscriptionForm.NewPassword;  
             }
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData) // pour se connecter en appuyant sur entrée
+        {
+            if(keyData == (Keys.Enter))
+            {
+                btnConnexion.PerformClick();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
     }
 }

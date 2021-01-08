@@ -78,7 +78,7 @@ namespace ProjetGL
 
         private void btnAjoutAnnuler_Click(object sender, EventArgs e)
         {
-            // A COMPLETER
+            this.Close();
         }
     }
 }
