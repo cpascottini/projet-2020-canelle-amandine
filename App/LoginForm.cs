@@ -58,11 +58,9 @@ namespace ProjetGL
             }
         }
 
- 
-
         private void linkInscription_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            InscriptionForm inscriptionForm = new InscriptionForm();
+            InscriptionForm inscriptionForm = new InscriptionForm(personneRepository);
             if (inscriptionForm.ShowDialog() == DialogResult.OK)
             {
                  string login = inscriptionForm.NewLogin;

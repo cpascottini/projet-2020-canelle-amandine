@@ -18,6 +18,8 @@ namespace Domain
         public virtual ISet<BD> Souhaits { get; set; }
 
         public Personne() { }
+
+        /*
         public Personne(int id, string login, string mdp, string role)
         // pour construire un administrateur
         {
@@ -37,6 +39,7 @@ namespace Domain
             Possessions = possessions;
             Souhaits = souhaits;
         }
+        */
         public override string ToString()
         {
             return Login;

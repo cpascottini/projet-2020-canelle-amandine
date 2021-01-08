@@ -47,11 +47,11 @@ namespace ProjetGL
                 {
                     string serie = tbAjoutSerie.Text;
                     bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, serie);
-                    
-                    string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);
-                    MessageBox.Show(message, "Album enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
                 }
+
+                string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);
+                MessageBox.Show(message, "Album enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
         }
         

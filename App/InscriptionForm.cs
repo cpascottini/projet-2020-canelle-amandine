@@ -7,19 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
+using Domain;
 
 namespace ProjetGL
 {
     public partial class InscriptionForm : Form
     {
-        public InscriptionForm()
+        private IPersonneRepository personneRepository;
+
+        public InscriptionForm(IPersonneRepository personneRepository)
         {
             InitializeComponent();
-        }
-
-        public bool passwordsEqual()
-        {
-            return tbNewPassword.Text == tbNewPassword2.Text;
+            this.personneRepository = personneRepository;
         }
 
         public string NewLogin
@@ -32,6 +32,17 @@ namespace ProjetGL
         {
             get { return tbNewPassword.Text; }
             set { tbNewPassword.Text = value; }
+        }
+
+        private void btnInscriptionConfirmer_Click(object sender, EventArgs e)
+        {
+            personneRepository.SaveUtilisateur(NewLogin, NewPassword);
+            MessageBox.Show("Inscription à la BDthèque réussie.\nBienvenue !", "Inscription réussie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+        private void btnInscriptionAnnuler_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
