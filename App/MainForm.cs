@@ -154,10 +154,19 @@ namespace ProjetGL
             {
                 showAlbum = false;
 
-                // ajouter la BD du row à la liste d'envies
-                relationRepository.SaveRelation(bd, idUtilisateur, "veut");
-                string message = String.Format("L'album '{0}' a bien été ajouté à votre wishlist.", bd.Titre);
-                MessageBox.Show(message, "Ajout à la wishlist", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                if (bdRepository.GetBDUtilisateur(idUtilisateur).Contains(bd))
+                    // si la BD est déjà dans les possessions de l'utilisateur
+                {
+                    string message = String.Format("Vous possédez déjà l'album '{0}'.", bd.Titre);
+                    MessageBox.Show(message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    // ajouter la BD du row à la liste d'envies
+                    relationRepository.SaveRelation(bd, idUtilisateur, "veut");
+                    string message = String.Format("L'album '{0}' a bien été ajouté à votre wishlist.", bd.Titre);
+                    MessageBox.Show(message, "Ajout à la wishlist", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
             }
 
             // ajout d'une BD du marché à ses possessions

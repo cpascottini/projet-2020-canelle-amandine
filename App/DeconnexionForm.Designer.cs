@@ -46,15 +46,15 @@
             // 
             // labelQuestionDeconnexion
             // 
-            this.labelQuestionDeconnexion.AutoSize = true;
             this.labelQuestionDeconnexion.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelQuestionDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuestionDeconnexion.Location = new System.Drawing.Point(13, 89);
+            this.labelQuestionDeconnexion.Location = new System.Drawing.Point(41, 88);
             this.labelQuestionDeconnexion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelQuestionDeconnexion.Name = "labelQuestionDeconnexion";
-            this.labelQuestionDeconnexion.Size = new System.Drawing.Size(529, 20);
+            this.labelQuestionDeconnexion.Size = new System.Drawing.Size(334, 54);
             this.labelQuestionDeconnexion.TabIndex = 1;
             this.labelQuestionDeconnexion.Text = "Voulez-vous quitter l\'application ou vous reconnecter à la BDthèque ?\r\n";
+            this.labelQuestionDeconnexion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnQuit
             // 
