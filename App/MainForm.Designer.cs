@@ -197,7 +197,7 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(477, 17);
+            this.btnAnnuler.Location = new System.Drawing.Point(598, 17);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btnAnnuler.TabIndex = 4;

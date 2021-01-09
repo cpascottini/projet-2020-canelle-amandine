@@ -19,8 +19,7 @@ namespace DAL
 
             string titre = bdLocal.Titre;
             string auteur = bdLocal.Auteur;
-            string requeteIdBD = "select Id from BD bd where bd.Titre='" + titre + "' and bd.Auteur='" + auteur + "'";
-            int idBD = (int)Session.CreateQuery(requeteIdBD).UniqueResult<int>();
+            int idBD = GetIdBD(titre, auteur);
             relation.BD = idBD;
 
             relation.Personne = idUtilisateurLocal;
@@ -33,11 +32,9 @@ namespace DAL
         {
             string titre = bdLocal.Titre;
             string auteur = bdLocal.Auteur;
-            string requeteIdBD = "select Id from BD bd where bd.Titre='" + titre + "' and bd.Auteur='" + auteur + "'";
-            int idBD = (int)Session.CreateQuery(requeteIdBD).UniqueResult<int>();
+            int idBD = GetIdBD(titre, auteur);
 
-            string requeteIdRelation = "select Id from Relation r where r.BD=" + idBD + " and r.Personne=" + idUtilisateurLocal;
-            int idRelation = (int)Session.CreateQuery(requeteIdRelation).UniqueResult<int>();
+            int idRelation = GetIdRelation(idBD, idUtilisateurLocal, "veut");
 
             Relation relation = Session.Load<Relation>(idRelation); // récupération de la relation correspondante
             relation.Statut = "possede"; // màj des données
@@ -50,13 +47,9 @@ namespace DAL
         {
             string titre = bdLocal.Titre;
             string auteur = bdLocal.Auteur;
-            string requeteIdBD = "select Id from BD bd where bd.Titre='" + titre + "' and bd.Auteur='" + auteur + "'";
-            int idBD = (int)Session.CreateQuery(requeteIdBD).UniqueResult<int>();
+            int idBD = GetIdBD(titre, auteur);
 
-            string requeteIdRelation = "select Id from Relation r where r.BD=" + idBD +
-                " and r.Personne=" + idUtilisateurLocal +
-                " and r.Statut='" + statutLocal + "'";
-            int idRelation = (int)Session.CreateQuery(requeteIdRelation).UniqueResult<int>();
+            int idRelation = GetIdRelation(idBD,idUtilisateurLocal,statutLocal);
 
             Relation relation = Session.Load<Relation>(idRelation); // récupération de la relation correspondante
 
@@ -64,5 +57,14 @@ namespace DAL
             Session.Flush();
         }
 
+        private int GetIdBD(string titre, string auteur)
+        {
+            return (int)Session.CreateQuery("select Id from BD bd where bd.Titre=:titre and bd.Auteur=:auteur").SetString("titre", titre).SetString("auteur", auteur).UniqueResult<int>();
+        }
+
+        private int GetIdRelation(int idBD, int idUtilisateur, string statut)
+        {
+            return (int)Session.CreateQuery("select Id from Relation r where r.BD =:bd and r.Personne=:personne and r.Statut=:statut").SetInt32("bd",idBD).SetInt32("personne", idUtilisateur).SetString("statut", statut).UniqueResult<int>();
+        }
     }
 }

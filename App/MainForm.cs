@@ -46,8 +46,8 @@ namespace ProjetGL
 
         private void MajBDUtilisateur()
         {
-            BDUtilisateur = bdRepository.GetBDUtilisateur(idUtilisateur);
-            BDWishlist = bdRepository.GetBDWishlist(idUtilisateur);
+            BDUtilisateur = bdRepository.GetBDUtilisateur(idUtilisateur, "possede");
+            BDWishlist = bdRepository.GetBDUtilisateur(idUtilisateur, "veut");
         }
 
         private void AfficherContenu()
@@ -154,7 +154,7 @@ namespace ProjetGL
             {
                 showAlbum = false;
 
-                if (bdRepository.GetBDUtilisateur(idUtilisateur).Contains(bd))
+                if (BDUtilisateur.Contains(bd))
                     // si la BD est déjà dans les possessions de l'utilisateur
                 {
                     string message = String.Format("Vous possédez déjà l'album '{0}'.", bd.Titre);

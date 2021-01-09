@@ -14,24 +14,19 @@ namespace DAL
             return (Session.Query<BD>().ToList());
         }
         
-        public IList<BD> GetBDUtilisateur(int idUtilisateurLocal)
+        public IList<BD> GetBDUtilisateur(int idUtilisateurLocal, string statut)
         {
-            return Session.CreateQuery("select bd from BD as bd, Relation as r where bd.Id=r.BD and r.Personne=:util and r.Statut='possede'").SetInt32("util", idUtilisateurLocal).List<BD>();
-        }
-
-        public IList<BD> GetBDWishlist(int idUtilisateurLocal)
-        {
-            return Session.CreateQuery("select bd from BD as bd, Relation as r where bd.Id=r.BD and r.Personne=:util and r.Statut='veut'").SetInt32("util", idUtilisateurLocal).List<BD>();
+            return Session.CreateQuery("select bd from BD as bd, Relation as r where bd.Id=r.BD and r.Personne=:util and r.Statut=:statut").SetInt32("util", idUtilisateurLocal).SetString("statut",statut).List<BD>();
         }
 
         public IList<BD> GetBDRecherche(string rechercheLocal)
         {
-            IList<BD> bdRecherche = Session.CreateQuery("select bd from BD bd where bd.Titre like '%" + rechercheLocal + "%'" +
-                "or bd.Auteur like '%" + rechercheLocal + "%'" +
-                "or bd.Dessinateur like '%" + rechercheLocal + "%'" +
-                "or bd.Editeur like '%" + rechercheLocal + "%'" +
-                "or bd.Genre like '%" + rechercheLocal + "%'" +
-                "or bd.Serie like '%" + rechercheLocal + "%'").List<BD>();
+            IList<BD> bdRecherche = Session.CreateQuery("select bd from BD bd where (bd.Titre like :r)" +
+                "or (bd.Auteur like :r)" +
+                "or (bd.Dessinateur like :r)" +
+                "or (bd.Editeur like :r)" +
+                "or (bd.Genre like :r)" +
+                "or (bd.Serie like :r)").SetParameter("r", "%"+rechercheLocal+"%").List<BD>();
 
             return bdRecherche;
         }
