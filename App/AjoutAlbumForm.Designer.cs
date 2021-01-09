@@ -52,48 +52,48 @@ namespace ProjetGL
             // 
             // tbAjoutGenre
             // 
-            this.tbAjoutGenre.Location = new System.Drawing.Point(116, 262);
-            this.tbAjoutGenre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAjoutGenre.Location = new System.Drawing.Point(116, 241);
+            this.tbAjoutGenre.Margin = new System.Windows.Forms.Padding(2);
             this.tbAjoutGenre.Name = "tbAjoutGenre";
             this.tbAjoutGenre.Size = new System.Drawing.Size(154, 20);
             this.tbAjoutGenre.TabIndex = 25;
             // 
             // tbAjoutSerie
             // 
-            this.tbAjoutSerie.Location = new System.Drawing.Point(116, 239);
-            this.tbAjoutSerie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAjoutSerie.Location = new System.Drawing.Point(116, 218);
+            this.tbAjoutSerie.Margin = new System.Windows.Forms.Padding(2);
             this.tbAjoutSerie.Name = "tbAjoutSerie";
             this.tbAjoutSerie.Size = new System.Drawing.Size(154, 20);
             this.tbAjoutSerie.TabIndex = 24;
             // 
             // tbAjoutEditeur
             // 
-            this.tbAjoutEditeur.Location = new System.Drawing.Point(116, 167);
-            this.tbAjoutEditeur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAjoutEditeur.Location = new System.Drawing.Point(116, 146);
+            this.tbAjoutEditeur.Margin = new System.Windows.Forms.Padding(2);
             this.tbAjoutEditeur.Name = "tbAjoutEditeur";
             this.tbAjoutEditeur.Size = new System.Drawing.Size(154, 20);
             this.tbAjoutEditeur.TabIndex = 23;
             // 
             // tbAjoutDessinateur
             // 
-            this.tbAjoutDessinateur.Location = new System.Drawing.Point(116, 141);
-            this.tbAjoutDessinateur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAjoutDessinateur.Location = new System.Drawing.Point(116, 120);
+            this.tbAjoutDessinateur.Margin = new System.Windows.Forms.Padding(2);
             this.tbAjoutDessinateur.Name = "tbAjoutDessinateur";
             this.tbAjoutDessinateur.Size = new System.Drawing.Size(154, 20);
             this.tbAjoutDessinateur.TabIndex = 22;
             // 
             // tbAjoutAuteur
             // 
-            this.tbAjoutAuteur.Location = new System.Drawing.Point(116, 117);
-            this.tbAjoutAuteur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAjoutAuteur.Location = new System.Drawing.Point(116, 96);
+            this.tbAjoutAuteur.Margin = new System.Windows.Forms.Padding(2);
             this.tbAjoutAuteur.Name = "tbAjoutAuteur";
             this.tbAjoutAuteur.Size = new System.Drawing.Size(154, 20);
             this.tbAjoutAuteur.TabIndex = 21;
             // 
             // tbAjoutTitre
             // 
-            this.tbAjoutTitre.Location = new System.Drawing.Point(116, 93);
-            this.tbAjoutTitre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAjoutTitre.Location = new System.Drawing.Point(116, 72);
+            this.tbAjoutTitre.Margin = new System.Windows.Forms.Padding(2);
             this.tbAjoutTitre.Name = "tbAjoutTitre";
             this.tbAjoutTitre.Size = new System.Drawing.Size(154, 20);
             this.tbAjoutTitre.TabIndex = 20;
@@ -101,7 +101,7 @@ namespace ProjetGL
             // labelAjoutGenre
             // 
             this.labelAjoutGenre.AutoSize = true;
-            this.labelAjoutGenre.Location = new System.Drawing.Point(39, 268);
+            this.labelAjoutGenre.Location = new System.Drawing.Point(39, 247);
             this.labelAjoutGenre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAjoutGenre.Name = "labelAjoutGenre";
             this.labelAjoutGenre.Size = new System.Drawing.Size(36, 13);
@@ -111,7 +111,7 @@ namespace ProjetGL
             // labelAjoutSerie
             // 
             this.labelAjoutSerie.AutoSize = true;
-            this.labelAjoutSerie.Location = new System.Drawing.Point(39, 243);
+            this.labelAjoutSerie.Location = new System.Drawing.Point(39, 222);
             this.labelAjoutSerie.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAjoutSerie.Name = "labelAjoutSerie";
             this.labelAjoutSerie.Size = new System.Drawing.Size(31, 13);
@@ -121,7 +121,7 @@ namespace ProjetGL
             // labelAjoutEditeur
             // 
             this.labelAjoutEditeur.AutoSize = true;
-            this.labelAjoutEditeur.Location = new System.Drawing.Point(39, 171);
+            this.labelAjoutEditeur.Location = new System.Drawing.Point(39, 150);
             this.labelAjoutEditeur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAjoutEditeur.Name = "labelAjoutEditeur";
             this.labelAjoutEditeur.Size = new System.Drawing.Size(40, 13);
@@ -131,7 +131,7 @@ namespace ProjetGL
             // labelAjoutDessinateur
             // 
             this.labelAjoutDessinateur.AutoSize = true;
-            this.labelAjoutDessinateur.Location = new System.Drawing.Point(39, 147);
+            this.labelAjoutDessinateur.Location = new System.Drawing.Point(39, 126);
             this.labelAjoutDessinateur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAjoutDessinateur.Name = "labelAjoutDessinateur";
             this.labelAjoutDessinateur.Size = new System.Drawing.Size(63, 13);
@@ -141,7 +141,7 @@ namespace ProjetGL
             // labelAjoutAuteur
             // 
             this.labelAjoutAuteur.AutoSize = true;
-            this.labelAjoutAuteur.Location = new System.Drawing.Point(39, 121);
+            this.labelAjoutAuteur.Location = new System.Drawing.Point(39, 100);
             this.labelAjoutAuteur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAjoutAuteur.Name = "labelAjoutAuteur";
             this.labelAjoutAuteur.Size = new System.Drawing.Size(57, 13);
@@ -151,7 +151,7 @@ namespace ProjetGL
             // labelAjoutTitre
             // 
             this.labelAjoutTitre.AutoSize = true;
-            this.labelAjoutTitre.Location = new System.Drawing.Point(39, 97);
+            this.labelAjoutTitre.Location = new System.Drawing.Point(39, 76);
             this.labelAjoutTitre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAjoutTitre.Name = "labelAjoutTitre";
             this.labelAjoutTitre.Size = new System.Drawing.Size(28, 13);
@@ -171,8 +171,9 @@ namespace ProjetGL
             // btnAjoutAnnuler
             // 
             this.btnAjoutAnnuler.BackColor = System.Drawing.Color.Red;
-            this.btnAjoutAnnuler.Location = new System.Drawing.Point(472, 32);
-            this.btnAjoutAnnuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAjoutAnnuler.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAjoutAnnuler.Location = new System.Drawing.Point(145, 337);
+            this.btnAjoutAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjoutAnnuler.Name = "btnAjoutAnnuler";
             this.btnAjoutAnnuler.Size = new System.Drawing.Size(82, 33);
             this.btnAjoutAnnuler.TabIndex = 27;
@@ -183,8 +184,9 @@ namespace ProjetGL
             // btnAjoutValider
             // 
             this.btnAjoutValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAjoutValider.Location = new System.Drawing.Point(472, 311);
-            this.btnAjoutValider.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAjoutValider.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAjoutValider.Location = new System.Drawing.Point(324, 337);
+            this.btnAjoutValider.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjoutValider.Name = "btnAjoutValider";
             this.btnAjoutValider.Size = new System.Drawing.Size(82, 33);
             this.btnAjoutValider.TabIndex = 28;
@@ -195,8 +197,8 @@ namespace ProjetGL
             // pictureBoxAjoutCouverture
             // 
             this.pictureBoxAjoutCouverture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxAjoutCouverture.Location = new System.Drawing.Point(334, 93);
-            this.pictureBoxAjoutCouverture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxAjoutCouverture.Location = new System.Drawing.Point(334, 72);
+            this.pictureBoxAjoutCouverture.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxAjoutCouverture.Name = "pictureBoxAjoutCouverture";
             this.pictureBoxAjoutCouverture.Size = new System.Drawing.Size(142, 184);
             this.pictureBoxAjoutCouverture.TabIndex = 29;
@@ -204,8 +206,8 @@ namespace ProjetGL
             // 
             // btnAjoutParcourir
             // 
-            this.btnAjoutParcourir.Location = new System.Drawing.Point(369, 281);
-            this.btnAjoutParcourir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAjoutParcourir.Location = new System.Drawing.Point(369, 260);
+            this.btnAjoutParcourir.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjoutParcourir.Name = "btnAjoutParcourir";
             this.btnAjoutParcourir.Size = new System.Drawing.Size(71, 28);
             this.btnAjoutParcourir.TabIndex = 30;
@@ -216,7 +218,7 @@ namespace ProjetGL
             // labelAjoutCouverture
             // 
             this.labelAjoutCouverture.AutoSize = true;
-            this.labelAjoutCouverture.Location = new System.Drawing.Point(378, 76);
+            this.labelAjoutCouverture.Location = new System.Drawing.Point(378, 55);
             this.labelAjoutCouverture.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAjoutCouverture.Name = "labelAjoutCouverture";
             this.labelAjoutCouverture.Size = new System.Drawing.Size(59, 13);
@@ -227,7 +229,7 @@ namespace ProjetGL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(528, 393);
             this.Controls.Add(this.labelAjoutCouverture);
             this.Controls.Add(this.btnAjoutParcourir);
             this.Controls.Add(this.pictureBoxAjoutCouverture);
@@ -247,7 +249,7 @@ namespace ProjetGL
             this.Controls.Add(this.labelAjoutAuteur);
             this.Controls.Add(this.labelAjoutTitre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AjoutAlbumForm";
             this.Text = "Ajout d\'un album";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAjoutCouverture)).EndInit();

@@ -37,8 +37,8 @@ namespace DAL
         }
         
         public IList<BD> GetBDRow(string titreLocal, string auteurLocal)
-        {
-            return Session.CreateQuery("select bd from BD bd where bd.Titre='" + titreLocal + "' and bd.Auteur='" + auteurLocal + "'").List<BD>();
+        {         
+            return Session.CreateQuery("select bd from BD bd where bd.Titre=:titre and bd.Auteur=:auteur").SetString("titre", titreLocal).SetString("auteur", auteurLocal).List<BD>();
         }
 
         public void SaveBD(string titreLocal, string auteurLocal, string dessinateurLocal, string editeurLocal,
