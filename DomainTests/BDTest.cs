@@ -18,11 +18,7 @@ namespace DomainTests
         {
             string[] resultatAttendu = new string[] { "titre", "auteur", "dessinateur" };
 
-            for (int i=0; i<bd.Decrire().Length; i++)
-            {
-                Assert.AreEqual(bd.Decrire()[i], resultatAttendu[i]);    // compare la valeur attendue à la valeur réelle
-            }
-            // si on ne fait pas le for, le Assert compare les adresses des tableaux et renvoie un échec du test
+            CollectionAssert.AreEquivalent(bd.Decrire(), resultatAttendu);
         }
 
         [TestMethod()]
@@ -32,10 +28,7 @@ namespace DomainTests
             bool veutValue = false;
             string[] resultatAttendu = new string[] { "titre", "auteur", "dessinateur", "True", "False" };
 
-            for (int i = 0; i < bd.DecrireBDMarche(possedeValue, veutValue).Length; i++)
-            {
-                Assert.AreEqual(bd.DecrireBDMarche(possedeValue, veutValue)[i], resultatAttendu[i]);    // compare la valeur attendue à la valeur réelle
-            }
+            CollectionAssert.AreEquivalent(bd.DecrireBDMarche(possedeValue, veutValue), resultatAttendu);
         }
     }
 }

@@ -19,11 +19,11 @@ namespace Domain
 
         public Personne() { }
 
-        /*
+        
         public Personne(int id, string login, string mdp, string role)
         // pour construire un administrateur
         {
-            Id = id;
+            IdPersonne = id;
             Login = login;
             Mdp = mdp;
             Role = role;
@@ -32,14 +32,14 @@ namespace Domain
         public Personne(int id, string login, string mdp, string role, ISet<BD> possessions, ISet<BD> souhaits)
         // pour construire un utilisateur
         {
-            Id = id;
+            IdPersonne = id;
             Login = login;
             Mdp = mdp;
             Role = role;
             Possessions = possessions;
             Souhaits = souhaits;
         }
-        */
+        
         public override string ToString()
         {
             return Login;
