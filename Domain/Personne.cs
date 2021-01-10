@@ -8,7 +8,7 @@ namespace Domain
 {
     public class Personne
     {
-        public virtual int Id { get; set; }
+        public virtual int IdPersonne { get; set; }
         public virtual string Login { get; set; }
         public virtual string Mdp { get; set; }
         public virtual string Role { get; set; }

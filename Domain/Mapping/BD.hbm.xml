@@ -2,7 +2,7 @@
 
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain">
   <class name="BD" table="bd">
-    <id name="Id" column="bd_id" type="int">
+    <id name="IdBD" column="bd_id" type="int">
       <generator class="native">
       </generator>
     </id>

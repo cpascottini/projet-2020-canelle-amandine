@@ -8,7 +8,7 @@ namespace Domain
 {
     public class BD
     {
-        public virtual int Id { get; set; }
+        public virtual int IdBD { get; set; }
         public virtual string Titre { get; set; }
         public virtual string Auteur { get; set; }
         public virtual string Dessinateur { get; set; }
@@ -27,7 +27,7 @@ namespace Domain
             string genre,
             string couverture)
         {
-            Id = id;
+            IdBD = id;
             Titre = titre;
             Auteur = auteur;
             Dessinateur = dessinateur;

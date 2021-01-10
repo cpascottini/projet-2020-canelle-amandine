@@ -14,19 +14,19 @@ namespace DAL
     /// </summary>
     public abstract class Repository
     {
-        private static ISessionFactory sessionFactory;
         private static ISession session;
+        private static Configuration configuration;
 
-        private static ISessionFactory SessionFactory
+        protected static Configuration Configuration
         {
             get
             {
-                // Crée l'objet SessionFactory au premier accès (lazy loading)
-                if (sessionFactory == null)
+                // Crée l'objet Configuration au premier accès (lazy loading)
+                if (configuration == null)
                 {
-                    sessionFactory = new Configuration().Configure().BuildSessionFactory();
+                    configuration = new Configuration().Configure();
                 }
-                return sessionFactory;
+                return configuration;
             }
         }
 
@@ -37,7 +37,7 @@ namespace DAL
                 // Crée l'objet Session au premier accès (lazy loading)
                 if (session == null)
                 {
-                    session = SessionFactory.OpenSession();
+                    session = Configuration.BuildSessionFactory().OpenSession();
                 }
                 return session;
             }

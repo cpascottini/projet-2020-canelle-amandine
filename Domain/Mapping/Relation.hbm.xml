@@ -2,12 +2,12 @@
 
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Domain" namespace="Domain">
   <class name="Relation" table="relation">
-    <id name="Id" column="rel_id" type="int">
+    <id name="IdRelation" column="rel_id" type="int">
       <generator class="native">
       </generator>
     </id>
-    <property name="Personne" column="pers_id" />
-    <property name="BD" column="bd_id" />
-    <property name="Statut" column="rel_statut" />
+    <property name="Personne" column="pers_id" not-null="true"/>
+    <property name="BD" column="bd_id" not-null="true"/>
+    <property name="Statut" column="rel_statut" not-null="true"/>
   </class>
 </hibernate-mapping>

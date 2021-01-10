@@ -12,7 +12,7 @@ namespace DALTests
     [TestClass()]
     public class PersonneRepositoryTest
     {
-        IPersonneRepository personneRepository = new PersonneRepository();
+        /*IPersonneRepository personneRepository = new PersonneRepository();
 
         // il faut construire toutes les personnes qu'il y a dans la DB ???????
         Personne pers1 = new Personne();
@@ -20,6 +20,7 @@ namespace DALTests
         Personne pers2 = new Personne();
         Personne pers3 = new Personne();
         Personne pers4 = new Personne();
+
 
         [TestMethod()]
         public void GetAllTest()
@@ -29,6 +30,27 @@ namespace DALTests
             {
                 Assert.AreEqual(personneRepository.GetAll()[i], resultatAttendu[i]);    // compare la valeur attendue à la valeur réelle
             }
+        }*/
+
+        private PersonneRepository personneRepository;
+
+        [TestInitialize()]
+        public void Initialize()
+        {
+            RepositoryTest.InitDB();
+
+            personneRepository = new PersonneRepository();
+        }
+
+        [TestMethod]
+        public void TestPersRepo_GetAll()
+        {
+            var personnes = personneRepository.GetAll();
+            // 3 personnes dans le jeu de données de test
+            Assert.AreEqual(3, personnes.Count);
+            var actual = personnes.Select(pers => pers.Login).ToList();
+            var expected = new List<string> { "fanDeBD", "admin1", "roger" };
+            CollectionAssert.AreEquivalent(actual, expected);
         }
     }
 }
