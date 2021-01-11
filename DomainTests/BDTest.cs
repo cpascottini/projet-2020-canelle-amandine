@@ -16,7 +16,7 @@ namespace DomainTests
         [TestMethod()]
         public void DecrireTest()
         {
-            string[] resultatAttendu = new string[] { "titre", "auteur", "dessinateur" };
+            string[] resultatAttendu = new string[] { "série", "titre", "auteur", "dessinateur" };
 
             CollectionAssert.AreEquivalent(bd.Decrire(), resultatAttendu);
         }
@@ -26,7 +26,7 @@ namespace DomainTests
         {
             bool possedeValue = true;
             bool veutValue = false;
-            string[] resultatAttendu = new string[] { "titre", "auteur", "dessinateur", "True", "False" };
+            string[] resultatAttendu = new string[] { "série", "titre", "auteur", "dessinateur", "True", "False" };
 
             CollectionAssert.AreEquivalent(bd.DecrireBDMarche(possedeValue, veutValue), resultatAttendu);
         }

@@ -5,10 +5,9 @@
     <id name="IdRelation" column="rel_id" type="int">
       <generator class="native">
       </generator>
-    </id>
-    <property name="Statut" column="rel_statut" not-null="true"/>    
+    </id>        
     <property name="PersonneRelation" column="pers_id"/>
-    <property name="BDRelation" column="bd_id"/>    
-    
+    <property name="BDRelation" column="bd_id"/>
+    <property name="Statut" column="rel_statut" not-null="true"/>
   </class>
 </hibernate-mapping>

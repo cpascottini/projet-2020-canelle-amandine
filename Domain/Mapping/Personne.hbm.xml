@@ -9,10 +9,8 @@
     <property name="Login" column="pers_login" not-null="true"/>
     <property name="Mdp" column="pers_mdp" not-null="true"/>
     <property name="Role" column="pers_role" not-null="true"/>
-
-    <!-- ce qui fonctionnait -->
-    <!--
-    <set name="Possessions" table="relation">
+    
+    <!--<set name="Possessions" table="relation">
       <key column="pers_id"/>
       <many-to-many class="BD" column="bd_id"/>
     </set>
@@ -22,15 +20,15 @@
       <many-to-many class="BD" column="bd_id"/>
     </set> -->
 
-    <set name="Possessions">
+    <!--<set name="Possessions" >
       <key column="pers_id"/>
-      <one-to-many class="BD"/>
+      <many-to-many class="BD"/>
     </set>
 
     <set name="Souhaits">
       <key column="pers_id"/>
-      <one-to-many class="BD"/>
-    </set>
+      <many-to-many class="BD"/>
+    </set>-->
     
   </class>
 </hibernate-mapping>
