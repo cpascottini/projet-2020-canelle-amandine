@@ -31,7 +31,7 @@ namespace DALTests
             var actual = bds.Select(bd => bd.Titre).ToList();
             var expected = new List<string> { "Les bijoux de la Castafiore", "Ame rouge", "Astérix le Gaulois",
                 "Persepolis-Tome 3", "Journal infime", "Mortebouse"};
-            CollectionAssert.AreEquivalent(actual, expected);
+            CollectionAssert.AreEquivalent(expected, actual);
         }
 
         [TestMethod]
@@ -42,7 +42,7 @@ namespace DALTests
             Assert.AreEqual(2, bds.Count);
             var actual = bds.Select(bd => bd.Titre).ToList();
             var expected = new List<string> {"Journal infime", "Mortebouse"};
-            CollectionAssert.AreEquivalent(actual, expected);
+            CollectionAssert.AreEquivalent(expected, actual);
         }
 
         [TestMethod]
@@ -53,7 +53,7 @@ namespace DALTests
             Assert.AreEqual(2, bds.Count);
             var actual = bds.Select(bd => bd.Titre).ToList();
             var expected = new List<string> { "Les bijoux de la Castafiore", "Persepolis-Tome 3" };
-            CollectionAssert.AreEquivalent(actual, expected);
+            CollectionAssert.AreEquivalent(expected, actual);
         }
 
         // TestBDRepo_GetBDRow()

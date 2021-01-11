@@ -30,19 +30,19 @@ namespace DALTests
             Assert.AreEqual(3, personnes.Count);
             var actual = personnes.Select(pers => pers.Login).ToList();
             var expected = new List<string> { "fanDeBD", "admin1", "roger" };
-            CollectionAssert.AreEquivalent(actual, expected);
+            CollectionAssert.AreEquivalent(expected, actual);
         }
 
         [TestMethod]
         public void TestPersRepo_GetIdUtilisateur()
         {
-            Assert.AreEqual(personneRepository.GetIdUtilisateur("roger", "vivelabd"), 3);
+            Assert.AreEqual(3, personneRepository.GetIdUtilisateur("roger", "vivelabd"));
         }
 
         [TestMethod]
         public void TestPersRepo_GetRoleUtilisateur()
         {
-            Assert.AreEqual(personneRepository.GetRoleUtilisateur(3), "utilisateur");
+            Assert.AreEqual("utilisateur", personneRepository.GetRoleUtilisateur(3));
         }
 
         [TestMethod]
