@@ -11,7 +11,7 @@ namespace DomainTests
     [TestClass()]
     public class BDTest
     {
-        BD bd = new BD(5, "titre", "auteur", "dessinateur", "éditeur", "série", "genre", "couverture");
+        BD bd = new BD(7, "titre", "auteur", "dessinateur", "éditeur", "série", "genre", "couverture");
 
         [TestMethod()]
         public void DecrireTest()

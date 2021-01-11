@@ -9,7 +9,7 @@ namespace DAL
 {
     public interface IPersonneRepository
     {
-        List<Personne> GetAll();
+        IList<Personne> GetAll();
         int GetIdUtilisateur(string loginLocal, string mdpLocal);
         string GetRoleUtilisateur(int idUtilisateurLocal);
         void SaveUtilisateur(string loginLocal, string mdpLocal);

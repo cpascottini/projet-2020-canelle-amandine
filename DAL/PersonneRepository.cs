@@ -9,9 +9,9 @@ namespace DAL
 {
     public class PersonneRepository : Repository, IPersonneRepository
     {
-        public List<Personne> GetAll()
+        public IList<Personne> GetAll()
         {
-            return Session.Query<Personne>().ToList();
+            return (Session.Query<Personne>().ToList());
         }
         public int GetIdUtilisateur(string loginLocal, string mdpLocal)
         {

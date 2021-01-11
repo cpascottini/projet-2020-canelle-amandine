@@ -71,6 +71,7 @@
     <Compile Include="BDRepositoryTest.cs" />
     <Compile Include="PersonneRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelationRepositoryTest.cs" />
     <Compile Include="RepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>

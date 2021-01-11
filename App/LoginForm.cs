@@ -38,7 +38,7 @@ namespace ProjetGL
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-            List<Personne> personnes = personneRepository.GetAll();
+            IList<Personne> personnes = personneRepository.GetAll();
             bool validLogin = false;
             foreach(Personne p in personnes)
             {
