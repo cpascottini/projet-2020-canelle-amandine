@@ -44,5 +44,15 @@ namespace ProjetGL
         {
             this.Close();
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData) // pour se connecter en appuyant sur entrée
+        {
+            if (keyData == (Keys.Enter))
+            {
+                btnInscriptionConfirmer.PerformClick();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }

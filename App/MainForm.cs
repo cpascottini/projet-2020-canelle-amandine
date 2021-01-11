@@ -80,7 +80,7 @@ namespace ProjetGL
                 bool veut = BDWishlist.Contains(bd);
                 dgvAllAlbums.Rows.Add(bd.DecrireBDMarche(possede, veut));
             }
-            // tri alphabétique sur la 1ère colonne (titre)
+            // tri alphabétique sur la 1ère colonne (série)
             dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
         }
 
@@ -92,7 +92,7 @@ namespace ProjetGL
             {
                 dgv.Rows.Add(bd.Decrire());
             }
-            // tri alphabétique sur la 1ère colonne (titre)
+            // tri alphabétique sur la 1ère colonne (série)
             dgv.Sort(dgv.Columns[0], ListSortDirection.Ascending);
         }
 

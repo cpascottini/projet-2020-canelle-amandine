@@ -45,24 +45,24 @@
             this.label1.Location = new System.Drawing.Point(15, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Identifiant";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 122);
+            this.label2.Location = new System.Drawing.Point(15, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Mot de passe";
             // 
             // tbNewPassword
             // 
-            this.tbNewPassword.Location = new System.Drawing.Point(126, 119);
+            this.tbNewPassword.Location = new System.Drawing.Point(114, 78);
             this.tbNewPassword.Name = "tbNewPassword";
             this.tbNewPassword.Size = new System.Drawing.Size(192, 20);
-            this.tbNewPassword.TabIndex = 4;
+            this.tbNewPassword.TabIndex = 1;
             this.tbNewPassword.UseSystemPasswordChar = true;
             // 
             // tbNewLogin
@@ -70,7 +70,7 @@
             this.tbNewLogin.Location = new System.Drawing.Point(114, 32);
             this.tbNewLogin.Name = "tbNewLogin";
             this.tbNewLogin.Size = new System.Drawing.Size(192, 20);
-            this.tbNewLogin.TabIndex = 3;
+            this.tbNewLogin.TabIndex = 0;
             // 
             // btnInscriptionAnnuler
             // 
@@ -78,7 +78,7 @@
             this.btnInscriptionAnnuler.Location = new System.Drawing.Point(49, 132);
             this.btnInscriptionAnnuler.Name = "btnInscriptionAnnuler";
             this.btnInscriptionAnnuler.Size = new System.Drawing.Size(75, 23);
-            this.btnInscriptionAnnuler.TabIndex = 6;
+            this.btnInscriptionAnnuler.TabIndex = 2;
             this.btnInscriptionAnnuler.Text = "Annuler";
             this.btnInscriptionAnnuler.UseVisualStyleBackColor = true;
             this.btnInscriptionAnnuler.Click += new System.EventHandler(this.btnInscriptionAnnuler_Click);
@@ -89,7 +89,7 @@
             this.btnInscriptionConfirmer.Location = new System.Drawing.Point(193, 132);
             this.btnInscriptionConfirmer.Name = "btnInscriptionConfirmer";
             this.btnInscriptionConfirmer.Size = new System.Drawing.Size(75, 23);
-            this.btnInscriptionConfirmer.TabIndex = 7;
+            this.btnInscriptionConfirmer.TabIndex = 3;
             this.btnInscriptionConfirmer.Text = "Confirmer";
             this.btnInscriptionConfirmer.UseVisualStyleBackColor = true;
             this.btnInscriptionConfirmer.Click += new System.EventHandler(this.btnInscriptionConfirmer_Click);
@@ -97,13 +97,15 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnInscriptionAnnuler);
+            this.groupBox1.Controls.Add(this.tbNewPassword);
             this.groupBox1.Controls.Add(this.tbNewLogin);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnInscriptionConfirmer);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 43);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(316, 171);
-            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
             // label4
@@ -112,7 +114,7 @@
             this.label4.Location = new System.Drawing.Point(58, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(216, 13);
-            this.label4.TabIndex = 11;
+            this.label4.TabIndex = 2;
             this.label4.Text = "Veuillez choisir vos identifiants de connexion";
             // 
             // InscriptionForm
@@ -121,8 +123,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 226);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbNewPassword);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "InscriptionForm";

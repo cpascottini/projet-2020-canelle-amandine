@@ -59,12 +59,12 @@ namespace DAL
 
         private int GetIdBD(string titre, string auteur)
         {
-            return (int)Session.CreateQuery("select Id from BD bd where bd.Titre=:titre and bd.Auteur=:auteur").SetString("titre", titre).SetString("auteur", auteur).UniqueResult<int>();
+            return (int)Session.CreateQuery("select IdBD from BD bd where bd.Titre=:titre and bd.Auteur=:auteur").SetString("titre", titre).SetString("auteur", auteur).UniqueResult<int>();
         }
 
         private int GetIdRelation(int idBD, int idUtilisateur, string statut)
         {
-            return (int)Session.CreateQuery("select Id from Relation r where r.BD =:bd and r.Personne=:personne and r.Statut=:statut").SetInt32("bd",idBD).SetInt32("personne", idUtilisateur).SetString("statut", statut).UniqueResult<int>();
+            return (int)Session.CreateQuery("select IdRelation from Relation r where r.BD =:bd and r.Personne=:personne and r.Statut=:statut").SetInt32("bd",idBD).SetInt32("personne", idUtilisateur).SetString("statut", statut).UniqueResult<int>();
         }
     }
 }

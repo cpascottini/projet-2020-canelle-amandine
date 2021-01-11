@@ -15,14 +15,14 @@ namespace DAL
         }
         public int GetIdUtilisateur(string loginLocal, string mdpLocal)
         {
-            string requete = "select Id from Personne p where p.Login='" + loginLocal + "' and p.Mdp='" + mdpLocal + "'";
+            string requete = "select IdPersonne from Personne p where p.Login='" + loginLocal + "' and p.Mdp='" + mdpLocal + "'";
             int idUtilisateur = (int)Session.CreateQuery(requete).UniqueResult<int>();
 
             return idUtilisateur;
         }
         public string GetRoleUtilisateur(int idUtilisateurLocal)
         {
-            return Session.CreateQuery("select Role from Personne p where p.Id = :util").SetInt32("util", idUtilisateurLocal).UniqueResult<string>();
+            return Session.CreateQuery("select Role from Personne p where p.IdPersonne = :util").SetInt32("util", idUtilisateurLocal).UniqueResult<string>();
         }
         public void SaveUtilisateur(string loginLocal, string mdpLocal)
         {

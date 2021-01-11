@@ -43,13 +43,13 @@ namespace Domain
         }
         public virtual string[] Decrire()
         {
-            return new string[] { Titre, Auteur, Dessinateur };
+            return new string[] { Serie, Titre, Auteur, Dessinateur };
         }
 
         public virtual string[] DecrireBDMarche(bool possede, bool veut)
         {
             
-            return new string[] { Titre, Auteur, Dessinateur, possede.ToString(), veut.ToString() };
+            return new string[] { Serie, Titre, Auteur, Dessinateur, possede.ToString(), veut.ToString() };
         }
     }
 }
