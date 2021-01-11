@@ -20,9 +20,9 @@ namespace DAL
             string titre = bdLocal.Titre;
             string auteur = bdLocal.Auteur;
             int idBD = GetIdBD(titre, auteur);
-            relation.BD = idBD;
+            relation.BDRelation = idBD;
 
-            relation.Personne = idUtilisateurLocal;
+            relation.PersonneRelation = idUtilisateurLocal;
             relation.Statut = statutLocal;
 
             Session.SaveOrUpdate(relation); // Ajout d’une ligne dans la table Relation de la DB
@@ -64,7 +64,7 @@ namespace DAL
 
         private int GetIdRelation(int idBD, int idUtilisateur, string statut)
         {
-            return (int)Session.CreateQuery("select IdRelation from Relation r where r.BD =:bd and r.Personne=:personne and r.Statut=:statut").SetInt32("bd",idBD).SetInt32("personne", idUtilisateur).SetString("statut", statut).UniqueResult<int>();
+            return (int)Session.CreateQuery("select IdRelation from Relation r where r.BDRelation =:bd and r.PersonneRelation=:personne and r.Statut=:statut").SetInt32("bd",idBD).SetInt32("personne", idUtilisateur).SetString("statut", statut).UniqueResult<int>();
         }
     }
 }

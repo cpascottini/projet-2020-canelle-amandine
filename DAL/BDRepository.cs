@@ -16,7 +16,7 @@ namespace DAL
         
         public IList<BD> GetBDUtilisateur(int idUtilisateurLocal, string statut)
         {
-            return Session.CreateQuery("select bd from BD as bd, Relation as r where bd.IdBD=r.BD and r.Personne=:util and r.Statut=:statut").SetInt32("util", idUtilisateurLocal).SetString("statut",statut).List<BD>();
+            return Session.CreateQuery("select bd from BD as bd, Relation as r where bd.IdBD=r.BDRelation and r.PersonneRelation=:util and r.Statut=:statut").SetInt32("util", idUtilisateurLocal).SetString("statut",statut).List<BD>();
         }
 
         public IList<BD> GetBDRecherche(string rechercheLocal)

@@ -6,8 +6,9 @@
       <generator class="native">
       </generator>
     </id>
-    <property name="Personne" column="pers_id" not-null="true"/>
-    <property name="BD" column="bd_id" not-null="true"/>
-    <property name="Statut" column="rel_statut" not-null="true"/>
+    <property name="Statut" column="rel_statut" not-null="true"/>    
+    <property name="PersonneRelation" column="pers_id"/>
+    <property name="BDRelation" column="bd_id"/>    
+    
   </class>
 </hibernate-mapping>

@@ -22,8 +22,8 @@ create table bd (
 
 create table relation (
     rel_id integer not null primary key auto_increment,
-    pers_id integer not null,
-    bd_id integer not null,
+    pers_id integer,
+    bd_id integer,
     foreign key (pers_id) references personne(pers_id),
     foreign key (bd_id) references bd(bd_id),
     rel_statut varchar(100) not null
