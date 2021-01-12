@@ -139,115 +139,124 @@ namespace ProjetGL
 
         private void dgvAllAlbums_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int rowIndex = e.RowIndex;
-            DataGridViewRow row = this.dgvAllAlbums.Rows[rowIndex];
-            string titre = row.Cells["columnAllTitre"].Value.ToString();
-            string auteur = row.Cells["columnAllScenariste"].Value.ToString();
-            IList<BD> bdRow = bdRepository.GetBDRow(titre, auteur);
-            BD bd = bdRow[0];
-
-            bool showAlbum = true;
-
-            // ajout d'une BD du marché à sa liste d'envies    
-            DataGridViewCheckBoxCell caseAjoutWishlist = (DataGridViewCheckBoxCell)dgvAllAlbums.Rows[rowIndex].Cells["columnWishlist"];
-            if (caseAjoutWishlist.Selected && !Convert.ToBoolean(caseAjoutWishlist.Value))
+            int rowIndex = e.RowIndex;           
+            if(rowIndex!=-1)
             {
-                showAlbum = false;
+                DataGridViewRow row = this.dgvAllAlbums.Rows[rowIndex];
+                string titre = row.Cells["columnAllTitre"].Value.ToString();
+                string auteur = row.Cells["columnAllScenariste"].Value.ToString();
+                IList<BD> bdRow = bdRepository.GetBDRow(titre, auteur);
+                BD bd = bdRow[0];
 
-                if (BDUtilisateur.Contains(bd))
+                bool showAlbum = true;
+
+                // ajout d'une BD du marché à sa liste d'envies    
+                DataGridViewCheckBoxCell caseAjoutWishlist = (DataGridViewCheckBoxCell)dgvAllAlbums.Rows[rowIndex].Cells["columnWishlist"];
+                if (caseAjoutWishlist.Selected && !Convert.ToBoolean(caseAjoutWishlist.Value))
+                {
+                    showAlbum = false;
+
+                    if (BDUtilisateur.Contains(bd))
                     // si la BD est déjà dans les possessions de l'utilisateur
+                    {
+                        string message = String.Format("Vous possédez déjà l'album '{0}'.", bd.Titre);
+                        MessageBox.Show(message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        // ajouter la BD du row à la liste d'envies
+                        relationRepository.SaveRelation(bd, idUtilisateur, "veut");
+                        string message = String.Format("L'album '{0}' a bien été ajouté à votre wishlist.", bd.Titre);
+                        MessageBox.Show(message, "Ajout à la wishlist", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                }
+
+                // ajout d'une BD du marché à ses possessions
+                DataGridViewCheckBoxCell caseAjoutPossession = (DataGridViewCheckBoxCell)dgvAllAlbums.Rows[rowIndex].Cells["columnMyAlbums"];
+                if (caseAjoutPossession.Selected && !Convert.ToBoolean(caseAjoutPossession.Value))
                 {
-                    string message = String.Format("Vous possédez déjà l'album '{0}'.", bd.Titre);
-                    MessageBox.Show(message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    showAlbum = false;
+
+                    if (Convert.ToBoolean(caseAjoutWishlist.Value))    // si la BD était dans la liste d'envie on l'enlève
+                    {
+                        // ajouter la BD du row à la liste des possessions et la supprimer de la wishlist
+                        relationRepository.UpdateRelation(bd, idUtilisateur);
+                        string message = String.Format("L'album '{0}' a bien été ajouté à votre BDthèque et supprimé de votre wishlist.", bd.Titre);
+                        MessageBox.Show(message, "Ajout à la BDthèque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        caseAjoutWishlist.Value = false;
+                    }
+                    else
+                    {
+                        // ajouter la BD du row à la liste des possessions
+                        relationRepository.SaveRelation(bd, idUtilisateur, "possede");
+                        string message = String.Format("L'album '{0}' a bien été ajouté à votre BDthèque.", bd.Titre);
+                        MessageBox.Show(message, "Ajout à la BDthèque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                }
+
+                // suppression d'une BD de sa wishlist
+                if (caseAjoutWishlist.Selected && Convert.ToBoolean(caseAjoutWishlist.Value))
+                {
+                    showAlbum = false;
+
+                    // supprimer la BD du row de la wishlist
+                    relationRepository.DeleteRelation(bd, idUtilisateur, "veut");
+                    string message = String.Format("L'album '{0}' a bien été retiré de votre wishlist.", bd.Titre);
+                    MessageBox.Show(message, "Retrait d'un album de la wishlist", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+
+
+                // suppression d'une BD de ses possessions
+                if (caseAjoutPossession.Selected && Convert.ToBoolean(caseAjoutPossession.Value))
+                {
+                    showAlbum = false;
+
+                    // supprimer la BD du row de la liste des possessions
+                    relationRepository.DeleteRelation(bd, idUtilisateur, "possede");
+                    string message = String.Format("L'album '{0}' a bien été retiré de votre BDthèque.", bd.Titre);
+                    MessageBox.Show(message, "Retrait d'un album de la BDthèque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+
+                // on n'affiche la description d'un album que si le clic n'a pas lieu sur une colonne à cocher
+                if (showAlbum == true)
+                {
+                    AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
+                    albumForm.ShowDialog();
+
                 }
                 else
                 {
-                    // ajouter la BD du row à la liste d'envies
-                    relationRepository.SaveRelation(bd, idUtilisateur, "veut");
-                    string message = String.Format("L'album '{0}' a bien été ajouté à votre wishlist.", bd.Titre);
-                    MessageBox.Show(message, "Ajout à la wishlist", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MajBDUtilisateur();
+                    AfficherContenu(); // on réaffiche le contenu pour mettre les données à jour
                 }
-            }
-
-            // ajout d'une BD du marché à ses possessions
-            DataGridViewCheckBoxCell caseAjoutPossession = (DataGridViewCheckBoxCell)dgvAllAlbums.Rows[rowIndex].Cells["columnMyAlbums"];          
-            if (caseAjoutPossession.Selected && !Convert.ToBoolean(caseAjoutPossession.Value))
-            {
-                showAlbum = false;
-
-                if (Convert.ToBoolean(caseAjoutWishlist.Value))    // si la BD était dans la liste d'envie on l'enlève
-                {
-                    // ajouter la BD du row à la liste des possessions et la supprimer de la wishlist
-                    relationRepository.UpdateRelation(bd, idUtilisateur);
-                    string message = String.Format("L'album '{0}' a bien été ajouté à votre BDthèque et supprimé de votre wishlist.", bd.Titre);
-                    MessageBox.Show(message, "Ajout à la BDthèque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    caseAjoutWishlist.Value = false;
-                }
-                else
-                {
-                    // ajouter la BD du row à la liste des possessions
-                    relationRepository.SaveRelation(bd, idUtilisateur, "possede");
-                    string message = String.Format("L'album '{0}' a bien été ajouté à votre BDthèque.", bd.Titre);
-                    MessageBox.Show(message, "Ajout à la BDthèque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                }
-            }
-
-            // suppression d'une BD de sa wishlist
-            if (caseAjoutWishlist.Selected && Convert.ToBoolean(caseAjoutWishlist.Value))
-            {
-                showAlbum = false;
-
-                // supprimer la BD du row de la wishlist
-                relationRepository.DeleteRelation(bd, idUtilisateur, "veut");
-                string message = String.Format("L'album '{0}' a bien été retiré de votre wishlist.", bd.Titre);
-                MessageBox.Show(message, "Retrait d'un album de la wishlist", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-
-            
-            // suppression d'une BD de ses possessions
-            if (caseAjoutPossession.Selected && Convert.ToBoolean(caseAjoutPossession.Value)) 
-            {
-                showAlbum = false;
-
-                // supprimer la BD du row de la liste des possessions
-                relationRepository.DeleteRelation(bd, idUtilisateur, "possede");
-                string message = String.Format("L'album '{0}' a bien été retiré de votre BDthèque.", bd.Titre);
-                MessageBox.Show(message, "Retrait d'un album de la BDthèque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-
-            // on n'affiche la description d'un album que si le clic n'a pas lieu sur une colonne à cocher
-            if (showAlbum==true)
-            {
-                AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
-                albumForm.ShowDialog();
-                
-            }
-            else
-            {
-                MajBDUtilisateur();
-                AfficherContenu(); // on réaffiche le contenu pour mettre les données à jour
-            }
+            }           
         }
 
         private void dgvWishlist_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
-            DataGridViewRow row = this.dgvWishlist.Rows[rowIndex];
-            string titre = row.Cells["columnWishTitre"].Value.ToString();
-            string auteur = row.Cells["columnWishScenariste"].Value.ToString();
+            if(rowIndex!=-1)
+            {
+                DataGridViewRow row = this.dgvWishlist.Rows[rowIndex];
+                string titre = row.Cells["columnWishTitre"].Value.ToString();
+                string auteur = row.Cells["columnWishScenariste"].Value.ToString();
 
-            AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
-            albumForm.ShowDialog();
+                AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
+                albumForm.ShowDialog();
+            }           
         }
         private void dgvMyAlbums_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
-            DataGridViewRow row = this.dgvMyAlbums.Rows[rowIndex];
-            string titre = row.Cells["columnMyTitre"].Value.ToString();
-            string auteur = row.Cells["columnMyScenariste"].Value.ToString();
+            if(rowIndex!=-1)
+            {
+                DataGridViewRow row = this.dgvMyAlbums.Rows[rowIndex];
+                string titre = row.Cells["columnMyTitre"].Value.ToString();
+                string auteur = row.Cells["columnMyScenariste"].Value.ToString();
 
-            AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
-            albumForm.ShowDialog();
+                AlbumForm albumForm = new AlbumForm(bdRepository, titre, auteur);
+                albumForm.ShowDialog();
+            }           
         }
 
         private void btnDeconnexion_Click(object sender, EventArgs e)
