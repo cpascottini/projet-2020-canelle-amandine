@@ -28,8 +28,8 @@ namespace DALTests
             var personnes = personneRepository.GetAll();
             // 3 personnes dans le jeu de données de test
             Assert.AreEqual(3, personnes.Count);
-            var actual = personnes.Select(pers => pers.Login).ToList();
-            var expected = new List<string> { "fanDeBD", "admin1", "roger" };
+            var actual = personnes.Select(p => p.Login).ToList();
+            var expected = new List<string> { "fanDeBd", "admin1", "roger" };
             CollectionAssert.AreEquivalent(expected, actual);
         }
 

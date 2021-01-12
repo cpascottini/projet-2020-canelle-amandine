@@ -35,6 +35,17 @@ namespace DALTests
         }
 
         [TestMethod]
+        public void TestBDRepo_GetBDUtilisateur()
+        {
+            var bds = bdRepository.GetBDUtilisateur(3, "possede");
+            // 2 BD correspondant dans le jeu de données de test
+            Assert.AreEqual(2, bds.Count);
+            var actual = bds.Select(bd => bd.Titre).ToList();
+            var expected = new List<string> { "Les bijoux de la Castafiore", "Persepolis-Tome 3" };
+            CollectionAssert.AreEquivalent(expected, actual);
+        }
+
+        [TestMethod]
         public void TestBDRepo_GetBDRecherche()
         {
             var bds = bdRepository.GetBDRecherche("Julien");
@@ -44,19 +55,15 @@ namespace DALTests
             var expected = new List<string> {"Journal infime", "Mortebouse"};
             CollectionAssert.AreEquivalent(expected, actual);
         }
-
+        
         [TestMethod]
-        public void TestBDRepo_GetBDUtilisateur()
+        public void TestBDRepo_GetBDRow()
         {
-            var bds = bdRepository.GetBDUtilisateur(3,"possede");
-            // 2 BD correspondant dans le jeu de données de test
-            Assert.AreEqual(2, bds.Count);
-            var actual = bds.Select(bd => bd.Titre).ToList();
-            var expected = new List<string> { "Les bijoux de la Castafiore", "Persepolis-Tome 3" };
-            CollectionAssert.AreEquivalent(expected, actual);
-        }
+            BD bd = bdRepository.GetBDRow("Persepolis-Tome 3", "Marjane Satrapi")[0];
+            Assert.AreEqual("Persepolis-Tome 3", bd.Titre);
+            Assert.AreEqual("Marjane Satrapi", bd.Auteur);
 
-        // TestBDRepo_GetBDRow()
+        }
 
         [TestMethod]
         public void TestBDRepo_SaveBD()

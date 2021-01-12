@@ -9,7 +9,7 @@ namespace DAL
 {
     public interface IRelationRepository
     {
-        List<Relation> GetAll();
+        IList<Relation> GetAll();
         void SaveRelation(BD bdLocal, int idUtilisateurLocal, string statut);
         void UpdateRelation(BD bdLocal, int idUtilisateurLocal);
         void DeleteRelation(BD bdLocal, int idUtilisateur, string statutLocal);

@@ -14,6 +14,7 @@ namespace DALTests
     {
         private RelationRepository relationRepository;
         private BDRepository bdRepository;
+        private PersonneRepository personneRepository;
 
         [TestInitialize()]
         public void Initialize()
@@ -51,9 +52,29 @@ namespace DALTests
             Relation nouvelleRelation = relations[0];
             Assert.AreEqual(1, nouvelleRelation.PersonneRelation);
             Assert.AreEqual(3, nouvelleRelation.BDRelation);
+            Assert.AreEqual("veut", nouvelleRelation.Statut);
         }
 
-        //UpdateRelation
+        [TestMethod]
+        public void TestRelationRepo_UpdateRelation()
+        {
+            var bd = bdRepository.GetAll()[1]; // BD n°2
+            var utilisateur = personneRepository.GetAll()[0]; // utilisateur n°1
+            relationRepository.UpdateRelation(bd, utilisateur.IdPersonne);
+
+            RepositoryTest.ClearSession();
+            // Recherche des relations ayant le même IdPersonne & IdBD
+            var relations = relationRepository.GetAll().Where(r => r.PersonneRelation ==
+                1 && r.BDRelation == 2).ToList();
+
+            // 1 seule BD correspondant dans le jeu de données de test
+            Assert.AreEqual(1, relations.Count);
+            Relation nouvelleRelation = relations[0];
+            Assert.AreEqual(1, nouvelleRelation.PersonneRelation);
+            Assert.AreEqual(2, nouvelleRelation.BDRelation);
+            Assert.AreEqual("possede", nouvelleRelation.Statut);
+        }
+
         //DeleteRelation
 
         [TestMethod]
@@ -65,7 +86,7 @@ namespace DALTests
         [TestMethod]
         public void TestRelationRepo_GetIdRelation()
         {
-            Assert.AreEqual(4, relationRepository.GetIdRelation(3,4,"possede"));
+            Assert.AreEqual(3, relationRepository.GetIdRelation(3,1,"possede"));
         }
     }
 }
