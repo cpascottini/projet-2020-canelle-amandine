@@ -73,7 +73,7 @@
             this.tabCtrlAlbums.Location = new System.Drawing.Point(10, 54);
             this.tabCtrlAlbums.Name = "tabCtrlAlbums";
             this.tabCtrlAlbums.SelectedIndex = 0;
-            this.tabCtrlAlbums.Size = new System.Drawing.Size(792, 358);
+            this.tabCtrlAlbums.Size = new System.Drawing.Size(739, 358);
             this.tabCtrlAlbums.TabIndex = 0;
             // 
             // tabPageMyAlbums
@@ -82,7 +82,7 @@
             this.tabPageMyAlbums.Location = new System.Drawing.Point(4, 22);
             this.tabPageMyAlbums.Name = "tabPageMyAlbums";
             this.tabPageMyAlbums.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMyAlbums.Size = new System.Drawing.Size(784, 332);
+            this.tabPageMyAlbums.Size = new System.Drawing.Size(731, 332);
             this.tabPageMyAlbums.TabIndex = 0;
             this.tabPageMyAlbums.Text = "Mes albums";
             this.tabPageMyAlbums.UseVisualStyleBackColor = true;
@@ -143,7 +143,7 @@
             this.tabWishlist.Margin = new System.Windows.Forms.Padding(2);
             this.tabWishlist.Name = "tabWishlist";
             this.tabWishlist.Padding = new System.Windows.Forms.Padding(2);
-            this.tabWishlist.Size = new System.Drawing.Size(784, 332);
+            this.tabWishlist.Size = new System.Drawing.Size(731, 332);
             this.tabWishlist.TabIndex = 2;
             this.tabWishlist.Text = "Wishlist";
             this.tabWishlist.UseVisualStyleBackColor = true;
@@ -209,14 +209,14 @@
             this.tabPageAllAlbums.Location = new System.Drawing.Point(4, 22);
             this.tabPageAllAlbums.Name = "tabPageAllAlbums";
             this.tabPageAllAlbums.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAllAlbums.Size = new System.Drawing.Size(784, 332);
+            this.tabPageAllAlbums.Size = new System.Drawing.Size(731, 332);
             this.tabPageAllAlbums.TabIndex = 1;
             this.tabPageAllAlbums.Text = "Tous les albums";
             this.tabPageAllAlbums.UseVisualStyleBackColor = true;
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(693, 17);
+            this.btnAnnuler.Location = new System.Drawing.Point(644, 16);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btnAnnuler.TabIndex = 4;
@@ -236,7 +236,7 @@
             // 
             // btnRecherche
             // 
-            this.btnRecherche.Location = new System.Drawing.Point(513, 17);
+            this.btnRecherche.Location = new System.Drawing.Point(497, 16);
             this.btnRecherche.Name = "btnRecherche";
             this.btnRecherche.Size = new System.Drawing.Size(75, 23);
             this.btnRecherche.TabIndex = 3;
@@ -247,7 +247,7 @@
             // tbRecherche
             // 
             this.tbRecherche.ForeColor = System.Drawing.Color.DarkGray;
-            this.tbRecherche.Location = new System.Drawing.Point(163, 19);
+            this.tbRecherche.Location = new System.Drawing.Point(135, 18);
             this.tbRecherche.Name = "tbRecherche";
             this.tbRecherche.Size = new System.Drawing.Size(328, 20);
             this.tbRecherche.TabIndex = 2;
@@ -270,7 +270,7 @@
             this.dgvAllAlbums.ReadOnly = true;
             this.dgvAllAlbums.RowHeadersVisible = false;
             this.dgvAllAlbums.RowHeadersWidth = 51;
-            this.dgvAllAlbums.Size = new System.Drawing.Size(784, 281);
+            this.dgvAllAlbums.Size = new System.Drawing.Size(730, 281);
             this.dgvAllAlbums.TabIndex = 0;
             this.dgvAllAlbums.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAllAlbums_CellClick);
             // 
@@ -325,7 +325,7 @@
             this.btnDeconnexion.BackColor = System.Drawing.Color.Red;
             this.btnDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeconnexion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDeconnexion.Location = new System.Drawing.Point(686, 12);
+            this.btnDeconnexion.Location = new System.Drawing.Point(611, 12);
             this.btnDeconnexion.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeconnexion.Name = "btnDeconnexion";
             this.btnDeconnexion.Size = new System.Drawing.Size(112, 37);
@@ -336,7 +336,7 @@
             // 
             // btnAjouterAlbum
             // 
-            this.btnAjouterAlbum.Location = new System.Drawing.Point(453, 12);
+            this.btnAjouterAlbum.Location = new System.Drawing.Point(410, 12);
             this.btnAjouterAlbum.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjouterAlbum.Name = "btnAjouterAlbum";
             this.btnAjouterAlbum.Size = new System.Drawing.Size(116, 37);
@@ -359,7 +359,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 411);
+            this.ClientSize = new System.Drawing.Size(756, 411);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAjouterAlbum);
             this.Controls.Add(this.btnDeconnexion);

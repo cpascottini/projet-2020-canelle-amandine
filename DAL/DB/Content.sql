@@ -15,6 +15,11 @@ insert into bd values (14,'Revers de fortune','Alain Ayroles','Jean-Luc Masbou',
 insert into bd values (15,'Maus','Art Spiegelman','Art Spiegelman','Flammarion',null,'historique','maus.jpg');
 insert into bd values (16,"La pourpre et l'or",'Jean Dufaux','Philippe Delaby','Dargaud','Murena','historique','laPourpreEtLOr.jpg');
 insert into bd values (17,'Quartier lointain','Jirô Taniguchi','Jirô Taniguchi','Casterman',null,'vie','quartierLointain.jpg');
+insert into bd values (18, 'Naruto - Tome 9', 'Masashi Kishimoto','Masashi Kishimoto','Kana Eds','Naruto','shonen', 'naruto9.jpg');
+insert into bd values (19, 'Naruto - Tome 6', 'Masashi Kishimoto','Masashi Kishimoto','Kana Eds','Naruto','shonen', 'naruto6.jpg');
+insert into bd values (20, 'À la rencontre de maître Chavipère', 'Eiichiro Oda', 'Eiichiro Oda', 'Glénat', 'One Piece', 'shonen', 'onePiece81.jpeg');
+insert into bd values (21, 'Déclaration de guerre', 'Eiichiro Oda', 'Eiichiro Oda', 'Glénat', 'One Piece', 'shonen', 'onePiece41.jpg');
+insert into bd values (22, 'La saga du Phénix Noir', 'Chris Claremont', 'John Byrne', 'Panini Comics', 'X-Men', 'science fiction', 'laSagaDuPhenixNoir.jpg');
 
 insert into personne values (1,'fanDeBd','bonjour','utilisateur');
 insert into personne values (2,'admin1','gestion','administrateur');
