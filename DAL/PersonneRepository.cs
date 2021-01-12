@@ -29,14 +29,9 @@ namespace DAL
 
             Personne nouvelUtilisateur = new Personne();
 
-            ISet<BD> possessions = null;
-            ISet<BD> souhaits = null;
-
             nouvelUtilisateur.Login = loginLocal;
             nouvelUtilisateur.Mdp = mdpLocal;
             nouvelUtilisateur.Role = "utilisateur"; // on ne peut pas s'inscrire avec le statut d'admin
-            nouvelUtilisateur.Possessions = possessions;
-            nouvelUtilisateur.Souhaits = souhaits;
 
             Session.SaveOrUpdate(nouvelUtilisateur); // Ajout d’une ligne dans la table Personne de la DB
             Session.Flush();

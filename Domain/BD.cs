@@ -37,10 +37,6 @@ namespace Domain
             Couverture = couverture;
         }
 
-        public override string ToString()
-        {
-            return Titre + " - " + Auteur + ", " + Dessinateur + " (" + Editeur + ")";
-        }
         public virtual string[] Decrire()
         {
             return new string[] { Serie, Titre, Auteur, Dessinateur };
