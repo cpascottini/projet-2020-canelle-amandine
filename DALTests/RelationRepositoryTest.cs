@@ -23,6 +23,7 @@ namespace DALTests
 
             relationRepository = new RelationRepository();
             bdRepository = new BDRepository();
+            personneRepository = new PersonneRepository();
         }
 
         [TestMethod]
@@ -86,7 +87,7 @@ namespace DALTests
         [TestMethod]
         public void TestRelationRepo_GetIdRelation()
         {
-            Assert.AreEqual(3, relationRepository.GetIdRelation(3,1,"possede"));
+            Assert.AreEqual(3, relationRepository.GetIdRelation(1,3,"possede"));
         }
     }
 }
