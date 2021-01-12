@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using Domain;
+using System.Diagnostics.Eventing.Reader;
 
 namespace DALTests
 {
@@ -76,7 +77,16 @@ namespace DALTests
             Assert.AreEqual("possede", nouvelleRelation.Statut);
         }
 
-        //DeleteRelation
+        [TestMethod]
+        public void TestRelationRepo_DeleteRelation()
+        {
+            var bd = bdRepository.GetAll()[3]; // BD n°4
+            var utilisateur = personneRepository.GetAll()[2]; // utilisateur n°3
+            relationRepository.DeleteRelation(bd, utilisateur.IdPersonne, "possede");
+
+            var nbRelation = (relationRepository.GetAll().Where(r => r.PersonneRelation ==3 && r.BDRelation == 4).ToList()).Count;
+            Assert.AreEqual(0, nbRelation);
+        }
 
         [TestMethod]
         public void TestRelationRepo_GetIdBD()

@@ -8,27 +8,6 @@
     </id>
     <property name="Login" column="pers_login" not-null="true"/>
     <property name="Mdp" column="pers_mdp" not-null="true"/>
-    <property name="Role" column="pers_role" not-null="true"/>
-    
-    <!--<set name="Possessions" table="relation">
-      <key column="pers_id"/>
-      <many-to-many class="BD" column="bd_id"/>
-    </set>
-
-    <set name="Souhaits" table="relation">
-      <key column="pers_id"/>
-      <many-to-many class="BD" column="bd_id"/>
-    </set> -->
-
-    <!--<set name="Possessions" >
-      <key column="pers_id"/>
-      <many-to-many class="BD"/>
-    </set>
-
-    <set name="Souhaits">
-      <key column="pers_id"/>
-      <many-to-many class="BD"/>
-    </set>-->
-    
+    <property name="Role" column="pers_role" not-null="true"/>   
   </class>
 </hibernate-mapping>
