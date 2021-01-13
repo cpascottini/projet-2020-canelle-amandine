@@ -30,7 +30,7 @@ namespace DALTests
             Assert.AreEqual(6, bds.Count);
             var actual = bds.Select(bd => bd.Titre).ToList();
             var expected = new List<string> { "Les bijoux de la Castafiore", "Ame rouge", "Astérix le Gaulois",
-                "Persepolis-Tome 3", "Journal infime", "Mortebouse"};
+                "Persepolis - Tome 3", "Journal infime", "Mortebouse"};
             CollectionAssert.AreEquivalent(expected, actual);
         }
 
@@ -41,7 +41,7 @@ namespace DALTests
             // 2 BD correspondant dans le jeu de données de test
             Assert.AreEqual(2, bds.Count);
             var actual = bds.Select(bd => bd.Titre).ToList();
-            var expected = new List<string> { "Les bijoux de la Castafiore", "Persepolis-Tome 3" };
+            var expected = new List<string> { "Les bijoux de la Castafiore", "Persepolis - Tome 3" };
             CollectionAssert.AreEquivalent(expected, actual);
         }
 
@@ -59,7 +59,7 @@ namespace DALTests
         [TestMethod]
         public void TestBDRepo_GetBDRow()
         {
-            BD bd = bdRepository.GetBDRow("Persepolis-Tome 3", "Marjane Satrapi")[0];
+            BD bd = bdRepository.GetBDRow("Persepolis - Tome 3", "Marjane Satrapi")[0];
             Assert.AreEqual("Persepolis-Tome 3", bd.Titre);
             Assert.AreEqual("Marjane Satrapi", bd.Auteur);
 
