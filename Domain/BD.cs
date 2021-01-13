@@ -14,7 +14,9 @@ namespace Domain
         public virtual string Dessinateur { get; set; }
         public virtual string Editeur { get; set; }
         public virtual string Serie { get; set; }
+        public virtual int NumSerie { get; set; }
         public virtual string Genre { get; set; }
+        public virtual string Categorie { get; set; }
         public virtual string Couverture { get; set; }
 
         public BD() { }
@@ -24,7 +26,9 @@ namespace Domain
             string dessinateur,
             string editeur,
             string serie,
+            int numSerie,
             string genre,
+            string categorie,
             string couverture)
         {
             IdBD = id;
@@ -33,19 +37,20 @@ namespace Domain
             Dessinateur = dessinateur;
             Editeur = editeur;
             Serie = serie;
+            NumSerie = numSerie;
             Genre = genre;
+            Categorie = categorie;
             Couverture = couverture;
         }
 
         public virtual string[] Decrire()
         {
-            return new string[] { Serie, Titre, Auteur, Dessinateur };
+            return new string[] { Serie, Convert.ToString(NumSerie), Titre, Auteur, Dessinateur };
         }
 
         public virtual string[] DecrireBDMarche(bool possede, bool veut)
-        {
-            
-            return new string[] { Serie, Titre, Auteur, Dessinateur, possede.ToString(), veut.ToString() };
+        {           
+            return new string[] { Serie, Convert.ToString(NumSerie), Titre, Auteur, Dessinateur, possede.ToString(), veut.ToString() };
         }
     }
 }

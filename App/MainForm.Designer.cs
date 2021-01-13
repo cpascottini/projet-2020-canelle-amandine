@@ -32,12 +32,14 @@
             this.tabPageMyAlbums = new System.Windows.Forms.TabPage();
             this.dgvMyAlbums = new System.Windows.Forms.DataGridView();
             this.columnMySerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnMyNumSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnMyTitre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnMyScenariste = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnMyDessinateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabWishlist = new System.Windows.Forms.TabPage();
             this.dgvWishlist = new System.Windows.Forms.DataGridView();
             this.columnWishSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnWishNumSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnWishTitre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnWishScenariste = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnWishDessinateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +50,7 @@
             this.tbRecherche = new System.Windows.Forms.TextBox();
             this.dgvAllAlbums = new System.Windows.Forms.DataGridView();
             this.columnAllSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNumSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnAllTitre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnAllScenariste = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnAllDessinateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,21 +73,19 @@
             this.tabCtrlAlbums.Controls.Add(this.tabPageMyAlbums);
             this.tabCtrlAlbums.Controls.Add(this.tabWishlist);
             this.tabCtrlAlbums.Controls.Add(this.tabPageAllAlbums);
-            this.tabCtrlAlbums.Location = new System.Drawing.Point(13, 66);
-            this.tabCtrlAlbums.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabCtrlAlbums.Location = new System.Drawing.Point(10, 54);
             this.tabCtrlAlbums.Name = "tabCtrlAlbums";
             this.tabCtrlAlbums.SelectedIndex = 0;
-            this.tabCtrlAlbums.Size = new System.Drawing.Size(985, 441);
+            this.tabCtrlAlbums.Size = new System.Drawing.Size(696, 358);
             this.tabCtrlAlbums.TabIndex = 0;
             // 
             // tabPageMyAlbums
             // 
             this.tabPageMyAlbums.Controls.Add(this.dgvMyAlbums);
-            this.tabPageMyAlbums.Location = new System.Drawing.Point(4, 25);
-            this.tabPageMyAlbums.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageMyAlbums.Location = new System.Drawing.Point(4, 22);
             this.tabPageMyAlbums.Name = "tabPageMyAlbums";
-            this.tabPageMyAlbums.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPageMyAlbums.Size = new System.Drawing.Size(977, 412);
+            this.tabPageMyAlbums.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageMyAlbums.Size = new System.Drawing.Size(688, 332);
             this.tabPageMyAlbums.TabIndex = 0;
             this.tabPageMyAlbums.Text = "Mes albums";
             this.tabPageMyAlbums.UseVisualStyleBackColor = true;
@@ -96,16 +97,16 @@
             this.dgvMyAlbums.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMyAlbums.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnMySerie,
+            this.columnMyNumSerie,
             this.columnMyTitre,
             this.columnMyScenariste,
             this.columnMyDessinateur});
             this.dgvMyAlbums.Location = new System.Drawing.Point(0, 0);
-            this.dgvMyAlbums.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvMyAlbums.Name = "dgvMyAlbums";
             this.dgvMyAlbums.ReadOnly = true;
             this.dgvMyAlbums.RowHeadersVisible = false;
             this.dgvMyAlbums.RowHeadersWidth = 51;
-            this.dgvMyAlbums.Size = new System.Drawing.Size(1045, 412);
+            this.dgvMyAlbums.Size = new System.Drawing.Size(688, 335);
             this.dgvMyAlbums.TabIndex = 0;
             this.dgvMyAlbums.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMyAlbums_CellClick);
             // 
@@ -117,13 +118,20 @@
             this.columnMySerie.ReadOnly = true;
             this.columnMySerie.Width = 125;
             // 
+            // columnMyNumSerie
+            // 
+            this.columnMyNumSerie.HeaderText = "N°";
+            this.columnMyNumSerie.Name = "columnMyNumSerie";
+            this.columnMyNumSerie.ReadOnly = true;
+            this.columnMyNumSerie.Width = 30;
+            // 
             // columnMyTitre
             // 
             this.columnMyTitre.HeaderText = "Titre";
             this.columnMyTitre.MinimumWidth = 6;
             this.columnMyTitre.Name = "columnMyTitre";
             this.columnMyTitre.ReadOnly = true;
-            this.columnMyTitre.Width = 125;
+            this.columnMyTitre.Width = 140;
             // 
             // columnMyScenariste
             // 
@@ -144,11 +152,11 @@
             // tabWishlist
             // 
             this.tabWishlist.Controls.Add(this.dgvWishlist);
-            this.tabWishlist.Location = new System.Drawing.Point(4, 25);
-            this.tabWishlist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabWishlist.Location = new System.Drawing.Point(4, 22);
+            this.tabWishlist.Margin = new System.Windows.Forms.Padding(2);
             this.tabWishlist.Name = "tabWishlist";
-            this.tabWishlist.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabWishlist.Size = new System.Drawing.Size(977, 412);
+            this.tabWishlist.Padding = new System.Windows.Forms.Padding(2);
+            this.tabWishlist.Size = new System.Drawing.Size(688, 332);
             this.tabWishlist.TabIndex = 2;
             this.tabWishlist.Text = "Wishlist";
             this.tabWishlist.UseVisualStyleBackColor = true;
@@ -160,17 +168,18 @@
             this.dgvWishlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWishlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnWishSerie,
+            this.columnWishNumSerie,
             this.columnWishTitre,
             this.columnWishScenariste,
             this.columnWishDessinateur});
             this.dgvWishlist.Location = new System.Drawing.Point(0, 0);
-            this.dgvWishlist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvWishlist.Margin = new System.Windows.Forms.Padding(2);
             this.dgvWishlist.Name = "dgvWishlist";
             this.dgvWishlist.ReadOnly = true;
             this.dgvWishlist.RowHeadersVisible = false;
             this.dgvWishlist.RowHeadersWidth = 51;
             this.dgvWishlist.RowTemplate.Height = 24;
-            this.dgvWishlist.Size = new System.Drawing.Size(1045, 412);
+            this.dgvWishlist.Size = new System.Drawing.Size(689, 335);
             this.dgvWishlist.TabIndex = 0;
             this.dgvWishlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWishlist_CellClick);
             // 
@@ -182,13 +191,20 @@
             this.columnWishSerie.ReadOnly = true;
             this.columnWishSerie.Width = 125;
             // 
+            // columnWishNumSerie
+            // 
+            this.columnWishNumSerie.HeaderText = "N°";
+            this.columnWishNumSerie.Name = "columnWishNumSerie";
+            this.columnWishNumSerie.ReadOnly = true;
+            this.columnWishNumSerie.Width = 30;
+            // 
             // columnWishTitre
             // 
             this.columnWishTitre.HeaderText = "Titre";
             this.columnWishTitre.MinimumWidth = 6;
             this.columnWishTitre.Name = "columnWishTitre";
             this.columnWishTitre.ReadOnly = true;
-            this.columnWishTitre.Width = 125;
+            this.columnWishTitre.Width = 140;
             // 
             // columnWishScenariste
             // 
@@ -213,21 +229,19 @@
             this.tabPageAllAlbums.Controls.Add(this.btnRecherche);
             this.tabPageAllAlbums.Controls.Add(this.tbRecherche);
             this.tabPageAllAlbums.Controls.Add(this.dgvAllAlbums);
-            this.tabPageAllAlbums.Location = new System.Drawing.Point(4, 25);
-            this.tabPageAllAlbums.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageAllAlbums.Location = new System.Drawing.Point(4, 22);
             this.tabPageAllAlbums.Name = "tabPageAllAlbums";
-            this.tabPageAllAlbums.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPageAllAlbums.Size = new System.Drawing.Size(977, 412);
+            this.tabPageAllAlbums.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAllAlbums.Size = new System.Drawing.Size(688, 332);
             this.tabPageAllAlbums.TabIndex = 1;
             this.tabPageAllAlbums.Text = "Tous les albums";
             this.tabPageAllAlbums.UseVisualStyleBackColor = true;
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(859, 20);
-            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAnnuler.Location = new System.Drawing.Point(597, 15);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(100, 28);
+            this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btnAnnuler.TabIndex = 4;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
@@ -237,17 +251,17 @@
             // 
             this.labelPasDeResultat.AutoSize = true;
             this.labelPasDeResultat.BackColor = System.Drawing.Color.Transparent;
-            this.labelPasDeResultat.Location = new System.Drawing.Point(243, 158);
+            this.labelPasDeResultat.Location = new System.Drawing.Point(182, 128);
+            this.labelPasDeResultat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPasDeResultat.Name = "labelPasDeResultat";
-            this.labelPasDeResultat.Size = new System.Drawing.Size(0, 17);
+            this.labelPasDeResultat.Size = new System.Drawing.Size(0, 13);
             this.labelPasDeResultat.TabIndex = 5;
             // 
             // btnRecherche
             // 
-            this.btnRecherche.Location = new System.Drawing.Point(663, 20);
-            this.btnRecherche.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRecherche.Location = new System.Drawing.Point(497, 16);
             this.btnRecherche.Name = "btnRecherche";
-            this.btnRecherche.Size = new System.Drawing.Size(100, 28);
+            this.btnRecherche.Size = new System.Drawing.Size(75, 23);
             this.btnRecherche.TabIndex = 3;
             this.btnRecherche.Text = "Rechercher";
             this.btnRecherche.UseVisualStyleBackColor = true;
@@ -256,10 +270,9 @@
             // tbRecherche
             // 
             this.tbRecherche.ForeColor = System.Drawing.Color.DarkGray;
-            this.tbRecherche.Location = new System.Drawing.Point(180, 22);
-            this.tbRecherche.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbRecherche.Location = new System.Drawing.Point(135, 18);
             this.tbRecherche.Name = "tbRecherche";
-            this.tbRecherche.Size = new System.Drawing.Size(436, 22);
+            this.tbRecherche.Size = new System.Drawing.Size(328, 20);
             this.tbRecherche.TabIndex = 2;
             this.tbRecherche.Text = "Recherchez une BD, une série, un auteur, un genre...";
             this.tbRecherche.Enter += new System.EventHandler(this.tbRecherche_Enter);
@@ -267,21 +280,23 @@
             // dgvAllAlbums
             // 
             this.dgvAllAlbums.AllowUserToAddRows = false;
+            this.dgvAllAlbums.AllowUserToResizeColumns = false;
+            this.dgvAllAlbums.AllowUserToResizeRows = false;
             this.dgvAllAlbums.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllAlbums.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnAllSerie,
+            this.ColumnNumSerie,
             this.columnAllTitre,
             this.columnAllScenariste,
             this.columnAllDessinateur,
             this.columnMyAlbums,
             this.columnWishlist});
-            this.dgvAllAlbums.Location = new System.Drawing.Point(0, 63);
-            this.dgvAllAlbums.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvAllAlbums.Location = new System.Drawing.Point(0, 51);
             this.dgvAllAlbums.Name = "dgvAllAlbums";
             this.dgvAllAlbums.ReadOnly = true;
             this.dgvAllAlbums.RowHeadersVisible = false;
             this.dgvAllAlbums.RowHeadersWidth = 51;
-            this.dgvAllAlbums.Size = new System.Drawing.Size(973, 346);
+            this.dgvAllAlbums.Size = new System.Drawing.Size(688, 281);
             this.dgvAllAlbums.TabIndex = 0;
             this.dgvAllAlbums.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAllAlbums_CellClick);
             // 
@@ -293,13 +308,20 @@
             this.columnAllSerie.ReadOnly = true;
             this.columnAllSerie.Width = 125;
             // 
+            // ColumnNumSerie
+            // 
+            this.ColumnNumSerie.HeaderText = "N°";
+            this.ColumnNumSerie.Name = "ColumnNumSerie";
+            this.ColumnNumSerie.ReadOnly = true;
+            this.ColumnNumSerie.Width = 30;
+            // 
             // columnAllTitre
             // 
             this.columnAllTitre.HeaderText = "Titre";
             this.columnAllTitre.MinimumWidth = 6;
             this.columnAllTitre.Name = "columnAllTitre";
             this.columnAllTitre.ReadOnly = true;
-            this.columnAllTitre.Width = 125;
+            this.columnAllTitre.Width = 140;
             // 
             // columnAllScenariste
             // 
@@ -323,7 +345,7 @@
             this.columnMyAlbums.MinimumWidth = 6;
             this.columnMyAlbums.Name = "columnMyAlbums";
             this.columnMyAlbums.ReadOnly = true;
-            this.columnMyAlbums.Width = 125;
+            this.columnMyAlbums.Width = 65;
             // 
             // columnWishlist
             // 
@@ -331,17 +353,17 @@
             this.columnWishlist.MinimumWidth = 6;
             this.columnWishlist.Name = "columnWishlist";
             this.columnWishlist.ReadOnly = true;
-            this.columnWishlist.Width = 125;
+            this.columnWishlist.Width = 65;
             // 
             // btnDeconnexion
             // 
             this.btnDeconnexion.BackColor = System.Drawing.Color.Red;
             this.btnDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeconnexion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDeconnexion.Location = new System.Drawing.Point(815, 15);
-            this.btnDeconnexion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeconnexion.Location = new System.Drawing.Point(557, 12);
+            this.btnDeconnexion.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeconnexion.Name = "btnDeconnexion";
-            this.btnDeconnexion.Size = new System.Drawing.Size(149, 46);
+            this.btnDeconnexion.Size = new System.Drawing.Size(112, 37);
             this.btnDeconnexion.TabIndex = 1;
             this.btnDeconnexion.Text = "Déconnexion";
             this.btnDeconnexion.UseVisualStyleBackColor = false;
@@ -349,10 +371,10 @@
             // 
             // btnAjouterAlbum
             // 
-            this.btnAjouterAlbum.Location = new System.Drawing.Point(547, 15);
-            this.btnAjouterAlbum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAjouterAlbum.Location = new System.Drawing.Point(410, 12);
+            this.btnAjouterAlbum.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjouterAlbum.Name = "btnAjouterAlbum";
-            this.btnAjouterAlbum.Size = new System.Drawing.Size(155, 46);
+            this.btnAjouterAlbum.Size = new System.Drawing.Size(116, 37);
             this.btnAjouterAlbum.TabIndex = 2;
             this.btnAjouterAlbum.Text = "Ajouter un album";
             this.btnAjouterAlbum.UseVisualStyleBackColor = true;
@@ -362,24 +384,22 @@
             // 
             this.labelConsigne.AutoSize = true;
             this.labelConsigne.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelConsigne.Location = new System.Drawing.Point(32, 30);
-            this.labelConsigne.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelConsigne.Location = new System.Drawing.Point(24, 24);
             this.labelConsigne.Name = "labelConsigne";
-            this.labelConsigne.Size = new System.Drawing.Size(389, 17);
+            this.labelConsigne.Size = new System.Drawing.Size(289, 13);
             this.labelConsigne.TabIndex = 3;
             this.labelConsigne.Text = "Cliquez sur une case pour afficher les informations d\'une BD";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 506);
+            this.ClientSize = new System.Drawing.Size(714, 411);
             this.Controls.Add(this.labelConsigne);
             this.Controls.Add(this.btnAjouterAlbum);
             this.Controls.Add(this.btnDeconnexion);
             this.Controls.Add(this.tabCtrlAlbums);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "BDThèque";
             this.tabCtrlAlbums.ResumeLayout(false);
@@ -411,19 +431,22 @@
         private System.Windows.Forms.Button btnAjouterAlbum;
         private System.Windows.Forms.Label labelConsigne;
         private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnMySerie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnMyNumSerie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnMyTitre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnMyScenariste;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnMyDessinateur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnWishSerie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnWishNumSerie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnWishTitre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnWishScenariste;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnWishDessinateur;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAllSerie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumSerie;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAllTitre;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAllScenariste;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAllDessinateur;
         private System.Windows.Forms.DataGridViewCheckBoxColumn columnMyAlbums;
         private System.Windows.Forms.DataGridViewCheckBoxColumn columnWishlist;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnMySerie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnMyTitre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnMyScenariste;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnMyDessinateur;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnWishSerie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnWishTitre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnWishScenariste;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnWishDessinateur;
     }
 }

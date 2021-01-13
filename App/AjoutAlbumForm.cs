@@ -22,13 +22,14 @@ namespace ProjetGL
             this.bdRepository = bdRepository;
             InitializeComponent();
             couverture = "";
+            cbAjoutCategorie.SelectedIndex = 1;
         }
 
         private void btnAjoutValider_Click(object sender, EventArgs e)
         {
             if (tbAjoutAuteur.Text == "" | tbAjoutDessinateur.Text =="" | tbAjoutEditeur.Text == "" |
-                tbAjoutGenre.Text == "" | tbAjoutTitre.Text == "" | couverture == "")
-                // pas obligatoire de remplir le champ Série
+                tbAjoutGenre.Text == "" | cbAjoutCategorie.Text=="" | tbAjoutTitre.Text == "" | couverture == "")
+                // pas obligatoire de remplir le champ Série ni son numéro
             {
                 MessageBox.Show("Un ou plusieurs champs sont vides.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -39,15 +40,17 @@ namespace ProjetGL
                 string dessinateur = tbAjoutDessinateur.Text;
                 string editeur = tbAjoutEditeur.Text;
                 string genre = tbAjoutGenre.Text;
+                string categorie = cbAjoutCategorie.Text;
 
                 if (tbAjoutSerie.Text == "")
                 {
-                    bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture);
+                    bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, categorie);
                 }
                 else
                 {
                     string serie = tbAjoutSerie.Text;
-                    bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, serie);
+                    int numSerie = (int)nudAjoutNumSerie.Value;
+                    bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, serie, numSerie, categorie);
                 }
 
                 string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);

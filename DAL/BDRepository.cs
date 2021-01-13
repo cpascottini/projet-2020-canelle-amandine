@@ -26,6 +26,7 @@ namespace DAL
                 "or (bd.Dessinateur like :r)" +
                 "or (bd.Editeur like :r)" +
                 "or (bd.Genre like :r)" +
+                "or (bd.Categorie like :r)" +
                 "or (bd.Serie like :r)").SetParameter("r", "%"+rechercheLocal+"%").List<BD>();
 
             return bdRecherche;
@@ -37,7 +38,7 @@ namespace DAL
         }
 
         public void SaveBD(string titreLocal, string auteurLocal, string dessinateurLocal, string editeurLocal,
-            string genreLocal, string couvertureLocal, string serieLocal)
+            string genreLocal, string couvertureLocal, string serieLocal, int numSerieLocal, string categorieLocal)
         {
             BD bd = new BD();
             bd.Titre = titreLocal;
@@ -47,12 +48,14 @@ namespace DAL
             bd.Genre = genreLocal;
             bd.Couverture = couvertureLocal;
             bd.Serie = serieLocal;
+            bd.NumSerie = numSerieLocal;
+            bd.Categorie = categorieLocal;
 
             Session.SaveOrUpdate(bd); // Ajout d’une ligne dans la table BD de la DB
             Session.Flush();
         }
         public void SaveBD(string titreLocal, string auteurLocal, string dessinateurLocal, string editeurLocal,
-            string genreLocal, string couvertureLocal)
+            string genreLocal, string couvertureLocal, string categorieLocal)
         {
             BD bd = new BD();
             bd.Titre = titreLocal;
@@ -61,6 +64,7 @@ namespace DAL
             bd.Editeur = editeurLocal;
             bd.Genre = genreLocal;
             bd.Couverture = couvertureLocal;
+            bd.Categorie = categorieLocal;
 
             Session.SaveOrUpdate(bd); // Ajout d’une ligne dans la table BD de la DB
             Session.Flush();

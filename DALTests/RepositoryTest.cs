@@ -36,12 +36,12 @@ namespace DALTests
             ResetSchema();
 
             Execute(
-                "insert into bd values(1,'Les bijoux de la Castafiore','Hergé','Hergé','Casterman','Tintin','aventure','lesBijouxDeLaCastafiore.jpg');" +
-                "insert into bd values(2,'Ame rouge','Juan Diaz Canales','Juanjo Guarnido','Dargaud','Blacksad','policier','ameRouge.jpg');" +
-                "insert into bd values(3,'Astérix le Gaulois','René Goscinny','Albert Uderzo','Hachette','Astérix','aventure','asterixLeGaulois.jpg');" +
-                "insert into bd values(4,'Persepolis-Tome 3','Marjane Satrapi','Marjane Satrapi','L''association','Persepolis','autobiographie','persepolis3.jpg');" +
-                "insert into bd values(5,'Journal infime' , 'Julien Neel' , 'Julien Neel', 'Glénat', 'Lou !' , 'jeunesse' , 'journalInfime.jpeg');" +
-                "insert into bd values(6,'Mortebouse' , 'Julien Neel' , 'Julien Neel', 'Glénat', 'Lou !' , 'jeunesse' , 'mortebouse.jpg');"
+                "insert into bd values(1, 'Les bijoux de la Castafiore', 'Hergé', 'Hergé', 'Casterman', 'Tintin', 21, 'aventure', 'BD', 'lesBijouxDeLaCastafiore.jpg');" +
+                "insert into bd values(2,'Ame rouge','Juan Diaz Canales','Juanjo Guarnido','Dargaud','Blacksad', 3,'policier','BD', 'ameRouge.jpg');" +
+                "insert into bd values(3,'Astérix le Gaulois','René Goscinny','Albert Uderzo','Hachette','Astérix', 1,'aventure','BD', 'asterixLeGaulois.jpg');" +
+                "insert into bd values(4,'Persepolis - Tome 3','Marjane Satrapi','Marjane Satrapi','L''association','Persepolis', 3, 'autobiographie','BD', 'persepolis3.jpg');"+
+                "insert into bd values(5,'Journal infime' , 'Julien Neel' , 'Julien Neel', 'Glénat', 'Lou !' , 1,  'jeunesse' , 'BD', 'journalInfime.jpeg');" +
+                "insert into bd values(6,'Mortebouse' , 'Julien Neel' , 'Julien Neel', 'Glénat', 'Lou !' , 2,  'jeunesse' , 'BD', 'mortebouse.jpg');"
                 );
             Execute(
                 "insert into personne values(1,'fanDeBd','bonjour','utilisateur');"+

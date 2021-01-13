@@ -1,6 +1,6 @@
-﻿drop table if exists personne;
+﻿drop table if exists relation;
+drop table if exists personne;
 drop table if exists bd;
-drop table if exists relation;
 
 create table personne (
     pers_id integer not null primary key auto_increment,
@@ -16,7 +16,9 @@ create table bd (
     bd_dessinateur varchar(100) not null,
     bd_editeur varchar(100) not null,
     bd_serie varchar(100),
+    bd_numSerie integer,
     bd_genre varchar(100) not null,
+    bd_categorie varchar(100) not null,
     bd_couverture varchar(100) not null
 );
 

@@ -11,12 +11,12 @@ namespace DomainTests
     [TestClass()]
     public class BDTest
     {
-        BD bd = new BD(7, "titre", "auteur", "dessinateur", "éditeur", "série", "genre", "couverture");
+        BD bd = new BD(7, "titre", "auteur", "dessinateur", "éditeur", "série", 1, "genre", "catégorie", "couverture");
 
         [TestMethod()]
         public void DecrireTest()
         {
-            string[] resultatAttendu = new string[] { "série", "titre", "auteur", "dessinateur" };
+            string[] resultatAttendu = new string[] { "série", "1", "titre", "auteur", "dessinateur" };
 
             CollectionAssert.AreEquivalent(bd.Decrire(), resultatAttendu);
         }
@@ -26,7 +26,7 @@ namespace DomainTests
         {
             bool possedeValue = true;
             bool veutValue = false;
-            string[] resultatAttendu = new string[] { "série", "titre", "auteur", "dessinateur", "True", "False" };
+            string[] resultatAttendu = new string[] { "série", "1", "titre", "auteur", "dessinateur", "True", "False" };
 
             CollectionAssert.AreEquivalent(bd.DecrireBDMarche(possedeValue, veutValue), resultatAttendu);
         }

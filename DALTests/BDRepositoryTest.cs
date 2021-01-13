@@ -60,7 +60,7 @@ namespace DALTests
         public void TestBDRepo_GetBDRow()
         {
             BD bd = bdRepository.GetBDRow("Persepolis - Tome 3", "Marjane Satrapi")[0];
-            Assert.AreEqual("Persepolis-Tome 3", bd.Titre);
+            Assert.AreEqual("Persepolis - Tome 3", bd.Titre);
             Assert.AreEqual("Marjane Satrapi", bd.Auteur);
 
         }
@@ -69,7 +69,7 @@ namespace DALTests
         public void TestBDRepo_SaveBD()
         {
             bdRepository.SaveBD("testTitre", "testAuteur", "testDessinateur", "testEditeur",
-                "testGenre", "testCouverture", "testSerie");
+                "testGenre", "testCouverture", "testSerie", 1, "testCategorie");
 
             RepositoryTest.ClearSession();
             // Recherche des BD ayant le même titre & auteur
@@ -87,7 +87,7 @@ namespace DALTests
         public void TestBDRepo_SaveBD_2()
         {
             bdRepository.SaveBD("testTitre", "testAuteur", "testDessinateur", "testEditeur",
-                "testGenre", "testCouverture");
+                "testGenre", "testCouverture", "testCategorie");
 
             RepositoryTest.ClearSession();
             // Recherche des BD ayant le même titre & auteur

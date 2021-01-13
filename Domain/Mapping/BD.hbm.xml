@@ -11,7 +11,9 @@
     <property name="Dessinateur" column="bd_dessinateur" not-null="true"/>
     <property name="Editeur" column="bd_editeur" not-null="true"/>
     <property name="Serie" column="bd_serie" />
+    <property name="NumSerie" column="bd_numSerie" />
     <property name="Genre" column="bd_genre" not-null="true"/>
+    <property name="Categorie" column="bd_categorie" not-null="true"/>
     <property name="Couverture" column="bd_couverture" not-null="true" />
 
   </class>

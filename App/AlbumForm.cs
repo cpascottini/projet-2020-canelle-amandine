@@ -35,7 +35,10 @@ namespace ProjetGL
                 tbDessinateur.Text = bdRow[0].Dessinateur;
                 tbEditeur.Text = bdRow[0].Editeur;
                 tbSerie.Text = bdRow[0].Serie;
+                tbNumSerie.Text = Convert.ToString(bdRow[0].NumSerie);
                 tbGenre.Text = bdRow[0].Genre;
+                tbCategorie.Text = bdRow[0].Categorie; 
+
                 
                 string couverture = bdRow[0].Couverture;
                 pictureBoxCouverture.Image = Image.FromFile( @"couvertures\" + couverture);

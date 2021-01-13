@@ -48,56 +48,61 @@ namespace ProjetGL
             this.btnAjoutParcourir = new System.Windows.Forms.Button();
             this.labelAjoutCouverture = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbAjoutCategorie = new System.Windows.Forms.ComboBox();
+            this.nudAjoutNumSerie = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAjoutCouverture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAjoutNumSerie)).BeginInit();
             this.SuspendLayout();
             // 
             // tbAjoutGenre
             // 
             this.tbAjoutGenre.Location = new System.Drawing.Point(116, 241);
-            this.tbAjoutGenre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAjoutGenre.Margin = new System.Windows.Forms.Padding(2);
             this.tbAjoutGenre.Name = "tbAjoutGenre";
             this.tbAjoutGenre.Size = new System.Drawing.Size(154, 20);
-            this.tbAjoutGenre.TabIndex = 25;
+            this.tbAjoutGenre.TabIndex = 7;
             // 
             // tbAjoutSerie
             // 
-            this.tbAjoutSerie.Location = new System.Drawing.Point(116, 218);
-            this.tbAjoutSerie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAjoutSerie.Location = new System.Drawing.Point(116, 96);
+            this.tbAjoutSerie.Margin = new System.Windows.Forms.Padding(2);
             this.tbAjoutSerie.Name = "tbAjoutSerie";
             this.tbAjoutSerie.Size = new System.Drawing.Size(154, 20);
-            this.tbAjoutSerie.TabIndex = 24;
+            this.tbAjoutSerie.TabIndex = 2;
             // 
             // tbAjoutEditeur
             // 
-            this.tbAjoutEditeur.Location = new System.Drawing.Point(116, 146);
-            this.tbAjoutEditeur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAjoutEditeur.Location = new System.Drawing.Point(116, 217);
+            this.tbAjoutEditeur.Margin = new System.Windows.Forms.Padding(2);
             this.tbAjoutEditeur.Name = "tbAjoutEditeur";
             this.tbAjoutEditeur.Size = new System.Drawing.Size(154, 20);
-            this.tbAjoutEditeur.TabIndex = 23;
+            this.tbAjoutEditeur.TabIndex = 6;
             // 
             // tbAjoutDessinateur
             // 
-            this.tbAjoutDessinateur.Location = new System.Drawing.Point(116, 120);
-            this.tbAjoutDessinateur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAjoutDessinateur.Location = new System.Drawing.Point(116, 168);
+            this.tbAjoutDessinateur.Margin = new System.Windows.Forms.Padding(2);
             this.tbAjoutDessinateur.Name = "tbAjoutDessinateur";
             this.tbAjoutDessinateur.Size = new System.Drawing.Size(154, 20);
-            this.tbAjoutDessinateur.TabIndex = 22;
+            this.tbAjoutDessinateur.TabIndex = 5;
             // 
             // tbAjoutAuteur
             // 
-            this.tbAjoutAuteur.Location = new System.Drawing.Point(116, 96);
-            this.tbAjoutAuteur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAjoutAuteur.Location = new System.Drawing.Point(116, 144);
+            this.tbAjoutAuteur.Margin = new System.Windows.Forms.Padding(2);
             this.tbAjoutAuteur.Name = "tbAjoutAuteur";
             this.tbAjoutAuteur.Size = new System.Drawing.Size(154, 20);
-            this.tbAjoutAuteur.TabIndex = 21;
+            this.tbAjoutAuteur.TabIndex = 4;
             // 
             // tbAjoutTitre
             // 
             this.tbAjoutTitre.Location = new System.Drawing.Point(116, 72);
-            this.tbAjoutTitre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAjoutTitre.Margin = new System.Windows.Forms.Padding(2);
             this.tbAjoutTitre.Name = "tbAjoutTitre";
             this.tbAjoutTitre.Size = new System.Drawing.Size(154, 20);
-            this.tbAjoutTitre.TabIndex = 20;
+            this.tbAjoutTitre.TabIndex = 1;
             // 
             // labelAjoutGenre
             // 
@@ -112,7 +117,7 @@ namespace ProjetGL
             // labelAjoutSerie
             // 
             this.labelAjoutSerie.AutoSize = true;
-            this.labelAjoutSerie.Location = new System.Drawing.Point(39, 222);
+            this.labelAjoutSerie.Location = new System.Drawing.Point(39, 100);
             this.labelAjoutSerie.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAjoutSerie.Name = "labelAjoutSerie";
             this.labelAjoutSerie.Size = new System.Drawing.Size(31, 13);
@@ -122,7 +127,7 @@ namespace ProjetGL
             // labelAjoutEditeur
             // 
             this.labelAjoutEditeur.AutoSize = true;
-            this.labelAjoutEditeur.Location = new System.Drawing.Point(39, 150);
+            this.labelAjoutEditeur.Location = new System.Drawing.Point(39, 221);
             this.labelAjoutEditeur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAjoutEditeur.Name = "labelAjoutEditeur";
             this.labelAjoutEditeur.Size = new System.Drawing.Size(47, 13);
@@ -132,7 +137,7 @@ namespace ProjetGL
             // labelAjoutDessinateur
             // 
             this.labelAjoutDessinateur.AutoSize = true;
-            this.labelAjoutDessinateur.Location = new System.Drawing.Point(39, 126);
+            this.labelAjoutDessinateur.Location = new System.Drawing.Point(39, 174);
             this.labelAjoutDessinateur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAjoutDessinateur.Name = "labelAjoutDessinateur";
             this.labelAjoutDessinateur.Size = new System.Drawing.Size(70, 13);
@@ -142,7 +147,7 @@ namespace ProjetGL
             // labelAjoutAuteur
             // 
             this.labelAjoutAuteur.AutoSize = true;
-            this.labelAjoutAuteur.Location = new System.Drawing.Point(39, 100);
+            this.labelAjoutAuteur.Location = new System.Drawing.Point(39, 148);
             this.labelAjoutAuteur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAjoutAuteur.Name = "labelAjoutAuteur";
             this.labelAjoutAuteur.Size = new System.Drawing.Size(64, 13);
@@ -174,7 +179,7 @@ namespace ProjetGL
             this.btnAjoutAnnuler.BackColor = System.Drawing.Color.Red;
             this.btnAjoutAnnuler.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAjoutAnnuler.Location = new System.Drawing.Point(145, 337);
-            this.btnAjoutAnnuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAjoutAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjoutAnnuler.Name = "btnAjoutAnnuler";
             this.btnAjoutAnnuler.Size = new System.Drawing.Size(82, 33);
             this.btnAjoutAnnuler.TabIndex = 27;
@@ -187,7 +192,7 @@ namespace ProjetGL
             this.btnAjoutValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAjoutValider.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAjoutValider.Location = new System.Drawing.Point(324, 337);
-            this.btnAjoutValider.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAjoutValider.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjoutValider.Name = "btnAjoutValider";
             this.btnAjoutValider.Size = new System.Drawing.Size(82, 33);
             this.btnAjoutValider.TabIndex = 28;
@@ -199,7 +204,7 @@ namespace ProjetGL
             // 
             this.pictureBoxAjoutCouverture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxAjoutCouverture.Location = new System.Drawing.Point(334, 72);
-            this.pictureBoxAjoutCouverture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxAjoutCouverture.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxAjoutCouverture.Name = "pictureBoxAjoutCouverture";
             this.pictureBoxAjoutCouverture.Size = new System.Drawing.Size(142, 184);
             this.pictureBoxAjoutCouverture.TabIndex = 29;
@@ -208,7 +213,7 @@ namespace ProjetGL
             // btnAjoutParcourir
             // 
             this.btnAjoutParcourir.Location = new System.Drawing.Point(369, 260);
-            this.btnAjoutParcourir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAjoutParcourir.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjoutParcourir.Name = "btnAjoutParcourir";
             this.btnAjoutParcourir.Size = new System.Drawing.Size(71, 28);
             this.btnAjoutParcourir.TabIndex = 30;
@@ -230,17 +235,60 @@ namespace ProjetGL
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(66, 284);
+            this.label1.Location = new System.Drawing.Point(65, 308);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 13);
             this.label1.TabIndex = 32;
             this.label1.Text = "Les champs suivis de * sont requis.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 124);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Tome";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(39, 274);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Catégorie *";
+            // 
+            // cbAjoutCategorie
+            // 
+            this.cbAjoutCategorie.FormattingEnabled = true;
+            this.cbAjoutCategorie.Items.AddRange(new object[] {
+            "BD",
+            "Comic",
+            "Manga"});
+            this.cbAjoutCategorie.Location = new System.Drawing.Point(116, 266);
+            this.cbAjoutCategorie.Name = "cbAjoutCategorie";
+            this.cbAjoutCategorie.Size = new System.Drawing.Size(154, 21);
+            this.cbAjoutCategorie.TabIndex = 8;
+            // 
+            // nudAjoutNumSerie
+            // 
+            this.nudAjoutNumSerie.Location = new System.Drawing.Point(116, 119);
+            this.nudAjoutNumSerie.Name = "nudAjoutNumSerie";
+            this.nudAjoutNumSerie.Size = new System.Drawing.Size(67, 20);
+            this.nudAjoutNumSerie.TabIndex = 3;
             // 
             // AjoutAlbumForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 393);
+            this.Controls.Add(this.nudAjoutNumSerie);
+            this.Controls.Add(this.cbAjoutCategorie);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelAjoutCouverture);
             this.Controls.Add(this.btnAjoutParcourir);
@@ -261,10 +309,11 @@ namespace ProjetGL
             this.Controls.Add(this.labelAjoutAuteur);
             this.Controls.Add(this.labelAjoutTitre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AjoutAlbumForm";
             this.Text = "Ajout d\'un album";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAjoutCouverture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAjoutNumSerie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +340,9 @@ namespace ProjetGL
         private System.Windows.Forms.Button btnAjoutParcourir;
         private System.Windows.Forms.Label labelAjoutCouverture;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbAjoutCategorie;
+        private System.Windows.Forms.NumericUpDown nudAjoutNumSerie;
     }
 }
