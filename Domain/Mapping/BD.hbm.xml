@@ -12,7 +12,7 @@
     <property name="Editeur" column="bd_editeur" not-null="true"/>
     <property name="Serie" column="bd_serie" />
     <property name="Genre" column="bd_genre" not-null="true"/>
-    <property name="Couverture" column="bd_couverture" />
+    <property name="Couverture" column="bd_couverture" not-null="true" />
 
   </class>
 </hibernate-mapping>

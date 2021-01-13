@@ -21,6 +21,7 @@ namespace ProjetGL
         {
             this.bdRepository = bdRepository;
             InitializeComponent();
+            couverture = "";
         }
 
         private void btnAjoutValider_Click(object sender, EventArgs e)
