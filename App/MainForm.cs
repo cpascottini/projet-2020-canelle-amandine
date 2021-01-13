@@ -82,6 +82,7 @@ namespace ProjetGL
             }
             // tri alphabétique sur la 1ère colonne (série)
             dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
+
         }
 
         private void AfficherBDUtilisateur(DataGridView dgv, IList<BD> listeBD)

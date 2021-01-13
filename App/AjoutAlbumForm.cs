@@ -44,18 +44,27 @@ namespace ProjetGL
 
                 if (tbAjoutSerie.Text == "")
                 {
-                    bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, categorie);
+                    if ((int)nudAjoutNumSerie.Value != 0)
+                    {
+                        MessageBox.Show("L'album ne fait pas partie d'une série, vous ne pouvez pas saisir de n°.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, categorie);
+                        string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);
+                        MessageBox.Show(message, "Album enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
                 }
                 else
                 {
                     string serie = tbAjoutSerie.Text;
                     int numSerie = (int)nudAjoutNumSerie.Value;
                     bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, serie, numSerie, categorie);
+                    string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);
+                    MessageBox.Show(message, "Album enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
-
-                string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);
-                MessageBox.Show(message, "Album enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
             }
         }
         
