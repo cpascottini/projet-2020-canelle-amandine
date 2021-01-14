@@ -16,12 +16,14 @@ namespace ProjetGL
     {
         private IBDRepository bdRepository;
         private string couverture { get; set; }
+        private string fileToCopy { get; set; }
 
         public AjoutAlbumForm(IBDRepository bdRepository)
         {
             this.bdRepository = bdRepository;
             InitializeComponent();
             couverture = "";
+            fileToCopy = "";
             cbAjoutCategorie.SelectedIndex = 0;
         }
 
@@ -50,6 +52,10 @@ namespace ProjetGL
                     }
                     else
                     {
+                        // copie de l'image dans le répertoire app/bin/debug/couvertures
+                        string destinationDirectory = @"couvertures\";
+                        System.IO.File.Copy(fileToCopy, destinationDirectory + System.IO.Path.GetFileName(fileToCopy));
+
                         bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, categorie);
                         string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);
                         MessageBox.Show(message, "Album enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -58,6 +64,10 @@ namespace ProjetGL
                 }
                 else
                 {
+                    // copie de l'image dans le répertoire app/bin/debug/couvertures
+                    string destinationDirectory = @"couvertures\";
+                    System.IO.File.Copy(fileToCopy, destinationDirectory + System.IO.Path.GetFileName(fileToCopy));
+
                     string serie = tbAjoutSerie.Text;
                     int numSerie = (int)nudAjoutNumSerie.Value;
                     bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, serie, numSerie, categorie);
@@ -82,10 +92,7 @@ namespace ProjetGL
                 // nom de l'image pour la DB
                 couverture = open.SafeFileName;
 
-                // copie de l'image dans le répertoire app/bin/debug/couvertures
-                string fileToCopy = open.FileName;
-                string destinationDirectory = @"couvertures\";
-                System.IO.File.Copy(fileToCopy, destinationDirectory + System.IO.Path.GetFileName(fileToCopy));
+                fileToCopy = open.FileName; // on récupère le nom de l'image pour quand on enregistrera la BD
             }
         }
 
