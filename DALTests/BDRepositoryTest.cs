@@ -66,6 +66,17 @@ namespace DALTests
         }
 
         [TestMethod]
+        public void TestBDRepo_GetAllCouvertures()
+        {
+            var actual = bdRepository.GetAllCouvertures();
+            // 6 BD dans le jeu de données de test
+            Assert.AreEqual(6, actual.Count);
+            var expected = new List<string> { "lesBijouxDeLaCastafiore.jpg", "ameRouge.jpg", "asterixLeGaulois.jpg",
+                "persepolis3.jpg", "journalInfime.jpeg", "mortebouse.jpg"};
+            CollectionAssert.AreEquivalent(expected, actual);
+        }
+
+        [TestMethod]
         public void TestBDRepo_SaveBD()
         {
             bdRepository.SaveBD("testTitre", "testAuteur", "testDessinateur", "testEditeur",

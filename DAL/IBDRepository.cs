@@ -13,6 +13,7 @@ namespace DAL
         IList<BD> GetBDUtilisateur(int idUtilisateurLocal, string statut);
         IList<BD> GetBDRecherche(string rechercheLocal);
         IList<BD> GetBDRow(string titreLocal, string auteurLocal);
+        List<string> GetAllCouvertures();
         void SaveBD(string titreLocal, string auteurLocal, string dessinateurLocal, string editeurLocal,
             string genreLocal, string couvertureLocal, string serieLocal, int numSerieLocal, string categorieLocal); // BD qui fait partie d'une série
         void SaveBD(string titreLocal, string auteurLocal, string dessinateurLocal, string editeurLocal,

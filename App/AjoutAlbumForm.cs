@@ -52,28 +52,42 @@ namespace ProjetGL
                     }
                     else
                     {
-                        // copie de l'image dans le répertoire app/bin/debug/couvertures
-                        string destinationDirectory = @"couvertures\";
-                        System.IO.File.Copy(fileToCopy, destinationDirectory + System.IO.Path.GetFileName(fileToCopy));
+                        if (bdRepository.GetAllCouvertures().Contains(couverture))
+                        {
+                            MessageBox.Show("Ce nom d'image est déjà pris.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            // copie de l'image dans le répertoire app/bin/debug/couvertures
+                            string destinationDirectory = @"couvertures\";
+                            System.IO.File.Copy(fileToCopy, destinationDirectory + System.IO.Path.GetFileName(fileToCopy));
 
-                        bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, categorie);
-                        string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);
-                        MessageBox.Show(message, "Album enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
+                            bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, categorie);
+                            string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);
+                            MessageBox.Show(message, "Album enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
                     }
                 }
                 else
                 {
-                    // copie de l'image dans le répertoire app/bin/debug/couvertures
-                    string destinationDirectory = @"couvertures\";
-                    System.IO.File.Copy(fileToCopy, destinationDirectory + System.IO.Path.GetFileName(fileToCopy));
+                    if (bdRepository.GetAllCouvertures().Contains(couverture))
+                    {
+                        MessageBox.Show("Ce nom d'image est déjà pris.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        // copie de l'image dans le répertoire app/bin/debug/couvertures
+                        string destinationDirectory = @"couvertures\";
+                        System.IO.File.Copy(fileToCopy, destinationDirectory + System.IO.Path.GetFileName(fileToCopy));
 
-                    string serie = tbAjoutSerie.Text;
-                    int numSerie = (int)nudAjoutNumSerie.Value;
-                    bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, serie, numSerie, categorie);
-                    string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);
-                    MessageBox.Show(message, "Album enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                        string serie = tbAjoutSerie.Text;
+                        int numSerie = (int)nudAjoutNumSerie.Value;
+                        bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, serie, numSerie, categorie);
+                        string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);
+                        MessageBox.Show(message, "Album enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
                 }
             }
         }

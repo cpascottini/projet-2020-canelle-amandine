@@ -37,6 +37,11 @@ namespace DAL
             return Session.CreateQuery("select bd from BD bd where bd.Titre=:titre and bd.Auteur=:auteur").SetString("titre", titreLocal).SetString("auteur", auteurLocal).List<BD>();
         }
 
+        public List<string> GetAllCouvertures()
+        {
+            return (List<string>)Session.CreateQuery("select Couverture from BD").List<string>();
+        }
+
         public void SaveBD(string titreLocal, string auteurLocal, string dessinateurLocal, string editeurLocal,
             string genreLocal, string couvertureLocal, string serieLocal, int numSerieLocal, string categorieLocal)
         {
