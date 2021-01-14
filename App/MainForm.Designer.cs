@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabCtrlAlbums = new System.Windows.Forms.TabControl();
             this.tabPageMyAlbums = new System.Windows.Forms.TabPage();
             this.dgvMyAlbums = new System.Windows.Forms.DataGridView();
@@ -400,6 +401,7 @@
             this.Controls.Add(this.btnDeconnexion);
             this.Controls.Add(this.tabCtrlAlbums);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "BDThèque";
             this.tabCtrlAlbums.ResumeLayout(false);

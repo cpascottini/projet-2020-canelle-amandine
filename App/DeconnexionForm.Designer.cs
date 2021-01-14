@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeconnexionForm));
             this.labelInfoDeconnexion = new System.Windows.Forms.Label();
             this.labelQuestionDeconnexion = new System.Windows.Forms.Label();
             this.btnQuit = new System.Windows.Forms.Button();
@@ -84,6 +85,7 @@
             this.Controls.Add(this.labelQuestionDeconnexion);
             this.Controls.Add(this.labelInfoDeconnexion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeconnexionForm";
             this.Text = "Déconnexion";
             this.ResumeLayout(false);

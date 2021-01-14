@@ -29,6 +29,7 @@ namespace ProjetGL
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AjoutAlbumForm));
             this.tbAjoutGenre = new System.Windows.Forms.TextBox();
             this.tbAjoutSerie = new System.Windows.Forms.TextBox();
             this.tbAjoutEditeur = new System.Windows.Forms.TextBox();
@@ -310,6 +311,7 @@ namespace ProjetGL
             this.Controls.Add(this.labelAjoutAuteur);
             this.Controls.Add(this.labelAjoutTitre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AjoutAlbumForm";
             this.Text = "Ajout d\'un album";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlbumForm));
             this.labelTitre = new System.Windows.Forms.Label();
             this.labelAuteur = new System.Windows.Forms.Label();
             this.labelDessinateur = new System.Windows.Forms.Label();
@@ -241,6 +242,7 @@
             this.Controls.Add(this.labelAuteur);
             this.Controls.Add(this.labelTitre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AlbumForm";
             this.Text = "Descripition album";
