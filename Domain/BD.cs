@@ -49,8 +49,8 @@ namespace Domain
         }
 
         public virtual string[] DecrireBDMarche(bool possede, bool veut)
-        {           
+        {
             return new string[] { Serie, Convert.ToString(NumSerie), Titre, Auteur, Dessinateur, possede.ToString(), veut.ToString() };
         }
-    }
+    }    
 }

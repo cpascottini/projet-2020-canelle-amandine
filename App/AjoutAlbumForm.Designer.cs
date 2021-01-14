@@ -263,6 +263,7 @@ namespace ProjetGL
             // 
             // cbAjoutCategorie
             // 
+            this.cbAjoutCategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAjoutCategorie.FormattingEnabled = true;
             this.cbAjoutCategorie.Items.AddRange(new object[] {
             "BD",

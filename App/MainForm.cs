@@ -72,29 +72,72 @@ namespace ProjetGL
 
         private void AfficherBDMarche(IList<BD> listeBD)
         {
-            dgvAllAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes
-                                        // Accès à la liste des BD et remplissage du tableau
-            foreach (BD bd in listeBD)
+            dgvAllAlbums.Rows.Clear();  // suppression des éventuelles lignes existantes                                     
+
+            List<BD> listeBDTri = TrierBD(listeBD); // tri des bd
+                       
+            foreach (BD bd in listeBDTri) // Accès à la liste des BD et remplissage du tableau
             {
                 bool possede = BDUtilisateur.Contains(bd);
                 bool veut = BDWishlist.Contains(bd);
                 dgvAllAlbums.Rows.Add(bd.DecrireBDMarche(possede, veut));
-            }
-            // tri alphabétique sur la 1ère colonne (série)
-            dgvAllAlbums.Sort(dgvAllAlbums.Columns[0], ListSortDirection.Ascending);
+            }          
+        }
 
+        private List<BD> TrierBD(IList<BD> listeBD)
+        {
+            List<BD> listeBDTri = new List<BD>();
+            foreach (BD bd in listeBD)
+            {
+                listeBDTri.Add(bd);
+            }
+            listeBDTri.Sort(Compare);
+            return listeBDTri;
+        }
+
+        private int Compare(BD bd1, BD bd2) // utilisée pour le tri des bd
+        {
+            if (bd1.Serie != null && bd2.Serie != null)
+            {
+                if (bd1.Serie != bd2.Serie)
+                {
+                    return bd1.Serie.CompareTo(bd2.Serie);
+                }
+                else
+                {
+                    return bd1.NumSerie.CompareTo(bd2.NumSerie);
+                }
+            }
+            else
+            {
+                if (bd1.Serie == null && bd2.Serie == null)
+                {
+                    return bd1.Titre.CompareTo(bd2.Titre);
+                }
+                else
+                {
+                    if (bd1.Serie == null)
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        return 1;
+                    }
+                }
+            }
         }
 
         private void AfficherBDUtilisateur(DataGridView dgv, IList<BD> listeBD)
         {
             dgv.Rows.Clear();  // suppression des éventuelles lignes existantes
-                                       // Accès à la liste des BD et remplissage du tableau
-            foreach (BD bd in listeBD)
+
+            List<BD> listeBDTri = TrierBD(listeBD); // tri des BD
+
+            foreach (BD bd in listeBDTri) // Accès à la liste des BD et remplissage du tableau
             {
                 dgv.Rows.Add(bd.Decrire());
             }
-            // tri alphabétique sur la 1ère colonne (série)
-            dgv.Sort(dgv.Columns[0], ListSortDirection.Ascending);
         }
 
         private void btnRecherche_Click(object sender, EventArgs e)
