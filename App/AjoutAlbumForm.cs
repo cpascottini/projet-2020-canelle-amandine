@@ -45,7 +45,7 @@ namespace ProjetGL
                 string genre = tbAjoutGenre.Text;
                 string categorie = cbAjoutCategorie.Text;
 
-                if (bdRepository.GetAll().Contains(bdRepository.GetBDRow(titre,auteur)[0]))
+                if (bdRepository.GetBDRow(titre, auteur).Count() != 0)
                     // une BD avec le même titre et le même auteur existe déjà
                 {
                     MessageBox.Show("Cet album existe déjà.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
