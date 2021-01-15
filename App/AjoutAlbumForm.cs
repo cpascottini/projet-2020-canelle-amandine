@@ -31,11 +31,12 @@ namespace ProjetGL
         {
             if (tbAjoutAuteur.Text == "" | tbAjoutDessinateur.Text =="" | tbAjoutEditeur.Text == "" |
                 tbAjoutGenre.Text == "" | cbAjoutCategorie.Text=="" | tbAjoutTitre.Text == "" | couverture == "")
+                // un des champs obligatoires n'est pas rempli
                 // pas obligatoire de remplir le champ Série ni son numéro
             {
                 MessageBox.Show("Un ou plusieurs champs sont vides.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            else // tout est correctement rempli
             {
                 string titre = tbAjoutTitre.Text;
                 string auteur = tbAjoutAuteur.Text;
@@ -44,15 +45,45 @@ namespace ProjetGL
                 string genre = tbAjoutGenre.Text;
                 string categorie = cbAjoutCategorie.Text;
 
-                if (tbAjoutSerie.Text == "")
+                if (bdRepository.GetAll().Contains(bdRepository.GetBDRow(titre,auteur)[0]))
+                    // une BD avec le même titre et le même auteur existe déjà
                 {
-                    if ((int)nudAjoutNumSerie.Value != 0)
+                    MessageBox.Show("Cet album existe déjà.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else // la BD n'existe pas encore
+                {
+                    if (tbAjoutSerie.Text == "")
+                        // la BD ne fait pas partie d'une série
                     {
-                        MessageBox.Show("L'album ne fait pas partie d'une série, vous ne pouvez pas saisir de n°.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if ((int)nudAjoutNumSerie.Value != 0)
+                            // l'admin a entré un n° de série sans saisir de nom de série
+                        {
+                            MessageBox.Show("L'album ne fait pas partie d'une série, vous ne pouvez pas saisir de n°.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            if (bdRepository.GetAllCouvertures().Contains(couverture))
+                                // une couverture du même nom existe déjà dans la DB
+                            {
+                                MessageBox.Show("Ce nom d'image est déjà pris.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                // copie de l'image dans le répertoire app/bin/debug/couvertures
+                                string destinationDirectory = @"couvertures\";
+                                System.IO.File.Copy(fileToCopy, destinationDirectory + System.IO.Path.GetFileName(fileToCopy));
+
+                                bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, categorie);
+                                string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);
+                                MessageBox.Show(message, "Album enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                        }
                     }
-                    else
+                    else // la BD fait partie d'une série
                     {
                         if (bdRepository.GetAllCouvertures().Contains(couverture))
+                            // une couverture avec le même nom existe déjà dans la DB
                         {
                             MessageBox.Show("Ce nom d'image est déjà pris.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
@@ -62,31 +93,13 @@ namespace ProjetGL
                             string destinationDirectory = @"couvertures\";
                             System.IO.File.Copy(fileToCopy, destinationDirectory + System.IO.Path.GetFileName(fileToCopy));
 
-                            bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, categorie);
+                            string serie = tbAjoutSerie.Text;
+                            int numSerie = (int)nudAjoutNumSerie.Value;
+                            bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, serie, numSerie, categorie);
                             string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);
                             MessageBox.Show(message, "Album enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
-                    }
-                }
-                else
-                {
-                    if (bdRepository.GetAllCouvertures().Contains(couverture))
-                    {
-                        MessageBox.Show("Ce nom d'image est déjà pris.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        // copie de l'image dans le répertoire app/bin/debug/couvertures
-                        string destinationDirectory = @"couvertures\";
-                        System.IO.File.Copy(fileToCopy, destinationDirectory + System.IO.Path.GetFileName(fileToCopy));
-
-                        string serie = tbAjoutSerie.Text;
-                        int numSerie = (int)nudAjoutNumSerie.Value;
-                        bdRepository.SaveBD(titre, auteur, dessinateur, editeur, genre, couverture, serie, numSerie, categorie);
-                        string message = String.Format("Le nouvel album '{0}' a bien été enregistré.", titre);
-                        MessageBox.Show(message, "Album enregistré", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
                     }
                 }
             }
