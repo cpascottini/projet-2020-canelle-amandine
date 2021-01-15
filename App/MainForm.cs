@@ -178,6 +178,12 @@ namespace ProjetGL
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
+            // on réaffiche le dgv si une recherche précédente l'a caché
+            dgvAllAlbums.Show();
+
+            // on remasque le label si une recherche précédente l'a affichée
+            labelPasDeResultat.Visible = false;
+
             tbRecherche.Text = "";
             AfficherBDMarche(bdRepository.GetAll());
         }
