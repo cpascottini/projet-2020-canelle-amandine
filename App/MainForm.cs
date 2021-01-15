@@ -54,13 +54,13 @@ namespace ProjetGL
         {
             try
             {
-                // BD QUE POSSEDE L'UTILISATEUR CONNECTÉ
+                // BD que possède l'utilisateur connecté
                 AfficherBDUtilisateur(dgvMyAlbums, BDUtilisateur);
 
-                // BD QUE VEUT L'UTILISATEUR CONNECTÉ               
+                // BD que veut l'utilisateur connecté              
                 AfficherBDUtilisateur(dgvWishlist, BDWishlist);
                 
-                // BD DU MARCHÉ
+                // BD du marché
                 AfficherBDMarche(bdRepository.GetAll());
 
             }
@@ -144,7 +144,7 @@ namespace ProjetGL
         {           
             string recherche = tbRecherche.Text;
 
-            // on réaffiche le dgv si une recherche précédente les a cachées
+            // on réaffiche le dgv si une recherche précédente l'a caché
             dgvAllAlbums.Show();
 
             // on remasque le label si une recherche précédente l'a affichée
@@ -165,7 +165,8 @@ namespace ProjetGL
             }
         }
 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData) // pour rechercher en appuyant sur entrée
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+            // pour rechercher en appuyant sur entrée
         {
             if (keyData == (Keys.Enter))
             {
@@ -203,7 +204,7 @@ namespace ProjetGL
                     AjouterBDWishlist(bd);
                 }
 
-                // ajout d'une BD du marché à ses possession        
+                // ajout d'une BD du marché à ses possessions   
                 if (caseAjoutPossession.Selected && !Convert.ToBoolean(caseAjoutPossession.Value))
                 {
                     showAlbum = false;

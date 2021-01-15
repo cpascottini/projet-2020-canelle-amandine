@@ -34,7 +34,7 @@ insert into relation values(6,1,10,'possede');
 insert into relation values(7,1,14,'possede');
 insert into relation values(8,1,18,'veut');
 insert into relation values(9,1,15,'veut');
-insert into relation values(10,3,1,'possede');
+insert into relation values(10,3,8,'possede');
 insert into relation values(11,3,22,'veut');
 insert into relation values(12,3,5,'veut');
 insert into relation values(13,1,21,'possede');
